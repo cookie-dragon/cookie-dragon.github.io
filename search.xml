@@ -4,11 +4,730 @@
   
     
     <entry>
+      <title>Docker加速器配置</title>
+      <link href="/2019/09/05/Docker%E5%8A%A0%E9%80%9F%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+      <url>/2019/09/05/Docker%E5%8A%A0%E9%80%9F%E5%99%A8%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="自安装Docker配置"><a href="#自安装Docker配置" class="headerlink" title="自安装Docker配置"></a>自安装Docker配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://99m18m7c.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure><h3 id="群辉Docker配置文件位置"><a href="#群辉Docker配置文件位置" class="headerlink" title="群辉Docker配置文件位置"></a>群辉Docker配置文件位置</h3><p>/var/packages/Docker/etc/dockerd.json</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 本地源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>龙尚（LONGSUNG） U9300 模块 Linux驱动</title>
+      <link href="/2019/09/05/%E9%BE%99%E5%B0%9A%EF%BC%88LONGSUNG%EF%BC%89-U9300-%E6%A8%A1%E5%9D%97-Linux%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2019/09/05/%E9%BE%99%E5%B0%9A%EF%BC%88LONGSUNG%EF%BC%89-U9300-%E6%A8%A1%E5%9D%97-Linux%E9%A9%B1%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<p>硬件环境：友善之臂（FriendlyARM）Smart4418 SDK 1606<br>固件环境：s5p4418-eflasher-friendlycore-xenial-4.4-armhf-20180906.img<br>交叉编译环境：ubuntu-16.04.4-server-amd64</p><a id="more"></a><blockquote></blockquote><p>注意：NetworkManager会导致ppp模式拨号异常，请使用network管理网络<br>vi rmnm.sh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"> </span><br><span class="line">apt-get --yes --force-yes remove --auto-remove --purge network-manager</span><br><span class="line">apt autoremove -y</span><br><span class="line"> </span><br><span class="line">cat &gt;/etc/network/interfaces &lt;&lt;INTERFACEEOL</span><br><span class="line">source-directory /etc/network/interfaces.d</span><br><span class="line"> </span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"> </span><br><span class="line">allow-hotplug wlan0</span><br><span class="line">iface wlan0 inet dhcp</span><br><span class="line">        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf</span><br><span class="line">INTERFACEEOL</span><br><span class="line"> </span><br><span class="line">cat &gt;/etc/network/interfaces.d/eth0 &lt;&lt;ETH0EOLB</span><br><span class="line">auto eth0</span><br><span class="line">    iface eth0 inet dhcp</span><br><span class="line">    hwaddress 76:92:d4:85:f3:0f</span><br><span class="line">ETH0EOLB</span><br></pre></td></tr></table></figure><p>chmod 755 rmnm.sh<br>sudo ./rmnm.sh</p><h3 id="交叉编译环境"><a href="#交叉编译环境" class="headerlink" title="交叉编译环境"></a>交叉编译环境</h3><ul><li>安装系统</li><li>apt-get update</li><li>apt安装<br>vim-gtk<br>git<br>make<br>bc<br>lsb-core<br>libssl-dev<br>libncurses*<br>minicom</li></ul><h4 id="工具链下载（操作目录：普通用户～）"><a href="#工具链下载（操作目录：普通用户～）" class="headerlink" title="工具链下载（操作目录：普通用户～）"></a>工具链下载（操作目录：普通用户～）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/friendlyarm/prebuilts.git</span><br></pre></td></tr></table></figure><h4 id="工具链配置（export最好配置到开机启动里）"><a href="#工具链配置（export最好配置到开机启动里）" class="headerlink" title="工具链配置（export最好配置到开机启动里）"></a>工具链配置（export最好配置到开机启动里）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /opt/FriendlyARM/toolchain</span><br><span class="line">sudo tar xf prebuilts/gcc-x64/arm-cortexa9-linux-gnueabihf-4.9.3.tar.xz -C /opt/FriendlyARM/toolchain/</span><br><span class="line">export PATH=/opt/FriendlyARM/toolchain/4.9.3/bin:$PATH</span><br><span class="line">export GCC_COLORS=auto</span><br></pre></td></tr></table></figure><h4 id="内核下载"><a href="#内核下载" class="headerlink" title="内核下载"></a>内核下载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/friendlyarm/linux.git -b nanopi2-v4.4.y --depth 1</span><br></pre></td></tr></table></figure><h4 id="内核配置（操作目录：普通用户～-linux，即内核根目录）"><a href="#内核配置（操作目录：普通用户～-linux，即内核根目录）" class="headerlink" title="内核配置（操作目录：普通用户～/linux，即内核根目录）"></a>内核配置（操作目录：普通用户～/linux，即内核根目录）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch .scmversion</span><br><span class="line">make ARCH=arm nanopi2_linux_defconfig</span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-cortexa9-linux-gnueabihf- menuconfig</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Device Drivers  ---&gt;</span><br><span class="line">[*] Network device support  ---&gt;</span><br><span class="line">&lt;*&gt;   PPP (point-to-point protocol) support</span><br><span class="line">&lt;*&gt;     PPP support for async serial ports</span><br><span class="line">&lt;*&gt;     PPP support for sync tty ports</span><br><span class="line">[*] USB support  ---&gt;</span><br><span class="line">&lt;*&gt;   USB Serial Converter support  ---&gt;</span><br><span class="line">&lt;*&gt;   USB driver for GSM and CDMA modems</span><br></pre></td></tr></table></figure><h4 id="增加具体设备驱动、USB-串口驱动过滤NDIS-接口"><a href="#增加具体设备驱动、USB-串口驱动过滤NDIS-接口" class="headerlink" title="增加具体设备驱动、USB 串口驱动过滤NDIS 接口"></a>增加具体设备驱动、USB 串口驱动过滤NDIS 接口</h4><p>drivers/usb/serial/option.c</p><p>在源码中找到option_ids 数组， 在数组中添加Longsung 产品的VID(0x1C9E) 和<br>PID(0x9B3C)。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define LONGSUNG_VENDOR_ID0x1c9e</span><br><span class="line">#define LONGSUNG_U9300_PRODUCT_ID0x9b3c</span><br></pre></td></tr></table></figure><p>在option.c 中的opiton_ids 中添加blacklist，驱动在加载时会自动跳过blacklist 指定的interface；设置interface 4 不加载option驱动；</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static const struct option_blacklist_info longssung_u9300_blacklist = &#123;</span><br><span class="line">.reserved = BIT(4),</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>添加blacklist 到option_ids 数组中。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; USB_DEVICE(LONGSUNG_VENDOR_ID, LONGSUNG_U9300_PRODUCT_ID),</span><br><span class="line">          .driver_info = (kernel_ulong_t)&amp;longssung_u9300_blacklist</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure><h4 id="内核编译（操作目录：普通用户～-linux，即内核根目录）"><a href="#内核编译（操作目录：普通用户～-linux，即内核根目录）" class="headerlink" title="内核编译（操作目录：普通用户～/linux，即内核根目录）"></a>内核编译（操作目录：普通用户～/linux，即内核根目录）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make ARCH=arm</span><br></pre></td></tr></table></figure><p>编译成功结束后，新生成的内核是 arch/arm/boot/zImage，目录arch/arm/boot/dts/下还包括新的DTB文件(s5p4418-nanopi2-rev*.dtb)，用于替换掉SD卡boot分区下对应的文件。<br>s5p4418-nanopi2-rev01.dtb<br>s5p4418-nanopi2-rev02.dtb<br>s5p4418-nanopi2-rev03.dtb<br>s5p4418-nanopi2-rev04.dtb<br>s5p4418-nanopi2-rev07.dtb<br>s5p4418-nanopi2-rev103.dtb<br>zImage</p><h4 id="内核替换"><a href="#内核替换" class="headerlink" title="内核替换"></a>内核替换</h4><p>挂载boot分区（mount /dev/mmcblk0p1 /boot/）<br>使用sftp传输替换文件<br>更新完成后，输入 reboot 命令重启即可，注意不要直接断电或按Reset键，否则可能会损坏文件。</p><h3 id="板上环境"><a href="#板上环境" class="headerlink" title="板上环境"></a>板上环境</h3><h4 id="加载USB-串口驱动"><a href="#加载USB-串口驱动" class="headerlink" title="加载USB 串口驱动"></a>加载USB 串口驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe option</span><br></pre></td></tr></table></figure><h4 id="使能设备（1c9e-9b3c分别为VID、PID）"><a href="#使能设备（1c9e-9b3c分别为VID、PID）" class="headerlink" title="使能设备（1c9e 9b3c分别为VID、PID）"></a>使能设备（1c9e 9b3c分别为VID、PID）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo 1c9e 9b3c &gt; /sys/bus/usb-serial/drivers/option1/new_id</span><br></pre></td></tr></table></figure><p>这个操作之后应该就能够看到 /dev 下多了 ttyUSB0、ttyUSB1、ttyUSB2 几个设备节点了。<br>使用dmesg 命令查看系统log，USB 串口驱动已经被加载。</p><h4 id="交互AT配置"><a href="#交互AT配置" class="headerlink" title="交互AT配置"></a>交互AT配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">minicom –s </span><br><span class="line">Serial port setup -&gt; Serial device -&gt; /dev/ttyUSB2</span><br><span class="line">Save setup as df1</span><br><span class="line">exit</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>注意：串口中AT(ttyUSB2)，Modem(ttyUSB1)可以发AT 命令，其他不能发AT指令</p><h4 id="AT命令"><a href="#AT命令" class="headerlink" title="AT命令"></a>AT命令</h4><p>打开回显（ATE）<br>查询版本信息（AT+LCTSW）<br>查询信号（AT+CSQ）<br>注册状态（AT+CREG?）<br>网络运营商信息（AT+COPS?）</p><h4 id="拨号上网配置"><a href="#拨号上网配置" class="headerlink" title="拨号上网配置"></a>拨号上网配置</h4><p>vim /etc/ppp/chat/gprs-connect-chat </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">TIMEOUT15</span><br><span class="line">ABORT&quot;DELAYED&quot;</span><br><span class="line">ABORT&quot;BUSY&quot;</span><br><span class="line">ABORT&quot;ERROR&quot;</span><br><span class="line">ABORT&quot;NO DIALTONE&quot;</span><br><span class="line">ABORT&quot;NO CARRIER&quot;</span><br><span class="line">TIMEOUT40</span><br><span class="line">&apos;&apos;\rAT</span><br><span class="line">OKATS0=0</span><br><span class="line">OKATE0V1</span><br><span class="line">OKAT+CGDCONT=1,\&quot;IP\&quot;,\&quot;CMNET\&quot;</span><br><span class="line">OKATDT*99***1#</span><br><span class="line">CONNECT &apos;&apos;</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>其中CMNET为中国移动的APN，按需修改</p><p>vim /etc/ppp/options </p><p>找到auth 字样的行然后将其改为#auth，这样在拨号过程中就不会提示需要身份验证</p><p>vim /etc/ppp/peer/gprs </p><blockquote></blockquote><p>必须指定Modem口是ttyUSB1 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Usage: root&gt;pppd call gprs</span><br><span class="line">/dev/ttyUSB1</span><br><span class="line">9600</span><br><span class="line">crtscts</span><br><span class="line">modem</span><br><span class="line">#noauth</span><br><span class="line">debug</span><br><span class="line">nodetach</span><br><span class="line">#hide-password</span><br><span class="line">usepeerdns</span><br><span class="line">noipdefault</span><br><span class="line">defaultroute</span><br><span class="line">0.0.0.0:0.0.0.0</span><br><span class="line">ipcp-accept-local</span><br><span class="line">ipcp-accept-remote</span><br><span class="line">#lcp-echo-failure 12</span><br><span class="line">#lcp-echo-interval 3</span><br><span class="line">#noccp</span><br><span class="line">#novj</span><br><span class="line">#novjccomp</span><br><span class="line">#persist</span><br><span class="line">connect &apos;/usr/sbin/chat -s -v -f /etc/ppp/chat/gprs-connect-chat&apos;</span><br></pre></td></tr></table></figure><h4 id="拨号上网"><a href="#拨号上网" class="headerlink" title="拨号上网"></a>拨号上网</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pppd call gprs</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>通过ifconfig、ping、apt-get update来检查网络</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 驱动 </tag>
+            
+            <tag> 4G </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux注册ko驱动</title>
+      <link href="/2019/09/05/Linux%E6%B3%A8%E5%86%8Cko%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2019/09/05/Linux%E6%B3%A8%E5%86%8Cko%E9%A9%B1%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="复制ko驱动"><a href="#复制ko驱动" class="headerlink" title="复制ko驱动"></a>复制ko驱动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp 8188eu.ko /lib/modules/3.2.0/</span><br></pre></td></tr></table></figure><h4 id="临时注册驱动"><a href="#临时注册驱动" class="headerlink" title="临时注册驱动"></a>临时注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insmod /lib/modules/3.2.0/8188eu.ko</span><br></pre></td></tr></table></figure><h4 id="持久化注册驱动"><a href="#持久化注册驱动" class="headerlink" title="持久化注册驱动"></a>持久化注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /lib/modules/3.2.0/</span><br><span class="line">depmod</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 驱动 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内核编译-网卡桥接</title>
+      <link href="/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-%E7%BD%91%E5%8D%A1%E6%A1%A5%E6%8E%A5/"/>
+      <url>/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-%E7%BD%91%E5%8D%A1%E6%A1%A5%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<p>make menuconfig<br>make ARCH=arm menuconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[*] Networking support ---&gt;</span><br><span class="line">Networking options ---&gt;</span><br><span class="line">&lt;*&gt; 802.1d Ethernet Bridging</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 内核编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> menuconfig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内核编译-虚拟网络设备tun/tap</title>
+      <link href="/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87tun-tap/"/>
+      <url>/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87tun-tap/</url>
+      
+        <content type="html"><![CDATA[<p>make menuconfig<br>make ARCH=arm menuconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Device Drivers ---&gt;</span><br><span class="line">[*] Network device support ---&gt;</span><br><span class="line">&lt;*&gt; Universal TUN/TAP device driver support</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 内核编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> menuconfig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内核编译-NAT转发</title>
+      <link href="/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-NAT%E8%BD%AC%E5%8F%91/"/>
+      <url>/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-NAT%E8%BD%AC%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[<p>make menuconfig<br>make ARCH=arm menuconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[*] Networking support ---&gt;</span><br><span class="line">Networking options ---&gt;</span><br><span class="line">[*] Network packet filtering framework (Netfilter) ---&gt;</span><br><span class="line">Core Netfilter Configuration ---&gt;</span><br><span class="line">&lt;*&gt; Netfilter connection tracking support</span><br><span class="line">&lt;*&gt; NetBIOS name service protocol support</span><br><span class="line">-*- Netfilter Xtables support (required for ip_tables)</span><br><span class="line">IP: Netfilter Configuration ---&gt;</span><br><span class="line">&lt;*&gt; IPv4 connection tracking support (required for NAT)</span><br><span class="line">&lt;*&gt; IP tables support (required for filtering/masq/NAT)</span><br><span class="line">&lt;*&gt; iptables NAT support</span><br><span class="line">&lt;*&gt; MASQUERADE target support</span><br><span class="line">&lt;*&gt; REDIRECT target support</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 内核编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> menuconfig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内核编译-4G网卡驱动</title>
+      <link href="/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-4G%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2019/09/05/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-4G%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<p>make menuconfig<br>make ARCH=arm menuconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Device Drivers ---&gt;</span><br><span class="line">[*] Network device support ---&gt;</span><br><span class="line">&lt;*&gt; PPP (point-to-point protocol) support</span><br><span class="line">&lt;*&gt; PPP support for async serial ports</span><br><span class="line">&lt;*&gt; PPP support for sync tty ports</span><br><span class="line">[*] USB support ---&gt;</span><br><span class="line">&lt;*&gt; USB Serial Converter support ---&gt;</span><br><span class="line">&lt;*&gt; USB driver for GSM and CDMA modems</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 内核编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> menuconfig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux设置forward转发</title>
+      <link href="/2019/09/05/Linux%E8%AE%BE%E7%BD%AEforward%E8%BD%AC%E5%8F%91/"/>
+      <url>/2019/09/05/Linux%E8%AE%BE%E7%BD%AEforward%E8%BD%AC%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Set-ip-forward"><a href="#Set-ip-forward" class="headerlink" title="Set ip_forward"></a>Set ip_forward</h3><p>vim /etc/sysctl.conf</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.ip_forward=1</span><br></pre></td></tr></table></figure><h3 id="Check-ip-forward"><a href="#Check-ip-forward" class="headerlink" title="Check ip_forward"></a>Check ip_forward</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> forward </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>route 网关设置</title>
+      <link href="/2019/09/05/route-%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE/"/>
+      <url>/2019/09/05/route-%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Delete-default-Gateway"><a href="#Delete-default-Gateway" class="headerlink" title="Delete default Gateway"></a>Delete default Gateway</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route del default</span><br></pre></td></tr></table></figure><h3 id="Add-default-Gateway"><a href="#Add-default-Gateway" class="headerlink" title="Add default Gateway"></a>Add default Gateway</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route add default gw 192.168.200.1</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> route </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iptables NAT转发</title>
+      <link href="/2019/09/05/iptables-NAT%E8%BD%AC%E5%8F%91/"/>
+      <url>/2019/09/05/iptables-NAT%E8%BD%AC%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</span><br><span class="line">iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iptables </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iptables 保存/加载</title>
+      <link href="/2019/09/05/iptables-%E4%BF%9D%E5%AD%98-%E5%8A%A0%E8%BD%BD/"/>
+      <url>/2019/09/05/iptables-%E4%BF%9D%E5%AD%98-%E5%8A%A0%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<h3 id="手动保存-加载"><a href="#手动保存-加载" class="headerlink" title="手动保存/加载"></a>手动保存/加载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables-save &gt; /etc/iptables.rules</span><br><span class="line">iptables-restore &lt; /etc/iptables.rules</span><br></pre></td></tr></table></figure><h3 id="永久保存"><a href="#永久保存" class="headerlink" title="永久保存"></a>永久保存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables save</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables-save &gt; /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>使用该命令会将所有的防火墙规则保存在/etc/sysconfig/iptables文件中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iptables </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git代理设置/取消</title>
+      <link href="/2019/09/05/git%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE-%E5%8F%96%E6%B6%88/"/>
+      <url>/2019/09/05/git%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE-%E5%8F%96%E6%B6%88/</url>
+      
+        <content type="html"><![CDATA[<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy &apos;socks5://192.168.111.12:1081&apos;</span><br><span class="line">git config --global https.proxy &apos;socks5://192.168.111.12:1081&apos;</span><br></pre></td></tr></table></figure><h3 id="取消"><a href="#取消" class="headerlink" title="取消"></a>取消</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-zlib</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-zlib/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-zlib/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>zlib-1.2.11</p><a id="more"></a><h2 id="zlib-1-2-11"><a href="#zlib-1-2-11" class="headerlink" title="zlib-1.2.11"></a>zlib-1.2.11</h2><h3 id="配置交叉编译工具链绝对路径"><a href="#配置交叉编译工具链绝对路径" class="headerlink" title="配置交叉编译工具链绝对路径"></a>配置交叉编译工具链绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export CC=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-gcc</span><br><span class="line">export CXX=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-g++</span><br><span class="line">export AR=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ar</span><br><span class="line">export RANLIB=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure><h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/zlib-1.2.11</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h3 id="重启交叉编译环境"><a href="#重启交叉编译环境" class="headerlink" title="重启交叉编译环境"></a>重启交叉编译环境</h3><blockquote></blockquote><p>由于配置交叉编译工具链绝对路径，会导致其他使用相对交叉编译工具链程序编译错误，所以重启一下比较好</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-bzip2</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-bzip2/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-bzip2/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>bzip2-1.0.6</p><a id="more"></a><h2 id="bzip2-1-0-6"><a href="#bzip2-1-0-6" class="headerlink" title="bzip2-1.0.6"></a>bzip2-1.0.6</h2><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># To assist in cross-compiling</span><br><span class="line">CC=arm-linux-gnueabihf-gcc -fPIC</span><br><span class="line">AR=arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib</span><br><span class="line">LDFLAGS=</span><br><span class="line"></span><br><span class="line">BIGFILES=-D_FILE_OFFSET_BITS=32</span><br><span class="line">CFLAGS=-Wall -Winline -O2 -g $(BIGFILES)</span><br><span class="line"></span><br><span class="line"># Where you want it installed when you do &apos;make install&apos;</span><br><span class="line">PREFIX=/opt/Crosscompile/buildComplete/bzip2-1.0.6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">check: test</span><br><span class="line">test: bzip2</span><br><span class="line"># @cat words1</span><br><span class="line"># ./bzip2 -1 &lt; sample1.ref &gt; sample1.rb2</span><br><span class="line"># ./bzip2 -2 &lt; sample2.ref &gt; sample2.rb2</span><br><span class="line"># ./bzip2 -3 &lt; sample3.ref &gt; sample3.rb2</span><br><span class="line"># ./bzip2 -d &lt; sample1.bz2 &gt; sample1.tst</span><br><span class="line"># ./bzip2 -d &lt; sample2.bz2 &gt; sample2.tst</span><br><span class="line"># ./bzip2 -ds &lt; sample3.bz2 &gt; sample3.tst</span><br><span class="line"># cmp sample1.bz2 sample1.rb2</span><br><span class="line"># cmp sample2.bz2 sample2.rb2</span><br><span class="line"># cmp sample3.bz2 sample3.rb2</span><br><span class="line"># cmp sample1.tst sample1.ref</span><br><span class="line"># cmp sample2.tst sample2.ref</span><br><span class="line"># cmp sample3.tst sample3.ref</span><br><span class="line"># @cat words3</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-gdbm</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-gdbm/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-gdbm/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>gdbm-1.18.1</p><a id="more"></a><h2 id="gdbm-1-18-1"><a href="#gdbm-1-18-1" class="headerlink" title="gdbm-1.18.1"></a>gdbm-1.18.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/gdbm-1.18.1</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-readline</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-readline/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-readline/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>readline-8.0</p><a id="more"></a><h2 id="readline-8-0"><a href="#readline-8-0" class="headerlink" title="readline-8.0"></a>readline-8.0</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/readline-8.0</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-sqlite</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-sqlite/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-sqlite/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>sqlite-3.28</p><a id="more"></a><h2 id="sqlite-3-28"><a href="#sqlite-3-28" class="headerlink" title="sqlite-3.28"></a>sqlite-3.28</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/sqlite-3.28</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-openssl</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openssl/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openssl/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>openssl-1.0.2s</p><a id="more"></a><h2 id="openssl-1-0-2s"><a href="#openssl-1-0-2s" class="headerlink" title="openssl-1.0.2s"></a>openssl-1.0.2s</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./Configure -shared no-asm linux-armv4 \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/openssl-1.0.2s \</span><br><span class="line">--openssldir=/opt/Crosscompile/buildComplete/openssl-1.0.2s/ssl \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--cross-compile-prefix=arm-linux-gnueabihf-</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-curl</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-curl/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-curl/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>curl-7.65.1<br>依赖：<br>openssl-1.0.2s<br>zlib-1.2.11</p><a id="more"></a><h2 id="curl-7-65-1"><a href="#curl-7-65-1" class="headerlink" title="curl-7.65.1"></a>curl-7.65.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CPPFLAGS=&quot;-I /opt/Crosscompile/buildComplete/openssl-1.0.2s/include -I /opt/Crosscompile/buildComplete/zlib-1.2.11/include&quot; \</span><br><span class="line">LDFLAGS=&quot;-L /opt/Crosscompile/buildComplete/openssl-1.0.2s/lib -L /opt/Crosscompile/buildComplete/zlib-1.2.11/lib&quot; \</span><br><span class="line">LIBS=&quot;-ldl -lssl -lcrypto&quot; \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--build=x86_64-linux-gnu \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">AS=arm-linux-gnueabihf-as \</span><br><span class="line">LD=arm-linux-gnueabihf-ld \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">NM=arm-linux-gnueabihf-nm \</span><br><span class="line">--with-ssl=/opt/Crosscompile/buildComplete/openssl-1.0.2s \</span><br><span class="line">--with-zlib=/opt/Crosscompile/buildComplete/zlib-1.2.11 \</span><br><span class="line">--enable-shared \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/curl-7.65.1</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-paho.mqtt.c</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-paho-mqtt-c/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-paho-mqtt-c/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>paho.mqtt.c -1.3.1<br>依赖：<br>openssl-1.0.2s</p><a id="more"></a><h2 id="paho-mqtt-c-1-3-1"><a href="#paho-mqtt-c-1-3-1" class="headerlink" title="paho.mqtt.c -1.3.1"></a>paho.mqtt.c -1.3.1</h2><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">prefix = /opt/Crosscompile/buildComplete/paho.mqtt.c-1.3.1</span><br><span class="line"></span><br><span class="line">CC = arm-linux-gnueabihf-gcc -lrt</span><br><span class="line">CFLAGS += -I /opt/Crosscompile/buildComplete/openssl-1.0.2s/include/</span><br><span class="line">LDFLAGS += -L /opt/Crosscompile/buildComplete/openssl-1.0.2s/lib/</span><br><span class="line"></span><br><span class="line">install: build</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;bindir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;libdir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;man1dir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;man3dir&#125;</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make html</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-bridge-utils</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-bridge-utils/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-bridge-utils/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>bridge-utils-1.5</p><a id="more"></a><h2 id="bridge-utils-1-5"><a href="#bridge-utils-1-5" class="headerlink" title="bridge-utils-1.5"></a>bridge-utils-1.5</h2><blockquote></blockquote><p>目标板内核目录：/home/cooky/Development/hzmct/v6/linux-3.2.0-psp04.06.00.11</p><h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">autoconf</span><br><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/bridge-utils-1.5</span><br></pre></td></tr></table></figure><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim brctl/Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- #KERNEL_HEADERS=-I/usr/src/linux/include</span><br><span class="line">+ KERNEL_HEADERS=-I/home/cooky/Development/hzmct/v6/linux-3.2.0-psp04.06.00.11</span><br></pre></td></tr></table></figure><p>vim doc/Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- #KERNEL_HEADERS=-I/usr/src/linux/include</span><br><span class="line">+ KERNEL_HEADERS=-I/home/cooky/Development/hzmct/v6/linux-3.2.0-psp04.06.00.11</span><br></pre></td></tr></table></figure><p>vim libbridge/Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- #KERNEL_HEADERS=-I/usr/src/linux/include</span><br><span class="line">+ KERNEL_HEADERS=-I/home/cooky/Development/hzmct/v6/linux-3.2.0-psp04.06.00.11</span><br><span class="line">- #AR=ar</span><br><span class="line">+ AR=arm-linux-gnueabihf-ar</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-jq</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-jq/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-jq/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>jq-1.5</p><a id="more"></a><h2 id="jq-1-5"><a href="#jq-1-5" class="headerlink" title="jq-1.5"></a>jq-1.5</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--disable-maintainer-mode \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/jq-1.5</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-openssh</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openssh/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openssh/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>openssh-8.0p1<br>依赖：<br>openssl-1.0.2s<br>zlib-1.2.11</p><a id="more"></a><h2 id="openssh-8-0p1"><a href="#openssh-8-0p1" class="headerlink" title="openssh-8.0p1"></a>openssh-8.0p1</h2><h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--with-libs \</span><br><span class="line">--with-zlib=/opt/Crosscompile/buildComplete/zlib-1.2.11 \</span><br><span class="line">--with-ssl-dir=/opt/Crosscompile/buildComplete/openssl-1.0.2s \</span><br><span class="line">--disable-etc-default-login</span><br></pre></td></tr></table></figure><h3 id="执行make"><a href="#执行make" class="headerlink" title="执行make"></a>执行make</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>注意：不执行make install</p><h3 id="压缩sshd"><a href="#压缩sshd" class="headerlink" title="压缩sshd"></a>压缩sshd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arm-linux-gnueabihf-strip -s sshd</span><br></pre></td></tr></table></figure><h3 id="修改sshd-config"><a href="#修改sshd-config" class="headerlink" title="修改sshd_config"></a>修改sshd_config</h3><p>vim sshd_config</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes#允许root用户登陆</span><br><span class="line">PermitEmptyPasswords yes#允许空密码登陆</span><br><span class="line">Subsystem sftp internal-sftp#指定sftp位置</span><br></pre></td></tr></table></figure><h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa1 -f ssh_host_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t rsa -f ssh_host_rsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t dsa -f ssh_host_dsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t ecdsa -f ssh_host_ecdsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t dsa -f ssh_host_ed25519_key -N &quot;&quot;</span><br></pre></td></tr></table></figure><h3 id="复制到结构目录"><a href="#复制到结构目录" class="headerlink" title="复制到结构目录"></a>复制到结构目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/Crosscompile/buildComplete/openssh-8.0p1</span><br><span class="line">rm -rf /opt/Crosscompile/buildComplete/openssh-8.0p1/*</span><br><span class="line">mkdir -p /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">mkdir -p /opt/Crosscompile/buildComplete/openssh-8.0p1/sbin</span><br><span class="line">mkdir -p /opt/Crosscompile/buildComplete/openssh-8.0p1/etc</span><br><span class="line">mkdir -p /opt/Crosscompile/buildComplete/openssh-8.0p1/libexec</span><br><span class="line"></span><br><span class="line">cp -rf scp /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf sftp /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf ssh /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf ssh-add /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf ssh-agent /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf ssh-keygen /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line">cp -rf ssh-keyscan /opt/Crosscompile/buildComplete/openssh-8.0p1/bin</span><br><span class="line"></span><br><span class="line">cp -rf moduli /opt/Crosscompile/buildComplete/openssh-8.0p1/etc</span><br><span class="line">cp -rf ssh_config /opt/Crosscompile/buildComplete/openssh-8.0p1/etc</span><br><span class="line">cp -rf sshd_config /opt/Crosscompile/buildComplete/openssh-8.0p1/etc</span><br><span class="line">cp -rf ssh_host_*key* /opt/Crosscompile/buildComplete/openssh-8.0p1/etc</span><br><span class="line"></span><br><span class="line">cp -rf sftp-server /opt/Crosscompile/buildComplete/openssh-8.0p1/libexec</span><br><span class="line">cp -rf ssh-keysign /opt/Crosscompile/buildComplete/openssh-8.0p1/libexec</span><br><span class="line"></span><br><span class="line">cp -rf sshd /opt/Crosscompile/buildComplete/openssh-8.0p1/sbin</span><br><span class="line"></span><br><span class="line">chmod 0644 /opt/Crosscompile/buildComplete/openssh-8.0p1/etc/*</span><br><span class="line">chmod 0600 /opt/Crosscompile/buildComplete/openssh-8.0p1/etc/ssh_host_*key</span><br></pre></td></tr></table></figure><h3 id="板上操作"><a href="#板上操作" class="headerlink" title="板上操作"></a>板上操作</h3><blockquote></blockquote><p>结构目录释放到目标板/usr/local/</p><h4 id="板上环境配置"><a href="#板上环境配置" class="headerlink" title="板上环境配置"></a>板上环境配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local</span><br><span class="line">mkdir -p /var/run</span><br><span class="line">mkdir -p /var/empty</span><br><span class="line">echo &quot;sshd:*:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin&quot; &gt;&gt; /etc/passwd</span><br><span class="line">echo &quot;sshd:*:74:&quot; &gt;&gt; /etc/group</span><br></pre></td></tr></table></figure><h4 id="板上启动"><a href="#板上启动" class="headerlink" title="板上启动"></a>板上启动</h4><blockquote></blockquote><p>需使用绝对路径启动，非阻塞</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/sbin/sshd</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-python2</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-python2/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-python2/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>python-2.7.13<br>python-2.7.16<br>依赖：<br>openssl-1.0.2s<br>sqlite-3.28<br>bzip2-1.0.6<br>gdbm-1.18.1<br>readline-8.0<br>zlib-1.2.11</p><a id="more"></a><h2 id="python-2-7-13"><a href="#python-2-7-13" class="headerlink" title="python-2.7.13"></a>python-2.7.13</h2><h3 id="删除setup-py中部分代码"><a href="#删除setup-py中部分代码" class="headerlink" title="删除setup.py中部分代码"></a>删除setup.py中部分代码</h3><p>vim setup.py</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- if ext.name in sys.builtin_module_names:</span><br><span class="line">- self.extensions.remove(ext)</span><br></pre></td></tr></table></figure><h3 id="执行x86编译并打补丁"><a href="#执行x86编译并打补丁" class="headerlink" title="执行x86编译并打补丁"></a>执行x86编译并打补丁</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make python Parser/pgen</span><br><span class="line">mv python hostpython</span><br><span class="line">mv Parser/pgen Parser/hostpgen</span><br><span class="line">make distclean</span><br><span class="line"></span><br><span class="line">patch -p1 &lt; Python-2.7.13-xcompile.patch</span><br></pre></td></tr></table></figure><h3 id="附补丁代码"><a href="#附补丁代码" class="headerlink" title="附补丁代码"></a>附补丁代码</h3><p>Python-2.7.13-xcompile.patch</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">--- Python-2.7.13_orig/Makefile.pre.in2016-12-18 04:05:06.000000000 +0800</span><br><span class="line">+++ Python-2.7.13/Makefile.pre.in2017-03-20 11:02:10.567394114 +0800</span><br><span class="line">@@ -245,6 +245,7 @@</span><br><span class="line"> ##########################################################################</span><br><span class="line"> # Parser</span><br><span class="line"> PGEN=Parser/pgen$(EXE)</span><br><span class="line">+HOSTPGEN=$(PGEN)$(EXE)</span><br><span class="line"> </span><br><span class="line"> PSRCS=\</span><br><span class="line"> Parser/acceler.c \</span><br><span class="line">@@ -681,7 +682,7 @@</span><br><span class="line"> </span><br><span class="line"> $(GRAMMAR_H): @GENERATED_COMMENT@ $(GRAMMAR_INPUT) $(PGEN)</span><br><span class="line"> @$(MKDIR_P) Include</span><br><span class="line">-$(PGEN) $(GRAMMAR_INPUT) $(GRAMMAR_H) $(GRAMMAR_C)</span><br><span class="line">+$(HOSTPGEN) $(GRAMMAR_INPUT) $(GRAMMAR_H) $(GRAMMAR_C)</span><br><span class="line"> $(GRAMMAR_C): @GENERATED_COMMENT@ $(GRAMMAR_H)</span><br><span class="line"> touch $(GRAMMAR_C)</span><br><span class="line"> </span><br><span class="line">@@ -1121,27 +1122,27 @@</span><br><span class="line"> $(DESTDIR)$(LIBDEST)/distutils/tests ; \</span><br><span class="line"> fi</span><br><span class="line"> PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">+$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line"> -d $(LIBDEST) -f \</span><br><span class="line"> -x &apos;bad_coding|badsyntax|site-packages|lib2to3/tests/data&apos; \</span><br><span class="line"> $(DESTDIR)$(LIBDEST)</span><br><span class="line"> PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">+$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line"> -d $(LIBDEST) -f \</span><br><span class="line"> -x &apos;bad_coding|badsyntax|site-packages|lib2to3/tests/data&apos; \</span><br><span class="line"> $(DESTDIR)$(LIBDEST)</span><br><span class="line"> -PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -Wi -t $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">+$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line"> -d $(LIBDEST)/site-packages -f \</span><br><span class="line"> -x badsyntax $(DESTDIR)$(LIBDEST)/site-packages</span><br><span class="line"> -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -Wi -t -O $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">+$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line"> -d $(LIBDEST)/site-packages -f \</span><br><span class="line"> -x badsyntax $(DESTDIR)$(LIBDEST)/site-packages</span><br><span class="line"> -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt</span><br><span class="line">+$(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt</span><br><span class="line"> -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">-$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt</span><br><span class="line">+$(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt</span><br><span class="line"> </span><br><span class="line"> # Create the PLATDIR source directory, if one wasn&apos;t distributed..</span><br><span class="line"> $(srcdir)/Lib/$(PLATDIR):</span><br></pre></td></tr></table></figure><h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><blockquote></blockquote><p>配置中build=x86_64-linux-gnu还是build=armv7要试一下，可能不影响</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--build=x86_64-linux-gnu \</span><br><span class="line">--enable-ipv6 \</span><br><span class="line">--enable-shared \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/python-2.7.13 \</span><br><span class="line">ac_cv_file__dev_ptmx=&quot;yes&quot; \</span><br><span class="line">ac_cv_file__dev_ptc=&quot;no&quot; \</span><br><span class="line">LDFLAGS=&quot;-L/opt/Crosscompile/buildComplete/openssl-1.0.2s/lib -L/opt/Crosscompile/buildComplete/sqlite-3.28/lib -L/opt/Crosscompile/buildComplete/bzip2-1.0.6/lib -L/opt/Crosscompile/buildComplete/gdbm-1.18.1/lib -L/opt/Crosscompile/buildComplete/readline-8.0/lib -L/opt/Crosscompile/buildComplete/zlib-1.2.11/lib&quot; \</span><br><span class="line">CPPFLAGS=&quot;-I/opt/Crosscompile/buildComplete/openssl-1.0.2s/include -I/opt/Crosscompile/buildComplete/sqlite-3.28/include -I/opt/Crosscompile/buildComplete/bzip2-1.0.6/include -I/opt/Crosscompile/buildComplete/gdbm-1.18.1/include -I/opt/Crosscompile/buildComplete/readline-8.0/include -I/opt/Crosscompile/buildComplete/zlib-1.2.11/include&quot;</span><br></pre></td></tr></table></figure><h3 id="删除Makefile中部分代码"><a href="#删除Makefile中部分代码" class="headerlink" title="删除Makefile中部分代码"></a>删除Makefile中部分代码</h3><p>vim Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">                -d $(LIBDEST) -f \</span><br><span class="line">                -x &apos;bad_coding|badsyntax|site-packages|lib2to3/tests/data&apos; \</span><br><span class="line">                $(DESTDIR)$(LIBDEST)</span><br><span class="line">- PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">                -d $(LIBDEST) -f \</span><br><span class="line">                -x &apos;bad_coding|badsyntax|site-packages|lib2to3/tests/data&apos; \</span><br><span class="line">                $(DESTDIR)$(LIBDEST)</span><br><span class="line">- -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">                -d $(LIBDEST)/site-packages -f \</span><br><span class="line">                -x badsyntax $(DESTDIR)$(LIBDEST)/site-packages</span><br><span class="line">- -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \</span><br><span class="line">                -d $(LIBDEST)/site-packages -f \</span><br><span class="line">                -x badsyntax $(DESTDIR)$(LIBDEST)/site-packages</span><br><span class="line">- -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt</span><br><span class="line">- -PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \</span><br><span class="line">                $(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><blockquote></blockquote><p>同样，BUILDARCH=x86_64-linux-gnu还是BUILDARCH=armv7要试一下，可能不影响</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">make \</span><br><span class="line">HOSTPYTHON=./hostpython \</span><br><span class="line">HOSTPGEN=./Parser/hostpgen \</span><br><span class="line">BLDSHARED=&quot;arm-linux-gnueabihf-gcc -shared&quot; \</span><br><span class="line">CROSS_COMPILE=arm-linux-gnueabihf- \</span><br><span class="line">CROSS_COMPILE_TARGET=yes \</span><br><span class="line">HOSTARCH=arm-linux-gnueabihf \</span><br><span class="line">BUILDARCH=x86_64-linux-gnu</span><br><span class="line"></span><br><span class="line">make install \</span><br><span class="line">HOSTPYTHON=./hostpython \</span><br><span class="line">BLDSHARED=&quot;arm-linux-gnueabihf-gcc -shared&quot; \</span><br><span class="line">CROSS_COMPILE=arm-linux-gnueabihf- \</span><br><span class="line">CROSS_COMPILE_TARGET=yes \</span><br><span class="line">prefix=/opt/Crosscompile/buildComplete/python-2.7.13 \</span><br></pre></td></tr></table></figure><h2 id="python-2-7-16"><a href="#python-2-7-16" class="headerlink" title="python-2.7.16"></a>python-2.7.16</h2><h3 id="执行交叉编译配置-1"><a href="#执行交叉编译配置-1" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--build=armv7 \</span><br><span class="line">--enable-ipv6 \</span><br><span class="line">--enable-shared \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/python-2.7.16 \</span><br><span class="line">ac_cv_file__dev_ptmx=&quot;yes&quot; \</span><br><span class="line">ac_cv_file__dev_ptc=&quot;no&quot; \</span><br><span class="line">LDFLAGS=&quot;-L/opt/Crosscompile/buildComplete/openssl-1.0.2s/lib -L/opt/Crosscompile/buildComplete/sqlite-3.28/lib -L/opt/Crosscompile/buildComplete/bzip2-1.0.6/lib -L/opt/Crosscompile/buildComplete/gdbm-1.18.1/lib -L/opt/Crosscompile/buildComplete/readline-8.0/lib -L/opt/Crosscompile/buildComplete/zlib-1.2.11/lib&quot; \</span><br><span class="line">CPPFLAGS=&quot;-I/opt/Crosscompile/buildComplete/openssl-1.0.2s/include -I/opt/Crosscompile/buildComplete/sqlite-3.28/include -I/opt/Crosscompile/buildComplete/bzip2-1.0.6/include -I/opt/Crosscompile/buildComplete/gdbm-1.18.1/include -I/opt/Crosscompile/buildComplete/readline-8.0/include -I/opt/Crosscompile/buildComplete/zlib-1.2.11/include&quot;</span><br></pre></td></tr></table></figure><h3 id="删除setup-py中部分代码-1"><a href="#删除setup-py中部分代码-1" class="headerlink" title="删除setup.py中部分代码"></a>删除setup.py中部分代码</h3><p>vim setup.py</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 236 if ext.name in sys.builtin_module_names:</span><br><span class="line">- 237     self.extensions.remove(ext)</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install-1"><a href="#执行make和make-install-1" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-python3</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-python3/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-python3/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>python-3.6.8<br>依赖：<br>openssl-1.0.2s<br>sqlite-3.28<br>bzip2-1.0.6<br>gdbm-1.18.1<br>readline-8.0<br>zlib-1.2.11</p><a id="more"></a><h2 id="python-3-6-8"><a href="#python-3-6-8" class="headerlink" title="python-3.6.8"></a>python-3.6.8</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--build=armv7 \</span><br><span class="line">--enable-ipv6 \</span><br><span class="line">--enable-shared \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/python-3.6.8 \</span><br><span class="line">ac_cv_file__dev_ptmx=&quot;yes&quot; \</span><br><span class="line">ac_cv_file__dev_ptc=&quot;no&quot; \</span><br><span class="line">LDFLAGS=&quot;-L/opt/Crosscompile/buildComplete/openssl-1.0.2s/lib -L/opt/Crosscompile/buildComplete/sqlite-3.28/lib -L/opt/Crosscompile/buildComplete/bzip2-1.0.6/lib -L/opt/Crosscompile/buildComplete/gdbm-1.18.1/lib -L/opt/Crosscompile/buildComplete/readline-8.0/lib -L/opt/Crosscompile/buildComplete/zlib-1.2.11/lib&quot; \</span><br><span class="line">CPPFLAGS=&quot;-I/opt/Crosscompile/buildComplete/openssl-1.0.2s/include -I/opt/Crosscompile/buildComplete/sqlite-3.28/include -I/opt/Crosscompile/buildComplete/bzip2-1.0.6/include -I/opt/Crosscompile/buildComplete/gdbm-1.18.1/include -I/opt/Crosscompile/buildComplete/readline-8.0/include -I/opt/Crosscompile/buildComplete/zlib-1.2.11/include&quot;</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><blockquote></blockquote><p>可能的报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subprocess.CalledProcessError: Command ‘(‘lsb_release’, ‘-a’)’ returned non-zero exit status 1.</span><br></pre></td></tr></table></figure><p>执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/bin/lsb_release</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-ntp</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-ntp/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-ntp/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>ntp-4.2.8p13</p><a id="more"></a><h2 id="ntp-4-2-8p13"><a href="#ntp-4-2-8p13" class="headerlink" title="ntp-4.2.8p13"></a>ntp-4.2.8p13</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/ntp-4.2.8p13 \</span><br><span class="line">--exec-prefix=/opt/Crosscompile/buildComplete/ntp-4.2.8p13 \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">--with-yielding-select=yes</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交叉编译-openvpn</title>
+      <link href="/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openvpn/"/>
+      <url>/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openvpn/</url>
+      
+        <content type="html"><![CDATA[<p>版本：<br>openvpn-2.3.18<br>依赖：<br>openssl-1.0.2s<br>lzo-2.10</p><a id="more"></a><h2 id="openssl-1-0-2s"><a href="#openssl-1-0-2s" class="headerlink" title="openssl-1.0.2s"></a>openssl-1.0.2s</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./Configure -no-shared no-asm gcc \</span><br><span class="line">--prefix=/opt/static/openssl-1.0.2s \</span><br><span class="line">--openssldir=/opt/static/openssl-1.0.2s/ssl \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--cross-compile-prefix=arm-linux-gnueabihf- </span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h2 id="lzo-2-10"><a href="#lzo-2-10" class="headerlink" title="lzo-2.10"></a>lzo-2.10</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--enable-static \</span><br><span class="line">--disable-debug \</span><br><span class="line">--prefix=/opt/static/lzo-2.10 \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--host=arm-linux-gnueabihf</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h2 id="openvpn-2-3-18"><a href="#openvpn-2-3-18" class="headerlink" title="openvpn-2.3.18"></a>openvpn-2.3.18</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/static/openvpn-2.3.18 \</span><br><span class="line">--enable-static \</span><br><span class="line">--disable-shared \</span><br><span class="line">--disable-plugins \</span><br><span class="line">--enable-ssl \</span><br><span class="line">--enable-crypto \</span><br><span class="line">--enable-lzo \</span><br><span class="line">OPENSSL_SSL_LIBS=&quot;-L/opt/static/openssl-1.0.2s/lib -lssl&quot; \</span><br><span class="line">OPENSSL_SSL_CFLAGS=&quot;-I/opt/static/openssl-1.0.2s/include&quot; \</span><br><span class="line">OPENSSL_CRYPTO_LIBS=&quot;-L/opt/static/openssl-1.0.2s/lib -lcrypto&quot; \</span><br><span class="line">OPENSSL_CRYPTO_CFLAGS=&quot;-I//opt/static/openssl-1.0.2s/include&quot; \</span><br><span class="line">LZO_CFLAGS=&quot;-I/opt/static/lzo-2.10/include&quot; \</span><br><span class="line">LZO_LIBS=&quot;-L/opt/static/lzo-2.10/lib -llzo2&quot;</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> 交叉编译 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 静态库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Delphi字符串加密解密算法</title>
       <link href="/2016/06/12/Delphi%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95/"/>
       <url>/2016/06/12/Delphi%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<p>纯代码</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">unit Unit1;</span><br><span class="line"></span><br><span class="line">interface</span><br><span class="line"></span><br><span class="line">uses</span><br><span class="line">  System.SysUtils;</span><br><span class="line"></span><br><span class="line">const</span><br><span class="line">  DefaultKey = &apos;delphi&apos;;</span><br><span class="line"></span><br><span class="line">//==============================================================================</span><br><span class="line">// 通过密钥加密解密</span><br><span class="line">// 对字符串加密(Source:源 Key:密匙)</span><br><span class="line">//==============================================================================</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">implementation</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  Range: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Range := 256;</span><br><span class="line">  randomize;</span><br><span class="line">  Offset := random(Range);</span><br><span class="line">  Dest := format(&apos;%1.2x&apos;, [Offset]);</span><br><span class="line">  for SrcPos := 1 to Length(Source) do</span><br><span class="line">  begin</span><br><span class="line">    SrcAsc := (Ord(Source[SrcPos]) + Offset) mod 255;</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    SrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    Dest := Dest + format(&apos;%1.2x&apos;, [SrcAsc]);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">  end;</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  TmpSrcAsc: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Offset := strtoint(&apos;$&apos; + copy(Source, 1, 2));</span><br><span class="line">  SrcPos := 3;</span><br><span class="line">  repeat</span><br><span class="line">    SrcAsc := strtoint(&apos;$&apos; + copy(Source, SrcPos, 2));</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    TmpSrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    if TmpSrcAsc &lt;= Offset then</span><br><span class="line">      TmpSrcAsc := 255 + TmpSrcAsc - Offset</span><br><span class="line">    else</span><br><span class="line">      TmpSrcAsc := TmpSrcAsc - Offset;</span><br><span class="line">    Dest := Dest + chr(TmpSrcAsc);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">    SrcPos := SrcPos + 2;</span><br><span class="line">  until SrcPos &gt;= Length(Source);</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">end.</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>▽▽▽▽▽纯代码▼▼▼▼▼</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">unit Unit1;</span><br><span class="line"></span><br><span class="line">interface</span><br><span class="line"></span><br><span class="line">uses</span><br><span class="line">  System.SysUtils;</span><br><span class="line"></span><br><span class="line">const</span><br><span class="line">  DefaultKey = &apos;delphi&apos;;</span><br><span class="line"></span><br><span class="line">//==============================================================================</span><br><span class="line">// 通过密钥加密解密</span><br><span class="line">// 对字符串加密(Source:源 Key:密匙)</span><br><span class="line">//==============================================================================</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">implementation</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  Range: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Range := 256;</span><br><span class="line">  randomize;</span><br><span class="line">  Offset := random(Range);</span><br><span class="line">  Dest := format(&apos;%1.2x&apos;, [Offset]);</span><br><span class="line">  for SrcPos := 1 to Length(Source) do</span><br><span class="line">  begin</span><br><span class="line">    SrcAsc := (Ord(Source[SrcPos]) + Offset) mod 255;</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    SrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    Dest := Dest + format(&apos;%1.2x&apos;, [SrcAsc]);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">  end;</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  TmpSrcAsc: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Offset := strtoint(&apos;$&apos; + copy(Source, 1, 2));</span><br><span class="line">  SrcPos := 3;</span><br><span class="line">  repeat</span><br><span class="line">    SrcAsc := strtoint(&apos;$&apos; + copy(Source, SrcPos, 2));</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    TmpSrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    if TmpSrcAsc &lt;= Offset then</span><br><span class="line">      TmpSrcAsc := 255 + TmpSrcAsc - Offset</span><br><span class="line">    else</span><br><span class="line">      TmpSrcAsc := TmpSrcAsc - Offset;</span><br><span class="line">    Dest := Dest + chr(TmpSrcAsc);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">    SrcPos := SrcPos + 2;</span><br><span class="line">  until SrcPos &gt;= Length(Source);</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">end.</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -35,7 +754,7 @@
       <link href="/2016/05/31/%E6%90%AD%E5%BB%BAWindows-NTP%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
       <url>/2016/05/31/%E6%90%AD%E5%BB%BAWindows-NTP%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[<p>【测试环境】Windows 7 旗舰版 With Sp1</p><a id="more"></a><h2 id="STEP1：组策略："><a href="#STEP1：组策略：" class="headerlink" title="STEP1：组策略："></a>STEP1：组策略：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机配置管理模板-Windows时间服务-时间提供程序-启用Windows NTP服务器（未配置-&gt;已启用）</span><br></pre></td></tr></table></figure><h2 id="STEP2：注册表："><a href="#STEP2：注册表：" class="headerlink" title="STEP2：注册表："></a>STEP2：注册表：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags（Hex a Dec 10-&gt;Hex 5 Dec 5）</span><br></pre></td></tr></table></figure><h2 id="STEP3：CMD："><a href="#STEP3：CMD：" class="headerlink" title="STEP3：CMD："></a>STEP3：CMD：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop w32time</span><br><span class="line">net start w32time</span><br></pre></td></tr></table></figure><h2 id="STEP4：服务："><a href="#STEP4：服务：" class="headerlink" title="STEP4：服务："></a>STEP4：服务：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows Time（手动-&gt;自动（延迟启动））</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>【测试环境】Windows 7 旗舰版 With Sp1</p><a id="more"></a><h2 id="组策略配置"><a href="#组策略配置" class="headerlink" title="组策略配置"></a>组策略配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机配置管理模板-Windows时间服务-时间提供程序-启用Windows NTP服务器（未配置-&gt;已启用）</span><br></pre></td></tr></table></figure><h2 id="注册表修改"><a href="#注册表修改" class="headerlink" title="注册表修改"></a>注册表修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags（Hex a Dec 10-&gt;Hex 5 Dec 5）</span><br></pre></td></tr></table></figure><h2 id="执行命令行"><a href="#执行命令行" class="headerlink" title="执行命令行"></a>执行命令行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop w32time</span><br><span class="line">net start w32time</span><br></pre></td></tr></table></figure><h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows Time（手动-&gt;自动（延迟启动））</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -60,7 +779,7 @@
       <link href="/2016/05/31/Delphi%E7%94%9F%E6%88%90EXE%E8%87%AA%E5%8A%A8%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%90%E8%A1%8C/"/>
       <url>/2016/05/31/Delphi%E7%94%9F%E6%88%90EXE%E8%87%AA%E5%8A%A8%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%90%E8%A1%8C/</url>
       
-        <content type="html"><![CDATA[<p>【测试环境】Windows 7 旗舰版 With Sp1，RAD 10 Seattle</p><a id="more"></a><h2 id="STEP1、文本文件：UAC-manifest"><a href="#STEP1、文本文件：UAC-manifest" class="headerlink" title="STEP1、文本文件：UAC.manifest"></a>STEP1、文本文件：UAC.manifest</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span><br><span class="line">&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;</span><br><span class="line">&lt;trustInfo xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;</span><br><span class="line">&lt;security&gt;</span><br><span class="line">&lt;requestedPrivileges&gt;</span><br><span class="line">&lt;requestedExecutionLevel level=&quot;requireAdministrator&quot; uiAccess=&quot;false&quot;&gt;</span><br><span class="line">&lt;/requestedExecutionLevel&gt;</span><br><span class="line">&lt;/requestedPrivileges&gt;</span><br><span class="line">&lt;/security&gt;</span><br><span class="line">&lt;/trustInfo&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;dependentAssembly&gt;</span><br><span class="line">&lt;assemblyIdentity type=&quot;win32&quot;</span><br><span class="line">name=&quot;Microsoft.Windows.Common-Controls&quot;</span><br><span class="line">version=&quot;6.0.0.0&quot;</span><br><span class="line">processorArchitecture=&quot;x86&quot;</span><br><span class="line">publicKeyToken=&quot;6595b64144ccf1df&quot;</span><br><span class="line">language=&quot;*&quot;&gt;</span><br><span class="line">&lt;/assemblyIdentity&gt;</span><br><span class="line">&lt;/dependentAssembly&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/assembly&gt;</span><br></pre></td></tr></table></figure><h2 id="STEP2、文本文件：UAC-rc"><a href="#STEP2、文本文件：UAC-rc" class="headerlink" title="STEP2、文本文件：UAC.rc"></a>STEP2、文本文件：UAC.rc</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 24 UAC.manifest</span><br></pre></td></tr></table></figure><h2 id="STEP3、拷贝上述两个文件到RAD10目录下-bin（如Embarcadero-Studio-17-0-bin）"><a href="#STEP3、拷贝上述两个文件到RAD10目录下-bin（如Embarcadero-Studio-17-0-bin）" class="headerlink" title="STEP3、拷贝上述两个文件到RAD10目录下/bin（如Embarcadero\Studio\17.0\bin）"></a>STEP3、拷贝上述两个文件到RAD10目录下/bin（如Embarcadero\Studio\17.0\bin）</h2><h2 id="STEP4、用brcc32编译这个-rc文件为-res文件"><a href="#STEP4、用brcc32编译这个-rc文件为-res文件" class="headerlink" title="STEP4、用brcc32编译这个.rc文件为.res文件"></a>STEP4、用brcc32编译这个.rc文件为.res文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brcc32 uac.rc -fouac.res</span><br></pre></td></tr></table></figure><h2 id="STEP5、在工程文件-dpr中-R-res-后面加入-R-uac-res"><a href="#STEP5、在工程文件-dpr中-R-res-后面加入-R-uac-res" class="headerlink" title="STEP5、在工程文件.dpr中{$R *.res}后面加入{$R uac.res}"></a>STEP5、在工程文件.dpr中{$R *.res}后面加入{$R uac.res}</h2><h2 id="STEP6、打开工程属性，Application-gt-Manifest-File，改成Custom，在下方选择UAC-manifest文件，重新编译工程。"><a href="#STEP6、打开工程属性，Application-gt-Manifest-File，改成Custom，在下方选择UAC-manifest文件，重新编译工程。" class="headerlink" title="STEP6、打开工程属性，Application-&gt;Manifest File，改成Custom，在下方选择UAC.manifest文件，重新编译工程。"></a>STEP6、打开工程属性，Application-&gt;Manifest File，改成Custom，在下方选择UAC.manifest文件，重新编译工程。</h2>]]></content>
+        <content type="html"><![CDATA[<p>【测试环境】Windows 7 旗舰版 With Sp1，RAD 10 Seattle</p><a id="more"></a><h2 id="文本文件UAC-manifest编辑"><a href="#文本文件UAC-manifest编辑" class="headerlink" title="文本文件UAC.manifest编辑"></a>文本文件UAC.manifest编辑</h2><p>UAC.manifest</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span><br><span class="line">&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;</span><br><span class="line">&lt;trustInfo xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;</span><br><span class="line">&lt;security&gt;</span><br><span class="line">&lt;requestedPrivileges&gt;</span><br><span class="line">&lt;requestedExecutionLevel level=&quot;requireAdministrator&quot; uiAccess=&quot;false&quot;&gt;</span><br><span class="line">&lt;/requestedExecutionLevel&gt;</span><br><span class="line">&lt;/requestedPrivileges&gt;</span><br><span class="line">&lt;/security&gt;</span><br><span class="line">&lt;/trustInfo&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;dependentAssembly&gt;</span><br><span class="line">&lt;assemblyIdentity type=&quot;win32&quot;</span><br><span class="line">name=&quot;Microsoft.Windows.Common-Controls&quot;</span><br><span class="line">version=&quot;6.0.0.0&quot;</span><br><span class="line">processorArchitecture=&quot;x86&quot;</span><br><span class="line">publicKeyToken=&quot;6595b64144ccf1df&quot;</span><br><span class="line">language=&quot;*&quot;&gt;</span><br><span class="line">&lt;/assemblyIdentity&gt;</span><br><span class="line">&lt;/dependentAssembly&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/assembly&gt;</span><br></pre></td></tr></table></figure><h2 id="文本文件UAC-rc编辑"><a href="#文本文件UAC-rc编辑" class="headerlink" title="文本文件UAC.rc编辑"></a>文本文件UAC.rc编辑</h2><p>UAC.rc</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 24 UAC.manifest</span><br></pre></td></tr></table></figure><h2 id="拷贝文件"><a href="#拷贝文件" class="headerlink" title="拷贝文件"></a>拷贝文件</h2><p>拷贝上述两个文件到RAD10目录下/bin（如Embarcadero\Studio\17.0\bin）</p><h2 id="编译文件"><a href="#编译文件" class="headerlink" title="编译文件"></a>编译文件</h2><p>用brcc32编译这个.rc文件为.res文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brcc32 uac.rc -fouac.res</span><br></pre></td></tr></table></figure><h2 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h2><p>在工程文件.dpr中{$R *.res}后面加入{$R uac.res}</p><h2 id="修改工程，重新编译"><a href="#修改工程，重新编译" class="headerlink" title="修改工程，重新编译"></a>修改工程，重新编译</h2><p>打开工程属性，Application-&gt;Manifest File，改成Custom，在下方选择UAC.manifest文件，重新编译工程。</p>]]></content>
       
       
       <categories>
@@ -84,24 +803,22 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2013/07/13/hello-world/"/>
-      <url>/2013/07/13/hello-world/</url>
+      <link href="/2015/08/03/hello-world/"/>
+      <url>/2015/08/03/hello-world/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
       <categories>
           
-          <category> 测试 </category>
-          
-          <category> 测试分类 </category>
+          <category> 未分类 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 测试标签 </tag>
+            <tag> 未知标签 </tag>
             
         </tags>
       
