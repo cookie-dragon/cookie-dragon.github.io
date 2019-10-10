@@ -58,18 +58,18 @@
   };
 </script>
 
-  <meta name="description" content="▽▽▽▽▽纯代码▼▼▼▼▼">
+  <meta name="description" content="纯代码">
 <meta name="keywords" content="加密解密">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Delphi字符串加密解密算法">
 <meta property="og:url" content="https://blog.cooky.tk/2016/06/12/Delphi字符串加密解密算法/index.html">
 <meta property="og:site_name" content="曲奇技术">
-<meta property="og:description" content="▽▽▽▽▽纯代码▼▼▼▼▼">
+<meta property="og:description" content="纯代码">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-06-12T07:51:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Delphi字符串加密解密算法">
-<meta name="twitter:description" content="▽▽▽▽▽纯代码▼▼▼▼▼">
+<meta name="twitter:description" content="纯代码">
   <link rel="canonical" href="https://blog.cooky.tk/2016/06/12/Delphi字符串加密解密算法/">
 
 
@@ -126,7 +126,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
 
     <div>
       <a href="/" class="brand" rel="start">
@@ -137,6 +137,9 @@
     </div>
         <p class="site-subtitle">曲奇龙的技术部落格</p>
       
+      <a>
+        <img class="custom-logo-image" src="/uploads/custom-logo.png" alt="曲奇技术">
+      </a>
   </div>
 
   <div class="site-nav-toggle">
@@ -311,7 +314,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.2k</span>
+              <span>2.1k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -334,14 +337,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>▽▽▽▽▽纯代码▼▼▼▼▼</p>
+        <p>纯代码</p>
 <a id="more"></a>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">unit Unit1;</span><br><span class="line"></span><br><span class="line">interface</span><br><span class="line"></span><br><span class="line">uses</span><br><span class="line">  System.SysUtils;</span><br><span class="line"></span><br><span class="line">const</span><br><span class="line">  DefaultKey = &apos;delphi&apos;;</span><br><span class="line"></span><br><span class="line">//==============================================================================</span><br><span class="line">// 通过密钥加密解密</span><br><span class="line">// 对字符串加密(Source:源 Key:密匙)</span><br><span class="line">//==============================================================================</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line"></span><br><span class="line">implementation</span><br><span class="line"></span><br><span class="line">function EncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  Range: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Range := 256;</span><br><span class="line">  randomize;</span><br><span class="line">  Offset := random(Range);</span><br><span class="line">  Dest := format(&apos;%1.2x&apos;, [Offset]);</span><br><span class="line">  for SrcPos := 1 to Length(Source) do</span><br><span class="line">  begin</span><br><span class="line">    SrcAsc := (Ord(Source[SrcPos]) + Offset) mod 255;</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    SrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    Dest := Dest + format(&apos;%1.2x&apos;, [SrcAsc]);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">  end;</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">function UnEncryptString(Source: string; Key: string = DefaultKey): string;</span><br><span class="line">var</span><br><span class="line">  KeyLen: integer;</span><br><span class="line">  KeyPos: integer;</span><br><span class="line">  Offset: integer;</span><br><span class="line">  Dest: string;</span><br><span class="line">  SrcPos: integer;</span><br><span class="line">  SrcAsc: integer;</span><br><span class="line">  TmpSrcAsc: integer;</span><br><span class="line">begin</span><br><span class="line">  KeyLen := Length(Key);</span><br><span class="line">  if KeyLen = 0 then</span><br><span class="line">    Key := DefaultKey;</span><br><span class="line">  KeyPos := 0;</span><br><span class="line">  Offset := strtoint(&apos;$&apos; + copy(Source, 1, 2));</span><br><span class="line">  SrcPos := 3;</span><br><span class="line">  repeat</span><br><span class="line">    SrcAsc := strtoint(&apos;$&apos; + copy(Source, SrcPos, 2));</span><br><span class="line">    if KeyPos &lt; KeyLen then</span><br><span class="line">      KeyPos := KeyPos + 1</span><br><span class="line">    else</span><br><span class="line">      KeyPos := 1;</span><br><span class="line">    TmpSrcAsc := SrcAsc xor Ord(Key[KeyPos]);</span><br><span class="line">    if TmpSrcAsc &lt;= Offset then</span><br><span class="line">      TmpSrcAsc := 255 + TmpSrcAsc - Offset</span><br><span class="line">    else</span><br><span class="line">      TmpSrcAsc := TmpSrcAsc - Offset;</span><br><span class="line">    Dest := Dest + chr(TmpSrcAsc);</span><br><span class="line">    Offset := SrcAsc;</span><br><span class="line">    SrcPos := SrcPos + 2;</span><br><span class="line">  until SrcPos &gt;= Length(Source);</span><br><span class="line">  result := Dest;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">end.</span><br></pre></td></tr></table></figure>
     </div>
 
     
     
     
+      
+
         
       
 
@@ -438,7 +444,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -451,7 +457,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -464,7 +470,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -502,6 +508,10 @@
           <a href="https://theme-next.org/docs/" title="https://theme-next.org/docs/" rel="noopener" target="_blank">NexT Docs</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://square.github.io" title="https://square.github.io" rel="noopener" target="_blank">Square大神</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -531,12 +541,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">53k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
 </div>
 
         
@@ -588,8 +598,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 

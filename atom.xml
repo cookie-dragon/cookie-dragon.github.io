@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.cooky.tk/"/>
-  <updated>2019-09-05T08:07:05.000Z</updated>
+  <updated>2019-10-10T13:26:38.000Z</updated>
   <id>https://blog.cooky.tk/</id>
   
   <author>
@@ -17,13 +17,215 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java第三方框架集合</title>
+    <link href="https://blog.cooky.tk/2019/10/10/Java%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E9%9B%86%E5%90%88/"/>
+    <id>https://blog.cooky.tk/2019/10/10/Java第三方框架集合/</id>
+    <published>2019-10-10T13:26:38.000Z</published>
+    <updated>2019-10-10T13:26:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="#">fastjson</a> - JOSN解析库<br><a href="https://square.github.io/okhttp/" target="_blank" rel="noopener">OkHttp</a> - 高效的HTTP客户端</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;#&quot;&gt;fastjson&lt;/a&gt; - JOSN解析库&lt;br&gt;&lt;a href=&quot;https://square.github.io/okhttp/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OkHttp&lt;/a&gt; - 高效的HTTP客户端&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.cooky.tk/categories/Java/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android第三方框架集合</title>
+    <link href="https://blog.cooky.tk/2019/10/10/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6%E9%9B%86%E5%90%88/"/>
+    <id>https://blog.cooky.tk/2019/10/10/Android第三方框架集合/</id>
+    <published>2019-10-10T13:13:59.000Z</published>
+    <updated>2019-10-10T13:13:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Android原生"><a href="#Android原生" class="headerlink" title="Android原生"></a>Android原生</h2><p><a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="noopener">multidex</a> - 多dex文件支持<br><a href="https://developer.android.com/reference/android/widget/GridLayout" target="_blank" rel="noopener">GridLayout</a> - 网格布局</p><h2 id="系统级"><a href="#系统级" class="headerlink" title="系统级"></a>系统级</h2><p><a href="http://jakewharton.github.io/butterknife/" target="_blank" rel="noopener">Butter Knife</a> - 专注于Android系统的View注入框架<br><a href="https://square.github.io/leakcanary" target="_blank" rel="noopener">LeakCanary</a> - 检测Android App中的内存泄露问题<br><a href="https://firebaseopensource.com/projects/googlesamples/easypermissions/" target="_blank" rel="noopener">easypermissions</a> - 一个处理权限的库</p><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p><a href="http://greenrobot.org/greendao/" target="_blank" rel="noopener">greenDAO</a> - 开源的Android ORM(“对象/关系映射”)</p><h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><a href="https://qmuiteam.com/android" target="_blank" rel="noopener">QMUI Android</a> - 致力于提高项目 UI 开发效率的解决方案<br><a href="https://github.com/scwang90/SmartRefreshLayout" target="_blank" rel="noopener">SmartRefreshLayout</a> - Android智能下拉刷新框架<br><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a> - Android软件中常用的开源图表库<br><a href="https://github.com/Bigkoo/Android-PickerView" target="_blank" rel="noopener">Android-PickerView</a> - 时间选择器、省市区三级联动</p><h2 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h2><p><a href="https://bumptech.github.io/glide/" target="_blank" rel="noopener">Glide</a> - 图片加载库<br><a href="https://github.com/zhihu/Matisse" target="_blank" rel="noopener">Matisse</a> - 知乎图片选择框架<br><a href="https://github.com/yipianfengye/android-zxingLibrary" target="_blank" rel="noopener">android-zxingLibrary</a> - 几行代码快速集成二维码扫描功能</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://www.jiguang.cn/push" target="_blank" rel="noopener">极光推送</a> - 快速集成推送，轻松提升用户粘性，为你的移动应用加油</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Android原生&quot;&gt;&lt;a href=&quot;#Android原生&quot; class=&quot;headerlink&quot; title=&quot;Android原生&quot;&gt;&lt;/a&gt;Android原生&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://developer.android.com/stu
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://blog.cooky.tk/categories/Android/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ERROR-recipe_for_target_kernel/timeconst.h_failed_kernel/timeconst.h]_Error_255</title>
+    <link href="https://blog.cooky.tk/2019/10/10/ERROR-recipe-for-target-kernel-timeconst-h-failed-kernel-timeconst-h-Error-255/"/>
+    <id>https://blog.cooky.tk/2019/10/10/ERROR-recipe-for-target-kernel-timeconst-h-failed-kernel-timeconst-h-Error-255/</id>
+    <published>2019-10-10T13:03:25.000Z</published>
+    <updated>2019-10-10T13:03:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>在使用ubuntu16.04编译Linux-3.4.2内核时出现这样的错误：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recipe for target &apos;kernel/timeconst.h&apos; failed kernel/timeconst.h] Error 255</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>将kernel/timeconst.pl中第373行的defined()去掉，只留下 !@val 就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;报错&quot;&gt;&lt;a href=&quot;#报错&quot; class=&quot;headerlink&quot; title=&quot;报错&quot;&gt;&lt;/a&gt;报错&lt;/h2&gt;&lt;p&gt;在使用ubuntu16.04编译Linux-3.4.2内核时出现这样的错误：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;recipe for target &amp;apos;kernel/timeconst.h&amp;apos; failed kernel/timeconst.h] Error 255&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+    
+      <category term="ERROR" scheme="https://blog.cooky.tk/tags/ERROR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内核编译-ip_rule功能</title>
+    <link href="https://blog.cooky.tk/2019/10/10/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91-ip-rule%E5%8A%9F%E8%83%BD/"/>
+    <id>https://blog.cooky.tk/2019/10/10/内核编译-ip-rule功能/</id>
+    <published>2019-10-10T12:55:52.000Z</published>
+    <updated>2019-10-10T12:55:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用iprule时，报如下错误：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iprule </span><br><span class="line">iprule: RTNETLINK answers: Operation not supported</span><br><span class="line">iprule: dump terminated</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="内核增加新功能"><a href="#内核增加新功能" class="headerlink" title="内核增加新功能"></a>内核增加新功能</h2><p>make menuconfig<br>make ARCH=arm menuconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Networking support  ---&gt; </span><br><span class="line">     Networking options  </span><br><span class="line">        [*]   IP: advanced router </span><br><span class="line">        [*]     IP: policy routing</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用iprule时，报如下错误：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iprule &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iprule: RTNETLINK answers: Operation not supported&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iprule: dump terminated&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+      <category term="内核编译" scheme="https://blog.cooky.tk/categories/Linux/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/"/>
+    
+    
+      <category term="menuconfig" scheme="https://blog.cooky.tk/tags/menuconfig/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下的文件查找find</title>
+    <link href="https://blog.cooky.tk/2019/09/10/Linux%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BEfind/"/>
+    <id>https://blog.cooky.tk/2019/09/10/Linux下的文件查找find/</id>
+    <published>2019-09-10T02:27:04.000Z</published>
+    <updated>2019-09-10T02:27:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Linux系统下用find命令查找最近修改过的文件"><a href="#Linux系统下用find命令查找最近修改过的文件" class="headerlink" title="Linux系统下用find命令查找最近修改过的文件"></a>Linux系统下用find命令查找最近修改过的文件</h2><p>查找最近30分钟修改的当前目录下的.php文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &apos;*.php&apos; -mmin -30</span><br></pre></td></tr></table></figure><p>查找最近24小时修改的当前目录下的.php文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &apos;*.php&apos; -mtime 0</span><br></pre></td></tr></table></figure><p>查找最近24小时修改的当前目录下的.php文件，并列出详细信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &apos;*.inc&apos; -mtime 0 -ls</span><br></pre></td></tr></table></figure><p>查找当前目录下，最近24-48小时修改过的常规文件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -type f -mtime 1</span><br></pre></td></tr></table></figure><p>查找当前目录下，最近1天前修改过的常规文件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -type f -mtime +1</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Linux系统下用find命令查找最近修改过的文件&quot;&gt;&lt;a href=&quot;#Linux系统下用find命令查找最近修改过的文件&quot; class=&quot;headerlink&quot; title=&quot;Linux系统下用find命令查找最近修改过的文件&quot;&gt;&lt;/a&gt;Linux系统下用fi
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一行命令更新所有npm依赖包</title>
+    <link href="https://blog.cooky.tk/2019/09/10/%E4%B8%80%E8%A1%8C%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89npm%E4%BE%9D%E8%B5%96%E5%8C%85/"/>
+    <id>https://blog.cooky.tk/2019/09/10/一行命令更新所有npm依赖包/</id>
+    <published>2019-09-10T01:09:56.000Z</published>
+    <updated>2019-09-10T01:09:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>npm 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 react 到最新版本，命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># npm</span><br><span class="line">npm i --save react@latest</span><br><span class="line"># yarn</span><br><span class="line">yarn add react@latest</span><br></pre></td></tr></table></figure><p>yarn 是 facebook 发明的新一代 js 包管理器，支持离线使用。这是 npm 与 yarn 的 命令对照。</p><p>但是，这种做法相当耗时。有没有更简单的方法呢？<br>答案是使用 npm-check 或者 yarn。两者都需要全局安装。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g yarn</span><br><span class="line">npm i -g npm-check</span><br></pre></td></tr></table></figure><h2 id="使用-npm-check-更新项目依赖"><a href="#使用-npm-check-更新项目依赖" class="headerlink" title="使用 npm-check 更新项目依赖"></a>使用 npm-check 更新项目依赖</h2><p>在项目根目录运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm-check -u</span><br></pre></td></tr></table></figure><p>输出如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">? Choose which packages to update. (Press &lt;space&gt; to select)</span><br><span class="line"></span><br><span class="line"> Update package.json to match version installed.</span><br><span class="line">❯◯ chalk     ^1.1.3   ❯  2.4.2   https://github.com/chalk/chalk#readme</span><br><span class="line"> ◯ cheerio   ^0.22.0  ❯  0.22.0  https://github.com/cheeriojs/cheerio#readme</span><br><span class="line"> ◯ debug     ^2.3.3   ❯  4.1.1   https://github.com/visionmedia/debug#readme</span><br><span class="line"> ◯ log4js    ^1.0.1   ❯  4.1.0   https://log4js-node.github.io/log4js-node/</span><br><span class="line"> ◯ mustache  ^2.3.0   ❯  3.0.1   https://github.com/janl/mustache.js</span><br><span class="line"> ◯ request   2.79.0   ❯  2.88.0  https://github.com/request/request#readme</span><br><span class="line"> ◯ unescape  ^0.2.0   ❯  1.0.1   https://github.com/jonschlinkert/unescape</span><br><span class="line"> ◯ yargs     ^6.4.0   ❯  13.2.2  https://yargs.js.org/</span><br><span class="line"></span><br><span class="line"> Space to select. Enter to start upgrading. Control-C to cancel.</span><br></pre></td></tr></table></figure><p>空格切换包是否更新，Control + C 取消更新，回车就是执行更新。</p><h2 id="使用-yarn-更新项目依赖"><a href="#使用-yarn-更新项目依赖" class="headerlink" title="使用 yarn 更新项目依赖"></a>使用 yarn 更新项目依赖</h2><p>在项目根目录运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade-interactive  --latest</span><br></pre></td></tr></table></figure><p>输出如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade-interactive v1.15.2</span><br><span class="line">info Color legend :</span><br><span class="line"> &quot;&lt;red&gt;&quot;    : Major Update backward-incompatible updates</span><br><span class="line"> &quot;&lt;yellow&gt;&quot; : Minor Update backward-compatible features</span><br><span class="line"> &quot;&lt;green&gt;&quot;  : Patch Update backward-compatible bug fixes</span><br><span class="line">? Choose which packages to update. (Press &lt;space&gt; to select, &lt;a&gt; to toggle all,</span><br><span class="line">&lt;i&gt; to invert selection)</span><br><span class="line"> dependencies</span><br><span class="line">   name      range   from       to          url</span><br><span class="line">❯◯ chalk     latest  1.1.3   ❯  2.4.2       https://github.com/chalk/chalk#readm</span><br><span class="line">e</span><br><span class="line"> ◯ cheerio   latest  0.22.0  ❯  1.0.0-rc.3  https://github.com/cheeriojs/cheerio</span><br><span class="line">#readme</span><br><span class="line"> ◯ debug     latest  2.6.9   ❯  4.1.1       https://github.com/visionmedia/debug</span><br><span class="line">#readme</span><br><span class="line"> ◯ log4js    latest  1.1.1   ❯  4.1.0       https://log4js-node.github.io/log4js</span><br><span class="line">-node/</span><br><span class="line"> ◯ mustache  latest  2.3.2   ❯  3.0.1       https://github.com/janl/mustache.js</span><br><span class="line"> ◯ request   latest  2.79.0  ❯  2.88.0      https://github.com/request/request#r</span><br><span class="line">eadme</span><br><span class="line"> ◯ unescape  latest  0.2.0   ❯  1.0.1       https://github.com/jonschlinkert/une</span><br><span class="line">scape</span><br><span class="line"> ◯ yargs     latest  6.6.0   ❯  13.2.2      https://yargs.js.org/</span><br></pre></td></tr></table></figure><p>yarn 提供了全选切换功能，就是按键 A，空格切换包是否更新，Control + C 取消更新，回车就是执行更新。</p><p>yarn 的更新命令太长了，谁记得住，这种时候，请合理使用命令行工具的帮助，比如运行 yarn help。</p><h2 id="更新命令对照表"><a href="#更新命令对照表" class="headerlink" title="更新命令对照表"></a>更新命令对照表</h2><p>更新全局依赖同上</p><table><thead><tr><th>说明</th><th>yarn</th><th>npm-check</th></tr></thead><tbody><tr><td>更新项目依赖，没有交互</td><td>yarn upgrade –latest</td><td>npm-check -y</td></tr><tr><td>更新项目依赖，有交互</td><td>yarn upgrade-interactive –latest</td><td>npm-check -u</td></tr><tr><td>更新全局依赖，没有交互</td><td>yarn global upgrade –latest</td><td>npm-check -g -y</td></tr><tr><td>更新全局依赖，有交互</td><td>yarn global upgrade-interactive –latest</td><td>npm-check -g -u</td></tr></tbody></table><h2 id="检测原理"><a href="#检测原理" class="headerlink" title="检测原理"></a>检测原理</h2><p>yarn 是根据 yarn.lock 文件来检测版本是否是最新的，所以项目是使用 npm 安装依赖包，更新前要运行<code>yarn install</code>一下。</p><p>npm-check 是检测 package.json 文件，项目存在 node_modules 文件夹即可更新。</p><h2 id="更新提醒"><a href="#更新提醒" class="headerlink" title="更新提醒"></a>更新提醒</h2><p>没有交互就是将依赖包直接更新到最新版本，推荐使用交互式更新，会有更新的警告信息。</p><p>最新的依赖包，API 可能发生重大改变。为了顺利更新，更新前请 git commit 一下，更新失败了也能顺利回退。</p><h2 id="不推荐使用-cnpm"><a href="#不推荐使用-cnpm" class="headerlink" title="不推荐使用 cnpm"></a>不推荐使用 cnpm</h2><p>为了加快安装依赖的安装速度，可能被同事安利 cnpm，但是这样会导致包的依赖安装不正常，项目无法运行。</p><p>更好的做法是使用 nrm 切换下载源。</p><p>平时使用 yarn 装包，npm 运行脚本。</p><h2 id="安装-nrm"><a href="#安装-nrm" class="headerlink" title="安装 nrm"></a>安装 nrm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nrm</span><br></pre></td></tr></table></figure><h2 id="查看下载镜像源"><a href="#查看下载镜像源" class="headerlink" title="查看下载镜像源"></a>查看下载镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm ls</span><br></pre></td></tr></table></figure><p>输出如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  npm ---- https://registry.npmjs.org/</span><br><span class="line">  cnpm --- http://r.cnpmjs.org/</span><br><span class="line">* taobao - https://registry.npm.taobao.org/</span><br><span class="line">  nj ----- https://registry.nodejitsu.com/</span><br><span class="line">  npmMirror  https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm - http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure><h2 id="切换镜像源"><a href="#切换镜像源" class="headerlink" title="切换镜像源"></a>切换镜像源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure><p>装包命令不变，比如安装 react 。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># npm</span><br><span class="line">npm i --save react</span><br><span class="line"># yarn</span><br><span class="line">yarn add react</span><br></pre></td></tr></table></figure><p>体验飞一般的装包速度，再也不是装包一小时，码代码五分钟。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;npm 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 react 到最新版本，命令如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="https://blog.cooky.tk/categories/node-js/"/>
+    
+      <category term="npm" scheme="https://blog.cooky.tk/categories/node-js/npm/"/>
+    
+    
+      <category term="依赖包" scheme="https://blog.cooky.tk/tags/%E4%BE%9D%E8%B5%96%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux启动脚本-sshd</title>
+    <link href="https://blog.cooky.tk/2019/09/10/Linux%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC-sshd/"/>
+    <id>https://blog.cooky.tk/2019/09/10/Linux启动脚本-sshd/</id>
+    <published>2019-09-10T01:05:35.000Z</published>
+    <updated>2019-09-10T01:05:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>纯代码</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">if [ ! -x /usr/sbin/sshd ]</span><br><span class="line">then</span><br><span class="line">    exit 0</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$1&quot; = &quot;stop&quot; -o &quot;$1&quot; = &quot;restart&quot; ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;Stopping the ssh server: &quot;</span><br><span class="line">    killall sshd</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$1&quot; = &quot;start&quot; -o &quot;$1&quot; = &quot;restart&quot; ]</span><br><span class="line">then</span><br><span class="line">    # assume if one key is missing, all are</span><br><span class="line">    if [ ! -f /etc/ssh/ssh_host_key ]</span><br><span class="line">    then</span><br><span class="line">        echo &quot;Generating keys for the ssh server: &quot;</span><br><span class="line">        ssh-keygen -q -t rsa1 -f /etc/ssh/ssh_host_key  -C &apos;&apos; -N &apos;&apos;</span><br><span class="line">        ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key  -C &apos;&apos; -N &apos;&apos;</span><br><span class="line">        ssh-keygen -q -t dsa -f /etc/ssh/ssh_host_dsa_key  -C &apos;&apos; -N &apos;&apos;</span><br><span class="line">    fi</span><br><span class="line">    for i in ssh_host_key ssh_host_rsa_key ssh_host_dsa_key</span><br><span class="line">    do</span><br><span class="line">        chmod 600 /etc/ssh/$i</span><br><span class="line">    done</span><br><span class="line">    echo &quot;Starting the ssh server: &quot;</span><br><span class="line">    /usr/sbin/sshd</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;纯代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+    
+      <category term="启动脚本" scheme="https://blog.cooky.tk/tags/%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ERROR-/bin/bash^M：bad interpreter: No such file or directory</title>
+    <link href="https://blog.cooky.tk/2019/09/09/ERROR-bin-bash-M%EF%BC%9Abad-interpreter-No-such-file-or-directory/"/>
+    <id>https://blog.cooky.tk/2019/09/09/ERROR-bin-bash-M：bad-interpreter-No-such-file-or-directory/</id>
+    <published>2019-09-09T09:45:41.000Z</published>
+    <updated>2019-09-09T09:45:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>/bin/bash^M：bad interpreter: No such file or directory</p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>这个文件在Windows下编辑过，在Windows下每一行结尾是\n\r，而Linux下则是\n，所以才会有多出来的\r</p><a id="more"></a><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有以下几种办法  </p><ol><li>dos2unix filename  </li><li>sed -i “s/\r//“ filename  </li><li>sed -i “s/^M//“ filename  </li><li>sed -i ‘s/\r$//‘ filename </li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi filename</span><br><span class="line">set ff=unix</span><br><span class="line">wq</span><br></pre></td></tr></table></figure></li></ol><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>查看脚本文件是dos格式还是unix格式的几种办法  </p><ol><li>cat -A filename 从显示结果可以判断，dos格式的文件行尾为^M$，unix格式的文件行尾为$；  </li><li>od -t x1 filename 如果看到输出内容中存在0d 0a的字符，那么文件是dos格式，如果只有0a，则是unix格式；  </li><li>vi filename打开文件，执行 : set ff，如果文件为dos格式在显示为fileformat=dos，如果是unxi则显示为fileformat=unix。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;报错&quot;&gt;&lt;a href=&quot;#报错&quot; class=&quot;headerlink&quot; title=&quot;报错&quot;&gt;&lt;/a&gt;报错&lt;/h2&gt;&lt;p&gt;/bin/bash^M：bad interpreter: No such file or directory&lt;/p&gt;
+&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h2&gt;&lt;p&gt;这个文件在Windows下编辑过，在Windows下每一行结尾是\n\r，而Linux下则是\n，所以才会有多出来的\r&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+    
+      <category term="ERROR" scheme="https://blog.cooky.tk/tags/ERROR/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Docker加速器配置</title>
     <link href="https://blog.cooky.tk/2019/09/05/Docker%E5%8A%A0%E9%80%9F%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
     <id>https://blog.cooky.tk/2019/09/05/Docker加速器配置/</id>
     <published>2019-09-05T08:07:05.000Z</published>
     <updated>2019-09-05T08:07:05.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="自安装Docker配置"><a href="#自安装Docker配置" class="headerlink" title="自安装Docker配置"></a>自安装Docker配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://99m18m7c.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure><h3 id="群辉Docker配置文件位置"><a href="#群辉Docker配置文件位置" class="headerlink" title="群辉Docker配置文件位置"></a>群辉Docker配置文件位置</h3><p>/var/packages/Docker/etc/dockerd.json</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="自安装Docker配置"><a href="#自安装Docker配置" class="headerlink" title="自安装Docker配置"></a>自安装Docker配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://xxxxxxxx.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure><h3 id="群辉Docker配置文件位置"><a href="#群辉Docker配置文件位置" class="headerlink" title="群辉Docker配置文件位置"></a>群辉Docker配置文件位置</h3><p>/var/packages/Docker/etc/dockerd.json</p>]]></content>
     
     <summary type="html">
     
@@ -340,206 +542,6 @@
     
     
       <category term="代理" scheme="https://blog.cooky.tk/tags/%E4%BB%A3%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-zlib</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-zlib/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-zlib/</id>
-    <published>2019-09-05T07:05:05.000Z</published>
-    <updated>2019-09-05T07:05:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>zlib-1.2.11</p><a id="more"></a><h2 id="zlib-1-2-11"><a href="#zlib-1-2-11" class="headerlink" title="zlib-1.2.11"></a>zlib-1.2.11</h2><h3 id="配置交叉编译工具链绝对路径"><a href="#配置交叉编译工具链绝对路径" class="headerlink" title="配置交叉编译工具链绝对路径"></a>配置交叉编译工具链绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export CC=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-gcc</span><br><span class="line">export CXX=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-g++</span><br><span class="line">export AR=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ar</span><br><span class="line">export RANLIB=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure><h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/zlib-1.2.11</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h3 id="重启交叉编译环境"><a href="#重启交叉编译环境" class="headerlink" title="重启交叉编译环境"></a>重启交叉编译环境</h3><blockquote></blockquote><p>由于配置交叉编译工具链绝对路径，会导致其他使用相对交叉编译工具链程序编译错误，所以重启一下比较好</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;zlib-1.2.11&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-bzip2</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-bzip2/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-bzip2/</id>
-    <published>2019-09-05T07:02:32.000Z</published>
-    <updated>2019-09-05T07:02:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>bzip2-1.0.6</p><a id="more"></a><h2 id="bzip2-1-0-6"><a href="#bzip2-1-0-6" class="headerlink" title="bzip2-1.0.6"></a>bzip2-1.0.6</h2><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># To assist in cross-compiling</span><br><span class="line">CC=arm-linux-gnueabihf-gcc -fPIC</span><br><span class="line">AR=arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib</span><br><span class="line">LDFLAGS=</span><br><span class="line"></span><br><span class="line">BIGFILES=-D_FILE_OFFSET_BITS=32</span><br><span class="line">CFLAGS=-Wall -Winline -O2 -g $(BIGFILES)</span><br><span class="line"></span><br><span class="line"># Where you want it installed when you do &apos;make install&apos;</span><br><span class="line">PREFIX=/opt/Crosscompile/buildComplete/bzip2-1.0.6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">check: test</span><br><span class="line">test: bzip2</span><br><span class="line"># @cat words1</span><br><span class="line"># ./bzip2 -1 &lt; sample1.ref &gt; sample1.rb2</span><br><span class="line"># ./bzip2 -2 &lt; sample2.ref &gt; sample2.rb2</span><br><span class="line"># ./bzip2 -3 &lt; sample3.ref &gt; sample3.rb2</span><br><span class="line"># ./bzip2 -d &lt; sample1.bz2 &gt; sample1.tst</span><br><span class="line"># ./bzip2 -d &lt; sample2.bz2 &gt; sample2.tst</span><br><span class="line"># ./bzip2 -ds &lt; sample3.bz2 &gt; sample3.tst</span><br><span class="line"># cmp sample1.bz2 sample1.rb2</span><br><span class="line"># cmp sample2.bz2 sample2.rb2</span><br><span class="line"># cmp sample3.bz2 sample3.rb2</span><br><span class="line"># cmp sample1.tst sample1.ref</span><br><span class="line"># cmp sample2.tst sample2.ref</span><br><span class="line"># cmp sample3.tst sample3.ref</span><br><span class="line"># @cat words3</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;bzip2-1.0.6&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-gdbm</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-gdbm/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-gdbm/</id>
-    <published>2019-09-05T07:01:51.000Z</published>
-    <updated>2019-09-05T07:01:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>gdbm-1.18.1</p><a id="more"></a><h2 id="gdbm-1-18-1"><a href="#gdbm-1-18-1" class="headerlink" title="gdbm-1.18.1"></a>gdbm-1.18.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/gdbm-1.18.1</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;gdbm-1.18.1&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-readline</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-readline/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-readline/</id>
-    <published>2019-09-05T07:01:14.000Z</published>
-    <updated>2019-09-05T07:01:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>readline-8.0</p><a id="more"></a><h2 id="readline-8-0"><a href="#readline-8-0" class="headerlink" title="readline-8.0"></a>readline-8.0</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/readline-8.0</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;readline-8.0&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-sqlite</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-sqlite/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-sqlite/</id>
-    <published>2019-09-05T07:00:40.000Z</published>
-    <updated>2019-09-05T07:00:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>sqlite-3.28</p><a id="more"></a><h2 id="sqlite-3-28"><a href="#sqlite-3-28" class="headerlink" title="sqlite-3.28"></a>sqlite-3.28</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/sqlite-3.28</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;sqlite-3.28&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-openssl</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-openssl/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-openssl/</id>
-    <published>2019-09-05T06:59:54.000Z</published>
-    <updated>2019-09-05T06:59:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>openssl-1.0.2s</p><a id="more"></a><h2 id="openssl-1-0-2s"><a href="#openssl-1-0-2s" class="headerlink" title="openssl-1.0.2s"></a>openssl-1.0.2s</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./Configure -shared no-asm linux-armv4 \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/openssl-1.0.2s \</span><br><span class="line">--openssldir=/opt/Crosscompile/buildComplete/openssl-1.0.2s/ssl \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--cross-compile-prefix=arm-linux-gnueabihf-</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;openssl-1.0.2s&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-curl</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-curl/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-curl/</id>
-    <published>2019-09-05T06:57:41.000Z</published>
-    <updated>2019-09-05T06:57:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>curl-7.65.1<br>依赖：<br>openssl-1.0.2s<br>zlib-1.2.11</p><a id="more"></a><h2 id="curl-7-65-1"><a href="#curl-7-65-1" class="headerlink" title="curl-7.65.1"></a>curl-7.65.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">CPPFLAGS=&quot;-I /opt/Crosscompile/buildComplete/openssl-1.0.2s/include -I /opt/Crosscompile/buildComplete/zlib-1.2.11/include&quot; \</span><br><span class="line">LDFLAGS=&quot;-L /opt/Crosscompile/buildComplete/openssl-1.0.2s/lib -L /opt/Crosscompile/buildComplete/zlib-1.2.11/lib&quot; \</span><br><span class="line">LIBS=&quot;-ldl -lssl -lcrypto&quot; \</span><br><span class="line">--host=arm-linux-gnueabihf \</span><br><span class="line">--target=arm-linux-gnueabihf \</span><br><span class="line">--build=x86_64-linux-gnu \</span><br><span class="line">CXX=arm-linux-gnueabihf-g++ \</span><br><span class="line">AR=arm-linux-gnueabihf-ar \</span><br><span class="line">AS=arm-linux-gnueabihf-as \</span><br><span class="line">LD=arm-linux-gnueabihf-ld \</span><br><span class="line">RANLIB=arm-linux-gnueabihf-ranlib \</span><br><span class="line">CC=arm-linux-gnueabihf-gcc \</span><br><span class="line">NM=arm-linux-gnueabihf-nm \</span><br><span class="line">--with-ssl=/opt/Crosscompile/buildComplete/openssl-1.0.2s \</span><br><span class="line">--with-zlib=/opt/Crosscompile/buildComplete/zlib-1.2.11 \</span><br><span class="line">--enable-shared \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/curl-7.65.1</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;curl-7.65.1&lt;br&gt;依赖：&lt;br&gt;openssl-1.0.2s&lt;br&gt;zlib-1.2.11&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交叉编译-paho.mqtt.c</title>
-    <link href="https://blog.cooky.tk/2019/09/05/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-paho-mqtt-c/"/>
-    <id>https://blog.cooky.tk/2019/09/05/交叉编译-paho-mqtt-c/</id>
-    <published>2019-09-05T06:55:48.000Z</published>
-    <updated>2019-09-05T06:55:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>版本：<br>paho.mqtt.c -1.3.1<br>依赖：<br>openssl-1.0.2s</p><a id="more"></a><h2 id="paho-mqtt-c-1-3-1"><a href="#paho-mqtt-c-1-3-1" class="headerlink" title="paho.mqtt.c -1.3.1"></a>paho.mqtt.c -1.3.1</h2><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">prefix = /opt/Crosscompile/buildComplete/paho.mqtt.c-1.3.1</span><br><span class="line"></span><br><span class="line">CC = arm-linux-gnueabihf-gcc -lrt</span><br><span class="line">CFLAGS += -I /opt/Crosscompile/buildComplete/openssl-1.0.2s/include/</span><br><span class="line">LDFLAGS += -L /opt/Crosscompile/buildComplete/openssl-1.0.2s/lib/</span><br><span class="line"></span><br><span class="line">install: build</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;bindir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;libdir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;man1dir&#125;</span><br><span class="line">mkdir -p $(DESTDIR)$&#123;man3dir&#125;</span><br></pre></td></tr></table></figure><h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make html</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版本：&lt;br&gt;paho.mqtt.c -1.3.1&lt;br&gt;依赖：&lt;br&gt;openssl-1.0.2s&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
-    
-      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
-    
-    
-      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
     
   </entry>
   
