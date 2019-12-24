@@ -52,13 +52,13 @@
   };
 </script>
 
-  <meta name="description" content="Docker 命令1234567docker run -itd \--name mariadb \-p 3306:3306 \-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \-e MYSQL_DATABASE=app \--network user-defined --network-alias mariadb \mariadb:latest">
+  <meta name="description" content="Docker 命令123456789docker run -itd \--name mariadb \-p 3306:3306 \-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \-e MYSQL_DATABASE=app \--network user-defined --network-alias mariadb \mariadb:latest \--charact">
 <meta name="keywords" content="MariaDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Docker中使用MariaDB">
 <meta property="og:url" content="https:&#x2F;&#x2F;blog.cooky.tk&#x2F;2019&#x2F;12&#x2F;06&#x2F;zai-docker-zhong-shi-yong-mariadb&#x2F;index.html">
 <meta property="og:site_name" content="曲奇技术">
-<meta property="og:description" content="Docker 命令1234567docker run -itd \--name mariadb \-p 3306:3306 \-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \-e MYSQL_DATABASE=app \--network user-defined --network-alias mariadb \mariadb:latest">
+<meta property="og:description" content="Docker 命令123456789docker run -itd \--name mariadb \-p 3306:3306 \-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \-e MYSQL_DATABASE=app \--network user-defined --network-alias mariadb \mariadb:latest \--charact">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-06T01:06:58.000Z">
 <meta name="twitter:card" content="summary">
@@ -258,7 +258,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>171</span>
+              <span>242</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Docker-命令"><a href="#Docker-命令" class="headerlink" title="Docker 命令"></a>Docker 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd \</span><br><span class="line">--name mariadb \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \</span><br><span class="line">-e MYSQL_DATABASE=app \</span><br><span class="line">--network user-defined --network-alias mariadb \</span><br><span class="line">mariadb:latest</span><br></pre></td></tr></table></figure>
+        <h2 id="Docker-命令"><a href="#Docker-命令" class="headerlink" title="Docker 命令"></a>Docker 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd \</span><br><span class="line">--name mariadb \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=HaiTian@315800 \</span><br><span class="line">-e MYSQL_DATABASE=app \</span><br><span class="line">--network user-defined --network-alias mariadb \</span><br><span class="line">mariadb:latest \</span><br><span class="line">--character-set-server=utf8mb4 \</span><br><span class="line">--collation-server=utf8mb4_unicode_ci</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -304,6 +304,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/19/tcp-fen-duan-udp-ip-fen-pian-yi-ji-mtu-he-mss/" rel="prev" title="TCP分段、UDP/IP分片，以及MTU和MSS">
+                  TCP分段、UDP/IP分片，以及MTU和MSS <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -358,20 +361,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,12 +434,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">109k</span>
+    <span title="站点总字数">111k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:39</span>
+    <span title="站点阅读时长">1:41</span>
 </div>
 
         
