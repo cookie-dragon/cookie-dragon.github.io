@@ -52,13 +52,13 @@
   };
 </script>
 
-  <meta name="description" content="我们在学习TCP&#x2F;IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。 我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。 MTUMaxitum Transmission Unit 最大传输单元 MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500">
+  <meta name="description" content="我们在学习TCP&#x2F;IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。 我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。">
 <meta name="keywords" content="TCP,TCP&#x2F;IP,UDP,UDP&#x2F;IP,MTU,MSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP分段、UDP&#x2F;IP分片，以及MTU和MSS">
 <meta property="og:url" content="https:&#x2F;&#x2F;blog.cooky.tk&#x2F;2019&#x2F;12&#x2F;19&#x2F;tcp-fen-duan-udp-ip-fen-pian-yi-ji-mtu-he-mss&#x2F;index.html">
 <meta property="og:site_name" content="曲奇技术">
-<meta property="og:description" content="我们在学习TCP&#x2F;IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。 我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。 MTUMaxitum Transmission Unit 最大传输单元 MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500">
+<meta property="og:description" content="我们在学习TCP&#x2F;IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。 我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-24T00:31:00.000Z">
 <meta name="twitter:card" content="summary">
@@ -286,6 +286,8 @@
       
         <p>我们在学习TCP/IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。</p>
 <p>我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。</p>
+<a id="more"></a>
+
 <h3 id="MTU"><a href="#MTU" class="headerlink" title="MTU"></a>MTU</h3><p>Maxitum Transmission Unit 最大传输单元</p>
 <p>MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500个字节。一个IP数据报在以太网中 传输，如果它的长度大于该MTU值，就要进行分片传输，使得每片数据报的长度小于MTU。分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装。IP数据报的分片与重组是在网络层进完成的。</p>
 <h3 id="MSS"><a href="#MSS" class="headerlink" title="MSS"></a>MSS</h3><p>Maxitum Segment Size 最大分段大小</p>
@@ -384,20 +386,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -457,12 +459,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">208k</span>
+    <span title="站点总字数">219k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:09</span>
+    <span title="站点阅读时长">3:19</span>
 </div>
 
         

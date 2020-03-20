@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="准备环境系统环境：ubuntu-18.04.4-server-amd64 APT： 12sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1sudo apt-get install -y make u-boot-tools qemu qemu-user-static  格式化工具：HPUSBDisk v2.0.6格式化卷标">
+<meta name="keywords" content="生产笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinuxOnBoard开发笔记">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.cooky.tk&#x2F;2020&#x2F;03&#x2F;09&#x2F;linuxonboard-kai-fa-bi-ji&#x2F;index.html">
+<meta property="og:site_name" content="曲奇技术">
+<meta property="og:description" content="准备环境系统环境：ubuntu-18.04.4-server-amd64 APT： 12sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1sudo apt-get install -y make u-boot-tools qemu qemu-user-static  格式化工具：HPUSBDisk v2.0.6格式化卷标">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-20T06:55:52.000Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.cooky.tk/2020/03/09/linuxonboard-kai-fa-bi-ji/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>LinuxOnBoard开发笔记 | 曲奇技术</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta custom-logo">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">曲奇技术</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">曲奇龙的技术部落格</p>
+      <a>
+        <img class="custom-logo-image" src="/uploads/custom-logo.png" alt="曲奇技术">
+      </a>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/cookie-dragon" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.cooky.tk/2020/03/09/linuxonboard-kai-fa-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="曲奇龙">
+      <meta itemprop="description" content="记录每一个灵感瞬间">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曲奇技术">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LinuxOnBoard开发笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-09 12:59:52" itemprop="dateCreated datePublished" datetime="2020-03-09T12:59:52+08:00">2020-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-20 14:55:52" itemprop="dateModified" datetime="2020-03-20T14:55:52+08:00">2020-03-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>系统环境：ubuntu-18.04.4-server-amd64</p>
+<p>APT：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1</span><br><span class="line">sudo apt-get install -y make u-boot-tools qemu qemu-user-static</span><br></pre></td></tr></table></figure>
+
+<p>格式化工具：HPUSBDisk v2.0.6<br>格式化卷标：boot</p>
+<p>拷贝顺序</p>
+<ul>
+<li>MLO</li>
+<li>u-boot.img</li>
+<li>uImage</li>
+<li>ubi.img</li>
+</ul>
+<a id="more"></a>
+
+
+<h2 id="准备文件"><a href="#准备文件" class="headerlink" title="准备文件"></a>准备文件</h2><ul>
+<li>~/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux.tar.bz2</li>
+<li>~/u-boot-nand-v6-2017-10-11.tar.gz</li>
+<li>~/IOT-BOX-V6-kernel-2017-11-01.tar.gz</li>
+<li>~/IOT-BOX-V6-rootfs.tar.gz</li>
+</ul>
+<p>~/ready/.config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略</span><br></pre></td></tr></table></figure>
+<p>~/ready/timeconst.pl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置交叉编译环境"><a href="#配置交叉编译环境" class="headerlink" title="配置交叉编译环境"></a>配置交叉编译环境</h2><ul>
+<li>注：普通用户和root用户都要配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar jxvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux.tar.bz2 -C /opt</span><br><span class="line">vi ~/.bashrc</span><br><span class="line">export PATH=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin:$PATH</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="固件生成"><a href="#固件生成" class="headerlink" title="固件生成"></a>固件生成</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/output</span><br></pre></td></tr></table></figure>
+
+<h3 id="Build-U-Boot"><a href="#Build-U-Boot" class="headerlink" title="Build U-Boot"></a>Build U-Boot</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf u-boot-nand-v6-2017-10-11.tar.gz</span><br><span class="line">cd ./u-boot-2013.01.01-psp06.00.00.00</span><br><span class="line">./build.sh</span><br><span class="line">cp -rf ./am335/MLO ../output/</span><br><span class="line">cp -rf ./am335/u-boot.img ../output/</span><br><span class="line">cd ..</span><br><span class="line">sudo rm -rf ./u-boot-2013.01.01-psp06.00.00.00</span><br></pre></td></tr></table></figure>
+
+<h3 id="Build-Kernel"><a href="#Build-Kernel" class="headerlink" title="Build Kernel"></a>Build Kernel</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf IOT-BOX-V6-kernel-2017-11-01.tar.gz</span><br><span class="line">cd ./linux-3.2.0-psp04.06.00.11</span><br><span class="line">cp -rf ../ready/.config ./</span><br><span class="line">cp -rf ../ready/timeconst.pl ./kernel/</span><br><span class="line">./build.sh</span><br><span class="line">cp -rf ./uImage ../output/</span><br><span class="line">cd ..</span><br><span class="line">sudo rm -rf ./linux-3.2.0-psp04.06.00.11</span><br></pre></td></tr></table></figure>
+
+<h3 id="Build-Root-File-System"><a href="#Build-Root-File-System" class="headerlink" title="Build Root File System"></a>Build Root File System</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo tar zxvf IOT-BOX-V6-rootfs.tar.gz</span><br><span class="line">sudo cp /usr/bin/qemu-arm-static ./rootfs/rootfs/usr/bin/</span><br><span class="line">./ms.sh -m ./rootfs/rootfs/</span><br><span class="line"># 文件系统配置（见下一章节）</span><br><span class="line">./ms.sh -u ./rootfs/rootfs/</span><br><span class="line">cd ./rootfs</span><br><span class="line">sudo ./mkfs.ubifs -F -q -r ./rootfs/ -m 2048 -e 126976 -c 2047 -o ubifs.img</span><br><span class="line">sudo ./ubinize -o ubi.img -m 2048 -p 128KiB ubinize.cfg</span><br><span class="line">cp -rf ./ubi.img ../output/</span><br><span class="line">cd ..</span><br><span class="line">sudo rm -rf ./rootfs</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件系统配置"><a href="#文件系统配置" class="headerlink" title="文件系统配置"></a>文件系统配置</h2><h3 id="准备文件-1"><a href="#准备文件-1" class="headerlink" title="准备文件"></a>准备文件</h3><h3 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h3><p>hostapd.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">##### hostapd configuration file ##############################################</span><br><span class="line">interface=wlan0</span><br><span class="line">logger_syslog=-1</span><br><span class="line">logger_syslog_level=2</span><br><span class="line">logger_stdout=-1</span><br><span class="line">logger_stdout_level=2</span><br><span class="line">dump_file=/tmp/hostapd.dump</span><br><span class="line">ctrl_interface=/var/run/hostapd</span><br><span class="line">ctrl_interface_group=0</span><br><span class="line">##### IEEE 802.11 related configuration #######################################</span><br><span class="line">ssid=HT-Link</span><br><span class="line">hw_mode=g</span><br><span class="line">channel=6</span><br><span class="line">beacon_int=100</span><br><span class="line">dtim_period=2</span><br><span class="line">max_num_sta=255</span><br><span class="line">rts_threshold=2347</span><br><span class="line">fragm_threshold=2346</span><br><span class="line">macaddr_acl=0</span><br><span class="line">auth_algs=3</span><br><span class="line">ignore_broadcast_ssid=0</span><br><span class="line">wmm_enabled=1</span><br><span class="line">wmm_ac_bk_cwmin=4</span><br><span class="line">wmm_ac_bk_cwmax=10</span><br><span class="line">wmm_ac_bk_aifs=7</span><br><span class="line">wmm_ac_bk_txop_limit=0</span><br><span class="line">wmm_ac_bk_acm=0</span><br><span class="line">wmm_ac_be_aifs=3</span><br><span class="line">wmm_ac_be_cwmin=4</span><br><span class="line">wmm_ac_be_cwmax=10</span><br><span class="line">wmm_ac_be_txop_limit=0</span><br><span class="line">wmm_ac_be_acm=0</span><br><span class="line">wmm_ac_vi_aifs=2</span><br><span class="line">wmm_ac_vi_cwmin=3</span><br><span class="line">wmm_ac_vi_cwmax=4</span><br><span class="line">wmm_ac_vi_txop_limit=94</span><br><span class="line">wmm_ac_vi_acm=0</span><br><span class="line">wmm_ac_vo_aifs=2</span><br><span class="line">wmm_ac_vo_cwmin=2</span><br><span class="line">wmm_ac_vo_cwmax=3</span><br><span class="line">wmm_ac_vo_txop_limit=47</span><br><span class="line">wmm_ac_vo_acm=0</span><br><span class="line">##### IEEE 802.11n related configuration ######################################</span><br><span class="line">ht_capab=[SHORT-GI-20][SHORT-GI-40][HT40]</span><br><span class="line">##### IEEE 802.1X-2004 related configuration ##################################</span><br><span class="line">eapol_key_index_workaround=0</span><br><span class="line">##### Integrated EAP server ###################################################</span><br><span class="line">eap_server=0</span><br><span class="line">##### RADIUS client configuration #############################################</span><br><span class="line">own_ip_addr=127.0.0.1</span><br><span class="line">##### WPA/IEEE 802.11i configuration ##########################################</span><br><span class="line">wpa=2</span><br><span class="line">wpa_passphrase=12345678</span><br><span class="line">wpa_key_mgmt=WPA-PSK</span><br><span class="line">wpa_pairwise=CCMP</span><br></pre></td></tr></table></figure>
+<p>udhcpd_wlan0.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface wlan0</span><br><span class="line">option subnet 255.255.255.0</span><br><span class="line">opt router 192.168.5.1</span><br><span class="line">opt dns 114.114.114.114 114.114.115.115</span><br><span class="line">start 192.168.5.100</span><br><span class="line">end 192.168.5.199</span><br><span class="line">max_leases 100</span><br></pre></td></tr></table></figure>
+<p>check_update.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># shellcheck shell=sh</span><br><span class="line">UpdateNum=`ls /media/card | grep &quot;htbox_update.tar.gz&quot; | wc -l`</span><br><span class="line"></span><br><span class="line">if [ $UpdateNum -eq 1 ];</span><br><span class="line">then</span><br><span class="line">  rm -rf /home/WebOnBoard</span><br><span class="line">  mv /media/card/htbox_update.tar.gz /home/</span><br><span class="line">  dd if=htbox_update.tar.gz |openssl des3 -d -k ht@315800 | tar zxf -</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AutoRunNum=`ls /home/WebOnBoard | grep &quot;antorun.sh&quot; | wc -l`</span><br><span class="line"></span><br><span class="line">if [ $AutoRunNum -eq 1 ];</span><br><span class="line">then</span><br><span class="line">  /home/WebOnBoard/autorun.sh</span><br><span class="line">  rm /home/WebOnBoard/autorun.sh</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">sleep 5</span><br><span class="line"></span><br><span class="line">if [ $UpdateNum -eq 1 ];</span><br><span class="line">then</span><br><span class="line">  reboot</span><br><span class="line">  exit 0</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ $AutoRunNum -eq 1 ];</span><br><span class="line">then</span><br><span class="line">  reboot</span><br><span class="line">  exit 0</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>sztenv</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">cd /home/WebOnBoard</span><br><span class="line">./auto_start.sh &amp;</span><br><span class="line"></span><br><span class="line">#ntpdate 0.pool.ntp.org</span><br><span class="line">#if [ &quot;$?&quot; == 0 ]</span><br><span class="line">#then</span><br><span class="line">#    hwclock -w</span><br><span class="line">#else</span><br><span class="line">#    reboot</span><br><span class="line">#fi</span><br></pre></td></tr></table></figure>
+<p>interfaces</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)</span><br><span class="line"></span><br><span class="line"># The loopback interface</span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">iface eth0 inet dhcp</span><br><span class="line"></span><br><span class="line">iface eth1 inet static</span><br><span class="line">	address 192.168.3.1</span><br><span class="line">	netmask 255.255.255.0</span><br><span class="line">	gateway 192.168.3.1</span><br><span class="line"></span><br><span class="line">iface wlan0 inet static</span><br><span class="line">	address 192.168.5.1</span><br><span class="line">	netmask 255.255.255.0</span><br><span class="line">	gateway 192.168.5.1</span><br><span class="line"></span><br><span class="line">iface br-vpn inet static</span><br><span class="line">	address 192.168.3.1</span><br><span class="line">	netmask 255.255.255.0</span><br><span class="line">	gateway 192.168.3.1</span><br></pre></td></tr></table></figure>
+<p>inittab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># /etc/inittab: init(8) configuration.</span><br><span class="line"># $Id: inittab,v 1.91 2002/01/25 13:35:21 miquels Exp $</span><br><span class="line"></span><br><span class="line"># The default runlevel.</span><br><span class="line">id:5:initdefault:</span><br><span class="line"></span><br><span class="line"># Boot-time system configuration/initialization script.</span><br><span class="line"># This is run first except when booting in emergency (-b) mode.</span><br><span class="line">si::sysinit:/etc/init.d/rcS</span><br><span class="line"></span><br><span class="line"># What to do in single-user mode.</span><br><span class="line">~~:S:wait:/sbin/sulogin</span><br><span class="line"></span><br><span class="line"># /etc/init.d executes the S and K scripts upon change</span><br><span class="line"># of runlevel.</span><br><span class="line">#</span><br><span class="line"># Runlevel 0 is halt.</span><br><span class="line"># Runlevel 1 is single-user.</span><br><span class="line"># Runlevels 2-5 are multi-user.</span><br><span class="line"># Runlevel 6 is reboot.</span><br><span class="line"></span><br><span class="line">l0:0:wait:/etc/init.d/rc 0</span><br><span class="line">l1:1:wait:/etc/init.d/rc 1</span><br><span class="line">l2:2:wait:/etc/init.d/rc 2</span><br><span class="line">l3:3:wait:/etc/init.d/rc 3</span><br><span class="line">l4:4:wait:/etc/init.d/rc 4</span><br><span class="line">l5:5:wait:/etc/init.d/rc 5</span><br><span class="line">l6:6:wait:/etc/init.d/rc 6</span><br><span class="line"># Normally not reached, but fallthrough in case of emergency.</span><br><span class="line">z6:6:respawn:/sbin/sulogin</span><br><span class="line">#S:2345:respawn:/sbin/getty -I root 115200 ttyO0</span><br><span class="line">usr:2345:respawn:/bin/login</span><br><span class="line"># /sbin/getty invocations for the runlevels.</span><br><span class="line">#</span><br><span class="line"># The &quot;id&quot; field MUST be the same as the last</span><br><span class="line"># characters of the device (after &quot;tty&quot;).</span><br><span class="line">#</span><br><span class="line"># Format:</span><br><span class="line">#  &lt;id&gt;:&lt;runlevels&gt;:&lt;action&gt;:&lt;process&gt;</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#1:2345:respawn:/sbin/getty 38400 tty1</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除不必要的内容"><a href="#删除不必要的内容" class="headerlink" title="删除不必要的内容"></a>删除不必要的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 删除网页服务</span><br><span class="line">rm -rf /etc/rc5.d/S20boa</span><br><span class="line"># 删除默认4G程序</span><br><span class="line">rm -rf /etc/quectel-CM</span><br><span class="line">rm -rf /etc/yiyuan_4g</span><br></pre></td></tr></table></figure>
+
+<h3 id="恢复4G程序"><a href="#恢复4G程序" class="headerlink" title="恢复4G程序"></a>恢复4G程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp quectel-CM /etc/</span><br><span class="line">cp yiyuan_4g /usr/bin/</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增GPIO程序-使能Wi-Fi模块用"><a href="#新增GPIO程序-使能Wi-Fi模块用" class="headerlink" title="新增GPIO程序 - 使能Wi-Fi模块用"></a>新增GPIO程序 - 使能Wi-Fi模块用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp gpio_test /usr/bin/</span><br><span class="line">cp gpio_test_new /usr/bin/</span><br></pre></td></tr></table></figure>
+
+<h3 id="加载Wi-Fi模块、程序、配置文件"><a href="#加载Wi-Fi模块、程序、配置文件" class="headerlink" title="加载Wi-Fi模块、程序、配置文件"></a>加载Wi-Fi模块、程序、配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp 8188eu.ko /lib/modules/3.2.0/</span><br><span class="line">cp hostapd /usr/bin/</span><br><span class="line">cp hostapd.conf /etc/</span><br><span class="line">cp udhcpd*.conf /etc/</span><br><span class="line">touch /var/lib/misc/udhcpd.leases</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建net转发"><a href="#创建net转发" class="headerlink" title="创建net转发"></a>创建net转发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.ipv4.ip_forward=0&quot; &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="SD卡插入相关"><a href="#SD卡插入相关" class="headerlink" title="SD卡插入相关"></a>SD卡插入相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp check_update.sh /etc/init.d/</span><br><span class="line"></span><br><span class="line">mkdir -p /media/card</span><br><span class="line">echo &quot;SUBSYSTEM==\&quot;block\&quot;, ACTION==\&quot;add\&quot;    RUN+=\&quot;/etc/udev/scripts/mount.sh\&quot;&quot;    &gt;&gt; /etc/udev/rules.d/automount.rules</span><br><span class="line">echo &quot;SUBSYSTEM==\&quot;block\&quot;, ACTION==\&quot;remove\&quot; RUN+=\&quot;/etc/udev/scripts/mount.sh\&quot;&quot;    &gt;&gt; /etc/udev/rules.d/automount.rules</span><br><span class="line">echo &quot;SUBSYSTEM==\&quot;block\&quot;, ACTION==\&quot;add\&quot;    RUN+=\&quot;/etc/init.d/check_update.sh\&quot;&quot;   &gt;&gt; /etc/udev/rules.d/automount.rules</span><br><span class="line">echo &quot;/dev/mmcblk0p1       /media/card          auto       defaults,sync         0  0&quot; &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 自启动文件</span><br><span class="line">cp sztenv /etc/init.d/</span><br><span class="line"># 网络相关</span><br><span class="line">cp interfaces /etc/network/</span><br><span class="line"># 用户相关</span><br><span class="line">cp inittab /etc/</span><br><span class="line"></span><br><span class="line"># 记得修改root密码</span><br><span class="line">passwd root</span><br></pre></td></tr></table></figure>
+
+<h3 id="库配置"><a href="#库配置" class="headerlink" title="库配置"></a>库配置</h3><p>sshd.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">	start)</span><br><span class="line">		echo -n &quot;Starting SSHD&quot;</span><br><span class="line">		/usr/local/sbin/sshd</span><br><span class="line">		echo .</span><br><span class="line">		;;</span><br><span class="line">	*)</span><br><span class="line">		echo &quot;Uasges: ./sshd.sh &#123;star&#125;t&quot;</span><br><span class="line">		exit 1</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除残余库"><a href="#删除残余库" class="headerlink" title="删除残余库"></a>删除残余库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># rm openssl</span><br><span class="line">rm -rf /usr/lib/libssl* /lib/libcrypto*</span><br><span class="line"># rm zlib</span><br><span class="line">rm -rf /usr/lib/libz*</span><br><span class="line"># rm curl</span><br><span class="line">rm -rf /usr/bin/curl /usr/lib/libcurl*</span><br><span class="line"># rm sqlite3</span><br><span class="line">rm -rf /usr/sbin/sqlite* /usr/lib/libsqlite*</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入openssl库"><a href="#导入openssl库" class="headerlink" title="导入openssl库"></a>导入openssl库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cp openssl /usr/bin/</span><br><span class="line"></span><br><span class="line">cp libssl.so.1.0.0 /usr/lib/</span><br><span class="line">cd /usr/lib/</span><br><span class="line">ln -s libssl.so.1.0.0 libssl.so</span><br><span class="line"></span><br><span class="line">cp libcrypto.so.1.0.0 /lib/</span><br><span class="line">cd /lib/</span><br><span class="line">ln -s libcrypto.so.1.0.0 libcrypto.so</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入系统自带其他库"><a href="#导入系统自带其他库" class="headerlink" title="导入系统自带其他库"></a>导入系统自带其他库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf zlib-1.2.11.tar.gz -C /usr/</span><br><span class="line">tar zxvf curl-7.65.1.tar.gz -C /usr/</span><br><span class="line">tar zxvf sqlite-3.28.tar.gz -C /usr/</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入openssh"><a href="#导入openssh" class="headerlink" title="导入openssh"></a>导入openssh</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local</span><br><span class="line">tar zxvf openssh-8.0p1.tar.gz -C /usr/local/</span><br><span class="line">mkdir -p /var/run/ </span><br><span class="line">mkdir -p /var/empty/</span><br><span class="line">echo &quot;sshd:*:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin&quot; &gt;&gt; /etc/passwd</span><br><span class="line">echo &quot;sshd:*:74:&quot; &gt;&gt; /etc/group</span><br><span class="line">cp sshd.sh /etc/init.d/</span><br><span class="line">cd /etc/rc5.d/</span><br><span class="line">ln -s ../init.d/sshd.sh S99sshd.sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入其他库"><a href="#导入其他库" class="headerlink" title="导入其他库"></a>导入其他库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf openvpn-2.3.18.tar.gz -C /usr/</span><br><span class="line"></span><br><span class="line">tar zxvf jq-1.5.tar.gz -C /usr/</span><br><span class="line">tar zxvf bridge-utils-1.5.tar.gz -C /usr/</span><br><span class="line">tar zxvf ntp-4.2.8p13.tar.gz -C /usr/</span><br><span class="line"></span><br><span class="line">tar zxvf bzip2-1.0.6.tar.gz -C /usr/</span><br><span class="line">tar zxvf gdbm-1.18.1.tar.gz -C /usr/</span><br><span class="line">tar zxvf readline-8.0.tar.gz -C /usr/</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入采集用库"><a href="#导入采集用库" class="headerlink" title="导入采集用库"></a>导入采集用库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf paho.mqtt.c-1.3.1.tar.gz -C /usr/</span><br><span class="line">cp libcjson.so.1.7.12 /usr/lib/</span><br><span class="line">cp libcjson_utils.so.1.7.12 /usr/lib/</span><br><span class="line">cp libmodbus.so.5.1.0 /usr/lib/</span><br><span class="line">cp libsnap7.so /usr/lib/</span><br><span class="line">cp libstdc++.so.6.0.17 /usr/lib/</span><br><span class="line"></span><br><span class="line">cd /usr/lib/</span><br><span class="line">ln -s libcjson.so.1.7.12 libcjson.so.1</span><br><span class="line">ln -s libcjson.so.1 libcjson.so</span><br><span class="line">ln -s libcjson_utils.so.1.7.12 libcjson_utils.so.1</span><br><span class="line">ln -s libcjson_utils.so.1 libcjson_utils.so</span><br><span class="line">ln -s libmodbus.so.5.1.0 libmodbus.so.5</span><br><span class="line">ln -s libmodbus.so.5 libmodbus.so</span><br><span class="line">ln -s libstdc++.so.6.0.17 libstdc++.so.6</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入python"><a href="#导入python" class="headerlink" title="导入python"></a>导入python</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf python-2.7.16.tar.gz -C /usr/</span><br><span class="line">mkdir -p /root/.cache</span><br><span class="line">curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</span><br><span class="line">python get-pip.py</span><br><span class="line">pip install flask-appconfig flask-bootstrap flask-debug flask-nav flask-wtf flask-sqlalchemy gunicorn pyserial python-can</span><br><span class="line">rm -rf /root/.cache/pip</span><br><span class="line">rm -rf /home/cooky</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%94%9F%E4%BA%A7%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 生产笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/11/vpc-bu-shu/" rel="next" title="VPC部署">
+                  <i class="fa fa-chevron-left"></i> VPC部署
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/03/20/cython-jia-mi/" rel="prev" title="cython加密">
+                  cython加密 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备文件"><span class="nav-number">2.</span> <span class="nav-text">准备文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置交叉编译环境"><span class="nav-number">3.</span> <span class="nav-text">配置交叉编译环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固件生成"><span class="nav-number">4.</span> <span class="nav-text">固件生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">4.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-U-Boot"><span class="nav-number">4.2.</span> <span class="nav-text">Build U-Boot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-Kernel"><span class="nav-number">4.3.</span> <span class="nav-text">Build Kernel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-Root-File-System"><span class="nav-number">4.4.</span> <span class="nav-text">Build Root File System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统配置"><span class="nav-number">5.</span> <span class="nav-text">文件系统配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备文件-1"><span class="nav-number">5.1.</span> <span class="nav-text">准备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本文件"><span class="nav-number">5.2.</span> <span class="nav-text">文本文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不必要的内容"><span class="nav-number">5.3.</span> <span class="nav-text">删除不必要的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复4G程序"><span class="nav-number">5.4.</span> <span class="nav-text">恢复4G程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增GPIO程序-使能Wi-Fi模块用"><span class="nav-number">5.5.</span> <span class="nav-text">新增GPIO程序 - 使能Wi-Fi模块用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载Wi-Fi模块、程序、配置文件"><span class="nav-number">5.6.</span> <span class="nav-text">加载Wi-Fi模块、程序、配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建net转发"><span class="nav-number">5.7.</span> <span class="nav-text">创建net转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SD卡插入相关"><span class="nav-number">5.8.</span> <span class="nav-text">SD卡插入相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统相关"><span class="nav-number">5.9.</span> <span class="nav-text">系统相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#库配置"><span class="nav-number">5.10.</span> <span class="nav-text">库配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除残余库"><span class="nav-number">5.10.1.</span> <span class="nav-text">删除残余库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入openssl库"><span class="nav-number">5.10.2.</span> <span class="nav-text">导入openssl库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入系统自带其他库"><span class="nav-number">5.10.3.</span> <span class="nav-text">导入系统自带其他库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入openssh"><span class="nav-number">5.10.4.</span> <span class="nav-text">导入openssh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入其他库"><span class="nav-number">5.10.5.</span> <span class="nav-text">导入其他库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入采集用库"><span class="nav-number">5.10.6.</span> <span class="nav-text">导入采集用库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入python"><span class="nav-number">5.10.7.</span> <span class="nav-text">导入python</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="曲奇龙"
+    src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">曲奇龙</p>
+  <div class="site-description" itemprop="description">记录每一个灵感瞬间</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cookie-dragon" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cookie-dragon" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://hexo.io/zh-cn/" title="https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;" rel="noopener" target="_blank">Hexo official</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.org/docs/" title="https:&#x2F;&#x2F;theme-next.org&#x2F;docs&#x2F;" rel="noopener" target="_blank">NexT Docs</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://square.github.io/" title="https:&#x2F;&#x2F;square.github.io" rel="noopener" target="_blank">Square大神</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曲奇龙</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">219k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:19</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+
+  
+
+  
+
+</body>
+</html>
