@@ -264,7 +264,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>735</span>
+              <span>619</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,7 +286,7 @@
         <p>版本：<br>zlib-1.2.11 <a href="https://www.zlib.net/fossils/zlib-1.2.11.tar.gz" target="_blank" rel="noopener">下载</a></p>
 <a id="more"></a>
 
-<h2 id="zlib-1-2-11"><a href="#zlib-1-2-11" class="headerlink" title="zlib-1.2.11"></a>zlib-1.2.11</h2><h3 id="配置交叉编译工具链绝对路径"><a href="#配置交叉编译工具链绝对路径" class="headerlink" title="配置交叉编译工具链绝对路径"></a>配置交叉编译工具链绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export CC=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-gcc</span><br><span class="line">export CXX=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-g++</span><br><span class="line">export AR=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ar</span><br><span class="line">export RANLIB=/opt/Crosscompile/hzmct/toolchain/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure>
+<h2 id="zlib-1-2-11"><a href="#zlib-1-2-11" class="headerlink" title="zlib-1.2.11"></a>zlib-1.2.11</h2><h3 id="配置交叉编译工具链绝对路径"><a href="#配置交叉编译工具链绝对路径" class="headerlink" title="配置交叉编译工具链绝对路径"></a>配置交叉编译工具链绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export CC=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-gcc</span><br><span class="line">export CXX=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-g++</span><br><span class="line">export AR=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ar</span><br><span class="line">export RANLIB=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.03-20130313_linux/bin/arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure>
 
 <h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/opt/Crosscompile/buildComplete/zlib-1.2.11</span><br></pre></td></tr></table></figure>
 
@@ -306,18 +306,13 @@
   <ul class="popular-posts">
     <li class="popular-posts-item">
         <div class="popular-posts-date">2019-09-05</div>
-      <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-bridge-utils/" rel="bookmark">交叉编译-bridge-utils</a></div>
-        <div class="popular-posts-excerpt"><p><p>版本：<br>bridge-utils-1.5</p></p></div>
-    </li>
-    <li class="popular-posts-item">
-        <div class="popular-posts-date">2019-09-05</div>
       <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-bzip2/" rel="bookmark">交叉编译-bzip2</a></div>
         <div class="popular-posts-excerpt"><p><p>版本：<br>bzip2-1.0.6 <a href="https://sourceware.org/pub/bzip2/bzip2-1.0.6.tar.gz" target="_blank" rel="noopener">下载</a></p></p></div>
     </li>
     <li class="popular-posts-item">
         <div class="popular-posts-date">2019-09-05</div>
-      <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-curl/" rel="bookmark">交叉编译-curl</a></div>
-        <div class="popular-posts-excerpt"><p><p>版本：<br>curl-7.65.1<br>依赖：<br>openssl-1.0.2s<br>zlib-1.2.11</p></p></div>
+      <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-bridge-utils/" rel="bookmark">交叉编译-bridge-utils</a></div>
+        <div class="popular-posts-excerpt"><p><p>版本：<br>bridge-utils-1.5</p></p></div>
     </li>
     <li class="popular-posts-item">
         <div class="popular-posts-date">2019-09-05</div>
@@ -328,6 +323,11 @@
         <div class="popular-posts-date">2019-09-05</div>
       <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-jq/" rel="bookmark">交叉编译-jq</a></div>
         <div class="popular-posts-excerpt"><p><p>版本：<br>jq-1.5</p></p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2019-09-05</div>
+      <div class="popular-posts-title"><a href="/2019/09/05/jiao-cha-bian-yi-curl/" rel="bookmark">交叉编译-curl</a></div>
+        <div class="popular-posts-excerpt"><p><p>版本：<br>curl-7.65.1<br>依赖：<br>openssl-1.0.2s<br>zlib-1.2.11</p></p></div>
     </li>
   </ul>
 
@@ -407,7 +407,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -480,12 +480,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">219k</span>
+    <span title="站点总字数">224k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:19</span>
+    <span title="站点阅读时长">3:24</span>
 </div>
 
         
