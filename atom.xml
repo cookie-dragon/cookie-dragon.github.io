@@ -466,7 +466,8 @@
       
         
         
-          &lt;h2 id=&quot;查看全局包&quot;&gt;&lt;a href=&quot;#查看全局包&quot; class=&quot;headerlink&quot; title=&quot;查看全局包&quot;&gt;&lt;/a&gt;查看全局包&lt;/h2&gt;&lt;p&gt;npm list -g –depth
+          &lt;h2 id=&quot;查看全局包&quot;&gt;&lt;a href=&quot;#查看全局包&quot; class=&quot;headerlink&quot; title=&quot;查看全局包&quot;&gt;&lt;/a&gt;查看全局包&lt;/h2&gt;&lt;p&gt;npm list -g –depth 0&lt;/p&gt;
+&lt;h2 id=&quot;报错集合&quot;&gt;&lt;a href=&quot;#报错集合&quot;
         
       
     
