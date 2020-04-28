@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>曲奇技术</title>
+  <icon>https://blog.cooky.tk/icon.png</icon>
+  <subtitle>曲奇龙的技术部落格</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.cooky.tk/"/>
+  <updated>2020-04-28T06:22:16.000Z</updated>
+  <id>https://blog.cooky.tk/</id>
+  
+  <author>
+    <name>曲奇龙</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在 macOS Catalina 中运行 64 位 KindleGen</title>
+    <link href="https://blog.cooky.tk/2020/04/28/ru-he-zai-macos-catalina-zhong-yun-xing-64-wei-kindlegen/"/>
+    <id>https://blog.cooky.tk/2020/04/28/ru-he-zai-macos-catalina-zhong-yun-xing-64-wei-kindlegen/</id>
+    <published>2020-04-28T06:22:16.000Z</published>
+    <updated>2020-04-28T06:22:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你是 macOS 用户，并且经常使用命令行工具 KindleGen 转换电子书格式，可能已经遇到了这个问题：将 macOS 升级到 Catalina 之后，在终端执行 KindleGen 会出现如下所示的错误提示：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;zsh: bad CPU type in executable: kindlegen&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;问题的原因是 macOS 系统自 Catalina 开始，就停止了对 32 位程序的支持，而KindleGen 官方发布页面却仍未提供 64 位的 KindleGen，这给很多小伙伴带来了不便。那该怎样解决这个问题呢？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Kindle" scheme="https://blog.cooky.tk/categories/Kindle/"/>
+    
+    
+      <category term="KindleGen" scheme="https://blog.cooky.tk/tags/KindleGen/"/>
+    
+      <category term="Kindle Previewer" scheme="https://blog.cooky.tk/tags/Kindle-Previewer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FFmpeg EAC3 and/or DTS support in Video Station for DSM 6.x</title>
+    <link href="https://blog.cooky.tk/2020/04/27/ffmpeg-eac3-and-or-dts-support-in-video-station-for-dsm-6-x/"/>
+    <id>https://blog.cooky.tk/2020/04/27/ffmpeg-eac3-and-or-dts-support-in-video-station-for-dsm-6-x/</id>
+    <published>2020-04-27T02:47:13.000Z</published>
+    <updated>2020-04-27T02:47:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Backup Synology’s original ffmpeg and link directly to SynoCommunity’s version instead:&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+      <category term="群晖" scheme="https://blog.cooky.tk/categories/%E7%BE%A4%E6%99%96/"/>
+    
+    
+      <category term="FFmpeg" scheme="https://blog.cooky.tk/tags/FFmpeg/"/>
+    
+      <category term="DTS" scheme="https://blog.cooky.tk/tags/DTS/"/>
+    
+      <category term="EAC3" scheme="https://blog.cooky.tk/tags/EAC3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacOS中Finder左侧“桌面”变为“Desktop”的解决方法</title>
+    <link href="https://blog.cooky.tk/2020/04/24/macos-zhong-finder-zuo-ce-zhuo-mian-bian-wei-desktop-de-jie-jue-fang-fa/"/>
+    <id>https://blog.cooky.tk/2020/04/24/macos-zhong-finder-zuo-ce-zhuo-mian-bian-wei-desktop-de-jie-jue-fang-fa/</id>
+    <published>2020-04-24T07:42:04.000Z</published>
+    <updated>2020-04-24T07:42:04.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;1、打开终端，输入 touch ~/desktop/.localized（“下载”文件夹同理，输入 touch
+        
+      
+    
+    </summary>
+    
+    
+      <category term="macOS" scheme="https://blog.cooky.tk/categories/macOS/"/>
+    
+    
+      <category term="ERROR" scheme="https://blog.cooky.tk/tags/ERROR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何知道自己vps线路是走否走的GIA？vps线路测试方法</title>
+    <link href="https://blog.cooky.tk/2020/04/02/ru-he-zhi-dao-zi-ji-vps-xian-lu-shi-zou-fou-zou-de-gia-vps-xian-lu-ce-shi-fang-fa/"/>
+    <id>https://blog.cooky.tk/2020/04/02/ru-he-zhi-dao-zi-ji-vps-xian-lu-shi-zou-fou-zou-de-gia-vps-xian-lu-ce-shi-fang-fa/</id>
+    <published>2020-04-02T05:29:12.000Z</published>
+    <updated>2020-04-02T05:29:12.000Z</updated>
+    
+    <summary type="html">
+    
+      有东西被加密了, 请输入密码查看.
+    
+    </summary>
+    
+    
+      <category term="GFW" scheme="https://blog.cooky.tk/categories/GFW/"/>
+    
+    
+      <category term="vps" scheme="https://blog.cooky.tk/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VPC部署2-平台部署</title>
+    <link href="https://blog.cooky.tk/2020/03/30/vpc-bu-shu-2-ping-tai-bu-shu/"/>
+    <id>https://blog.cooky.tk/2020/03/30/vpc-bu-shu-2-ping-tai-bu-shu/</id>
+    <published>2020-03-30T00:20:45.000Z</published>
+    <updated>2020-03-30T00:20:45.000Z</updated>
+    
+    <summary type="html">
+    
+      有东西被加密了, 请输入密码查看.
+    
+    </summary>
+    
+    
+      <category term="GFW" scheme="https://blog.cooky.tk/categories/GFW/"/>
+    
+    
+      <category term="vps" scheme="https://blog.cooky.tk/tags/vps/"/>
+    
+      <category term="v2ray" scheme="https://blog.cooky.tk/tags/v2ray/"/>
+    
+      <category term="bbr" scheme="https://blog.cooky.tk/tags/bbr/"/>
+    
+      <category term="ss" scheme="https://blog.cooky.tk/tags/ss/"/>
+    
+      <category term="shadowsocks" scheme="https://blog.cooky.tk/tags/shadowsocks/"/>
+    
+      <category term="翻墙" scheme="https://blog.cooky.tk/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="梯子" scheme="https://blog.cooky.tk/tags/%E6%A2%AF%E5%AD%90/"/>
+    
+      <category term="防火墙" scheme="https://blog.cooky.tk/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+      <category term="nginx" scheme="https://blog.cooky.tk/tags/nginx/"/>
+    
+      <category term="trojan" scheme="https://blog.cooky.tk/tags/trojan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cython加密</title>
+    <link href="https://blog.cooky.tk/2020/03/20/cython-jia-mi/"/>
+    <id>https://blog.cooky.tk/2020/03/20/cython-jia-mi/</id>
+    <published>2020-03-20T06:39:17.000Z</published>
+    <updated>2020-03-20T06:39:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;交叉编译板上需要设置环境变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export PYTHONHOME&amp;#x3D;&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PYTHONPATH&amp;#x3D;&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python27.zip:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7&amp;#x2F;plat-linux2:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7&amp;#x2F;lib-tk:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7&amp;#x2F;lib-old:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7&amp;#x2F;lib-dynload:&amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python2.7&amp;#x2F;site-packages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 PYTHONPATH 的内容可由以下py代码得出&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import sys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print sys.path&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://blog.cooky.tk/categories/Python/"/>
+    
+    
+      <category term="加密解密" scheme="https://blog.cooky.tk/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/"/>
+    
+      <category term="cython" scheme="https://blog.cooky.tk/tags/cython/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LinuxOnBoard开发笔记</title>
+    <link href="https://blog.cooky.tk/2020/03/09/linuxonboard-kai-fa-bi-ji/"/>
+    <id>https://blog.cooky.tk/2020/03/09/linuxonboard-kai-fa-bi-ji/</id>
+    <published>2020-03-09T04:59:52.000Z</published>
+    <updated>2020-03-20T06:55:52.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h2&gt;&lt;p&gt;系统环境：ubuntu-18.04.4-server-amd64&lt;/p&gt;
+&lt;p&gt;APT：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y make u-boot-tools qemu qemu-user-static&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;格式化工具：HPUSBDisk v2.0.6&lt;br&gt;格式化卷标：boot&lt;/p&gt;
+&lt;p&gt;拷贝顺序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MLO&lt;/li&gt;
+&lt;li&gt;u-boot.img&lt;/li&gt;
+&lt;li&gt;uImage&lt;/li&gt;
+&lt;li&gt;ubi.img&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+      <category term="嵌入式" scheme="https://blog.cooky.tk/categories/Linux/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="生产笔记" scheme="https://blog.cooky.tk/tags/%E7%94%9F%E4%BA%A7%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VPC部署</title>
+    <link href="https://blog.cooky.tk/2020/02/11/vpc-bu-shu/"/>
+    <id>https://blog.cooky.tk/2020/02/11/vpc-bu-shu/</id>
+    <published>2020-02-11T04:57:29.000Z</published>
+    <updated>2020-02-11T04:57:29.000Z</updated>
+    
+    <summary type="html">
+    
+      有东西被加密了, 请输入密码查看.
+    
+    </summary>
+    
+    
+      <category term="GFW" scheme="https://blog.cooky.tk/categories/GFW/"/>
+    
+    
+      <category term="vps" scheme="https://blog.cooky.tk/tags/vps/"/>
+    
+      <category term="v2ray" scheme="https://blog.cooky.tk/tags/v2ray/"/>
+    
+      <category term="caddy" scheme="https://blog.cooky.tk/tags/caddy/"/>
+    
+      <category term="bbr" scheme="https://blog.cooky.tk/tags/bbr/"/>
+    
+      <category term="ss" scheme="https://blog.cooky.tk/tags/ss/"/>
+    
+      <category term="shadowsocks" scheme="https://blog.cooky.tk/tags/shadowsocks/"/>
+    
+      <category term="翻墙" scheme="https://blog.cooky.tk/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="梯子" scheme="https://blog.cooky.tk/tags/%E6%A2%AF%E5%AD%90/"/>
+    
+      <category term="防火墙" scheme="https://blog.cooky.tk/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DDNS for Cloudflare</title>
+    <link href="https://blog.cooky.tk/2020/01/17/ddns-for-cloudflare/"/>
+    <id>https://blog.cooky.tk/2020/01/17/ddns-for-cloudflare/</id>
+    <published>2020-01-17T02:35:48.000Z</published>
+    <updated>2020-01-17T02:35:48.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;获取Global-API-Key&quot;&gt;&lt;a href=&quot;#获取Global-API-Key&quot; class=&quot;headerlink&quot; title=&quot;获取Global API Key&quot;&gt;&lt;/a&gt;获取Global API Key&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里获取Global API Key&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本脚本公网IP获取依赖&lt;a href=&quot;http://ip.taobao.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝IP地址库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;本脚本依赖jq库用于json解析&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+      <category term="脚本" scheme="https://blog.cooky.tk/categories/Linux/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="DDNS" scheme="https://blog.cooky.tk/tags/DDNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP分段、UDP/IP分片，以及MTU和MSS</title>
+    <link href="https://blog.cooky.tk/2019/12/19/tcp-fen-duan-udp-ip-fen-pian-yi-ji-mtu-he-mss/"/>
+    <id>https://blog.cooky.tk/2019/12/19/tcp-fen-duan-udp-ip-fen-pian-yi-ji-mtu-he-mss/</id>
+    <published>2019-12-19T05:00:02.000Z</published>
+    <updated>2019-12-24T00:31:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们在学习TCP/IP协议时都知道，TCP报文段如果很长的话，会在发送时发生分段，在接受时进行重组，同样IP数据报在长度超过一定值时也会发生分片，在接收端再将分片重组。&lt;/p&gt;
+&lt;p&gt;我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网络相关" scheme="https://blog.cooky.tk/categories/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="TCP" scheme="https://blog.cooky.tk/tags/TCP/"/>
+    
+      <category term="TCP/IP" scheme="https://blog.cooky.tk/tags/TCP-IP/"/>
+    
+      <category term="UDP" scheme="https://blog.cooky.tk/tags/UDP/"/>
+    
+      <category term="UDP/IP" scheme="https://blog.cooky.tk/tags/UDP-IP/"/>
+    
+      <category term="MTU" scheme="https://blog.cooky.tk/tags/MTU/"/>
+    
+      <category term="MSS" scheme="https://blog.cooky.tk/tags/MSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Docker中使用MariaDB</title>
+    <link href="https://blog.cooky.tk/2019/12/06/zai-docker-zhong-shi-yong-mariadb/"/>
+    <id>https://blog.cooky.tk/2019/12/06/zai-docker-zhong-shi-yong-mariadb/</id>
+    <published>2019-12-06T01:06:58.000Z</published>
+    <updated>2019-12-06T01:06:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-命令&quot;&gt;&lt;a href=&quot;#Docker-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker 命令&quot;&gt;&lt;/a&gt;Docker 命令&lt;/h2&gt;&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Docker" scheme="https://blog.cooky.tk/categories/Docker/"/>
+    
+    
+      <category term="MariaDB" scheme="https://blog.cooky.tk/tags/MariaDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Docker中使用Python</title>
+    <link href="https://blog.cooky.tk/2019/11/22/zai-docker-zhong-shi-yong-python/"/>
+    <id>https://blog.cooky.tk/2019/11/22/zai-docker-zhong-shi-yong-python/</id>
+    <published>2019-11-22T01:16:08.000Z</published>
+    <updated>2019-11-22T01:16:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Docker-命令&quot;&gt;&lt;a href=&quot;#Docker-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker 命令&quot;&gt;&lt;/a&gt;Docker 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -itd \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--name python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 8022:22 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 5000:5000 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;data:&amp;#x2F;data \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;easy-rsa:&amp;#x2F;usr&amp;#x2F;share&amp;#x2F;easy-rsa \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--network user-defined --network-alias python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python:latest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;该镜像底层为debian系统&lt;/li&gt;
+&lt;li&gt;-p 8022:22 : 用于ssh登陆&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Docker" scheme="https://blog.cooky.tk/categories/Docker/"/>
+    
+    
+      <category term="Python" scheme="https://blog.cooky.tk/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Docker中使用Redis</title>
+    <link href="https://blog.cooky.tk/2019/11/21/zai-docker-zhong-shi-yong-redis/"/>
+    <id>https://blog.cooky.tk/2019/11/21/zai-docker-zhong-shi-yong-redis/</id>
+    <published>2019-11-21T07:16:05.000Z</published>
+    <updated>2019-11-21T07:16:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Docker-命令&quot;&gt;&lt;a href=&quot;#Docker-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker 命令&quot;&gt;&lt;/a&gt;Docker 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -itd --name redis -p 6379:6379 -v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;redis&amp;#x2F;data:&amp;#x2F;data --network user-defined --network-alias redis redis:latest redis-server &amp;#x2F;data&amp;#x2F;redis.conf --appendonly yes&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;redis-server /data/redis.conf : 载入自己的配置文件&lt;/li&gt;
+&lt;li&gt;–appendonly yes : 持久化&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Docker" scheme="https://blog.cooky.tk/categories/Docker/"/>
+    
+    
+      <category term="Redis" scheme="https://blog.cooky.tk/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text插件集合</title>
+    <link href="https://blog.cooky.tk/2019/10/29/sublime-text-cha-jian-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/29/sublime-text-cha-jian-ji-he/</id>
+    <published>2019-10-29T14:14:34.000Z</published>
+    <updated>2019-12-24T00:13:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Package-Control&quot;&gt;&lt;a href=&quot;#Package-Control&quot; class=&quot;headerlink&quot; title=&quot;Package Control&quot;&gt;&lt;/a&gt;Package Control&lt;/h3&gt;&lt;p&gt;这是基础&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编辑器" scheme="https://blog.cooky.tk/categories/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Homebrew包集合</title>
+    <link href="https://blog.cooky.tk/2019/10/29/homebrew-bao-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/29/homebrew-bao-ji-he/</id>
+    <published>2019-10-29T14:08:49.000Z</published>
+    <updated>2019-12-24T00:13:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;版本控制&quot;&gt;&lt;a href=&quot;#版本控制&quot; class=&quot;headerlink&quot; title=&quot;版本控制&quot;&gt;&lt;/a&gt;版本控制&lt;/h2&gt;&lt;p&gt;git（需要先转移自带的git）&lt;/p&gt;
+&lt;h2 id=&quot;端口转发&quot;&gt;&lt;a href=&quot;#端口转发&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="macOS" scheme="https://blog.cooky.tk/categories/macOS/"/>
+    
+      <category term="Homebrew" scheme="https://blog.cooky.tk/categories/macOS/Homebrew/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs命令集合</title>
+    <link href="https://blog.cooky.tk/2019/10/29/nodejs-ming-ling-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/29/nodejs-ming-ling-ji-he/</id>
+    <published>2019-10-29T14:07:40.000Z</published>
+    <updated>2019-10-29T14:07:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;查看全局包&quot;&gt;&lt;a href=&quot;#查看全局包&quot; class=&quot;headerlink&quot; title=&quot;查看全局包&quot;&gt;&lt;/a&gt;查看全局包&lt;/h2&gt;&lt;p&gt;npm list -g –depth
+        
+      
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="https://blog.cooky.tk/categories/node-js/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs包集合</title>
+    <link href="https://blog.cooky.tk/2019/10/29/nodejs-bao-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/29/nodejs-bao-ji-he/</id>
+    <published>2019-10-29T14:06:10.000Z</published>
+    <updated>2019-10-29T14:06:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Appium&quot;&gt;&lt;a href=&quot;#Appium&quot; class=&quot;headerlink&quot; title=&quot;Appium&quot;&gt;&lt;/a&gt;Appium&lt;/h2&gt;&lt;p&gt;appium&lt;br&gt;appium-doctor&lt;/p&gt;
+&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="https://blog.cooky.tk/categories/node-js/"/>
+    
+      <category term="npm" scheme="https://blog.cooky.tk/categories/node-js/npm/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS命令集</title>
+    <link href="https://blog.cooky.tk/2019/10/29/macos-ming-ling-ji/"/>
+    <id>https://blog.cooky.tk/2019/10/29/macos-ming-ling-ji/</id>
+    <published>2019-10-29T12:54:29.000Z</published>
+    <updated>2019-12-24T00:13:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;终端翻墙&quot;&gt;&lt;a href=&quot;#终端翻墙&quot; class=&quot;headerlink&quot; title=&quot;终端翻墙&quot;&gt;&lt;/a&gt;终端翻墙&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export all_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export https_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export http_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="macOS" scheme="https://blog.cooky.tk/categories/macOS/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java第三方框架集合</title>
+    <link href="https://blog.cooky.tk/2019/10/10/java-di-san-fang-kuang-jia-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/10/java-di-san-fang-kuang-jia-ji-he/</id>
+    <published>2019-10-10T13:26:38.000Z</published>
+    <updated>2019-10-10T13:26:38.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;#&quot;&gt;fastjson&lt;/a&gt; - JOSN解析库&lt;br&gt;&lt;a href=&quot;https://square.github.io/okhttp/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OkHttp&lt;/a&gt; -
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://blog.cooky.tk/categories/Java/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android第三方框架集合</title>
+    <link href="https://blog.cooky.tk/2019/10/10/android-di-san-fang-kuang-jia-ji-he/"/>
+    <id>https://blog.cooky.tk/2019/10/10/android-di-san-fang-kuang-jia-ji-he/</id>
+    <published>2019-10-10T13:13:59.000Z</published>
+    <updated>2019-12-24T00:13:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Android原生&quot;&gt;&lt;a href=&quot;#Android原生&quot; class=&quot;headerlink&quot; title=&quot;Android原生&quot;&gt;&lt;/a&gt;Android原生&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://blog.cooky.tk/categories/Android/"/>
+    
+    
+      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+</feed>
