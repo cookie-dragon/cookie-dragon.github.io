@@ -331,7 +331,7 @@ Rule:
 # 自定义规则
   ## 您可以在此处插入您补充的自定义规则（请注意保持缩进）
 
-  # netflix
+  ### netflix
   - DOMAIN-SUFFIX,netflix.com,Proxy
   - DOMAIN-SUFFIX,netflix.net,Proxy
   - DOMAIN-SUFFIX,nflximg.net,Proxy
@@ -339,8 +339,13 @@ Rule:
   - DOMAIN-SUFFIX,nflxso.net,Proxy
   - DOMAIN-SUFFIX,nflxext.com,Proxy
 
-  # macOS破解站
+  ### macOS破解站
   - DOMAIN-SUFFIX,0daydown.com,DIRECT
+
+  ### PT站
+  - DOMAIN-SUFFIX,ourbits.club,DIRECT
+  - DOMAIN-SUFFIX,open.cd,DIRECT
+  - DOMAIN-SUFFIX,m-team.cc,DIRECT
 
 # 国内网站
   - DOMAIN-SUFFIX,cn,DIRECT

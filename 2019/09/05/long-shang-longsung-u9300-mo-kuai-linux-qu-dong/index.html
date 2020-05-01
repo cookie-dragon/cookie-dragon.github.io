@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -23,17 +23,14 @@
   </script>
 
   <meta name="description" content="硬件环境：友善之臂（FriendlyARM）Smart4418 SDK 1606固件环境：s5p4418-eflasher-friendlycore-xenial-4.4-armhf-20180906.img交叉编译环境：ubuntu-16.04.4-server-amd64">
+<meta name="keywords" content="驱动,4G">
 <meta property="og:type" content="article">
 <meta property="og:title" content="龙尚（LONGSUNG） U9300 模块 Linux驱动">
 <meta property="og:url" content="https://blog.cooky.tk/2019/09/05/long-shang-longsung-u9300-mo-kuai-linux-qu-dong/index.html">
 <meta property="og:site_name" content="曲奇技术">
 <meta property="og:description" content="硬件环境：友善之臂（FriendlyARM）Smart4418 SDK 1606固件环境：s5p4418-eflasher-friendlycore-xenial-4.4-armhf-20180906.img交叉编译环境：ubuntu-16.04.4-server-amd64">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-09-05T07:52:11.000Z">
-<meta property="article:modified_time" content="2019-09-05T07:52:11.000Z">
-<meta property="article:author" content="曲奇龙">
-<meta property="article:tag" content="驱动">
-<meta property="article:tag" content="4G">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-05T07:52:11.000Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://blog.cooky.tk/2019/09/05/long-shang-longsung-u9300-mo-kuai-linux-qu-dong/">
@@ -406,7 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉编译环境"><span class="nav-text">交叉编译环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工具链下载（操作目录：普通用户～）"><span class="nav-text">工具链下载（操作目录：普通用户～）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具链配置（export最好配置到开机启动里）"><span class="nav-text">工具链配置（export最好配置到开机启动里）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核下载"><span class="nav-text">内核下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核配置（操作目录：普通用户～-linux，即内核根目录）"><span class="nav-text">内核配置（操作目录：普通用户～&#x2F;linux，即内核根目录）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加具体设备驱动、USB-串口驱动过滤NDIS-接口"><span class="nav-text">增加具体设备驱动、USB 串口驱动过滤NDIS 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核编译（操作目录：普通用户～-linux，即内核根目录）"><span class="nav-text">内核编译（操作目录：普通用户～&#x2F;linux，即内核根目录）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核替换"><span class="nav-text">内核替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#板上环境"><span class="nav-text">板上环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载USB-串口驱动"><span class="nav-text">加载USB 串口驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使能设备（1c9e-9b3c分别为VID、PID）"><span class="nav-text">使能设备（1c9e 9b3c分别为VID、PID）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互AT配置"><span class="nav-text">交互AT配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AT命令"><span class="nav-text">AT命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拨号上网配置"><span class="nav-text">拨号上网配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拨号上网"><span class="nav-text">拨号上网</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉编译环境"><span class="nav-text">交叉编译环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工具链下载（操作目录：普通用户～）"><span class="nav-text">工具链下载（操作目录：普通用户～）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具链配置（export最好配置到开机启动里）"><span class="nav-text">工具链配置（export最好配置到开机启动里）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核下载"><span class="nav-text">内核下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核配置（操作目录：普通用户～-linux，即内核根目录）"><span class="nav-text">内核配置（操作目录：普通用户～/linux，即内核根目录）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加具体设备驱动、USB-串口驱动过滤NDIS-接口"><span class="nav-text">增加具体设备驱动、USB 串口驱动过滤NDIS 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核编译（操作目录：普通用户～-linux，即内核根目录）"><span class="nav-text">内核编译（操作目录：普通用户～/linux，即内核根目录）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核替换"><span class="nav-text">内核替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#板上环境"><span class="nav-text">板上环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载USB-串口驱动"><span class="nav-text">加载USB 串口驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使能设备（1c9e-9b3c分别为VID、PID）"><span class="nav-text">使能设备（1c9e 9b3c分别为VID、PID）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互AT配置"><span class="nav-text">交互AT配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AT命令"><span class="nav-text">AT命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拨号上网配置"><span class="nav-text">拨号上网配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拨号上网"><span class="nav-text">拨号上网</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,19 +497,9 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
 <script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
-
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
 
 
@@ -521,9 +508,7 @@
 
 
 
-  
-<script src="/js/local-search.js"></script>
-
+  <script src="/js/local-search.js"></script>
 
 
 
