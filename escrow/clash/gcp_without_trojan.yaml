@@ -346,6 +346,13 @@ Rule:
   - DOMAIN-SUFFIX,ourbits.club,DIRECT
   - DOMAIN-SUFFIX,open.cd,DIRECT
   - DOMAIN-SUFFIX,m-team.cc,DIRECT
+  - DOMAIN-SUFFIX,btschool.club,DIRECT
+  - DOMAIN-SUFFIX,hdstreet.club,DIRECT
+  - DOMAIN-SUFFIX,leaguehd.com,DIRECT
+  - DOMAIN-SUFFIX,moecat.best,DIRECT
+  - DOMAIN-SUFFIX,msg.vg,DIRECT
+  - DOMAIN-SUFFIX,ptsbao.club,DIRECT
+  - DOMAIN-SUFFIX,soulvoice.club,DIRECT
 
 # 国内网站
   - DOMAIN-SUFFIX,cn,DIRECT
