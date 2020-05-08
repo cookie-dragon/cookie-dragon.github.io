@@ -303,6 +303,10 @@ Rule:
   - DOMAIN-SUFFIX,ptsbao.club,DIRECT
   - DOMAIN-SUFFIX,soulvoice.club,DIRECT
 
+  ### 电子书站
+  - DOMAIN-SUFFIX,69shu.org,DIRECT
+  - DOMAIN-SUFFIX,biqudu.net,DIRECT
+
 # 国内网站
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN-KEYWORD,-cn,DIRECT
