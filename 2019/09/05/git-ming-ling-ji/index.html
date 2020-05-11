@@ -243,7 +243,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,21 +265,21 @@
         <h2 id="Git设置"><a href="#Git设置" class="headerlink" title="Git设置"></a>Git设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git config --system --list</span><br><span class="line">git config --global --list</span><br><span class="line">git config --local  --list</span><br><span class="line"></span><br><span class="line">git config --global --unset &lt;para&gt;</span><br><span class="line"></span><br><span class="line">git config --global http.proxy &#39;socks5:&#x2F;&#x2F;192.168.111.12:1081&#39;</span><br><span class="line">git config --global https.proxy &#39;socks5:&#x2F;&#x2F;192.168.111.12:1081&#39;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br><span class="line">git config --global color.ui true</span><br><span class="line">git config --global alias.&lt;alias command&gt; &quot;&lt;git command&gt;&quot;</span><br><span class="line">  * git config --global alias.lg &quot;log --color --graph --pretty&#x3D;format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
-<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><ul>
+<h2 id="一、基本功能"><a href="#一、基本功能" class="headerlink" title="一、基本功能"></a>一、基本功能</h2><ul>
 <li><span class="label default">git init</span> —— 初始化一个Git仓库</li>
 <li><span class="label default">git reflog</span> —— 查看<span class="label default">命令历史</span>
 
 
 </li>
 </ul>
-<h2 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h2><ul>
+<h2 id="二、工作区"><a href="#二、工作区" class="headerlink" title="二、工作区"></a>二、工作区</h2><ul>
 <li><span class="label default">git status</span> —— 查看<span class="label default">工作区</span>的状态</li>
 <li><span class="label default">git checkout -- &lt;file&gt;</span> —— 撤销文件在<span class="label default">工作区</span>的修改
 
 
 </li>
 </ul>
-<h2 id="版本库"><a href="#版本库" class="headerlink" title="版本库"></a>版本库</h2><ul>
+<h2 id="三、版本库"><a href="#三、版本库" class="headerlink" title="三、版本库"></a>三、版本库</h2><ul>
 <li><span class="label default">git reset --hard &lt;commit_id&gt;</span> —— 回到某个<span class="label default">版本库</span>
 <ul>
 <li><span class="label default">HEAD^</span>表示上个版本</li>
@@ -290,7 +290,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h3><ul>
+<h3 id="3-1、Log"><a href="#3-1、Log" class="headerlink" title="3.1、Log"></a>3.1、Log</h3><ul>
 <li><span class="label default">git log</span> —— 查看<span class="label default">版本库</span>的<span class="label default">提交历史</span>
 <ul>
 <li><span class="label default">--pretty=oneline</span> —— 单行美化</li>
@@ -301,13 +301,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h3><ul>
+<h3 id="3-2、变基"><a href="#3-2、变基" class="headerlink" title="3.2、变基"></a>3.2、变基</h3><ul>
 <li><span class="label default">git rebase</span> —— 把<span class="label default">版本库</span>未提交到<span class="label default">远程库</span>的分叉<span class="label default">提交历史</span>整理成直线
 
 
 </li>
 </ul>
-<h2 id="工作区-lt-gt-暂存区"><a href="#工作区-lt-gt-暂存区" class="headerlink" title="工作区 &lt; - &gt; 暂存区"></a>工作区 &lt; - &gt; 暂存区</h2><ul>
+<h2 id="四、工作区-lt-gt-暂存区"><a href="#四、工作区-lt-gt-暂存区" class="headerlink" title="四、工作区 &lt; - &gt; 暂存区"></a>四、工作区 &lt; - &gt; 暂存区</h2><ul>
 <li><span class="label default">git diff &lt;file&gt;</span> —— 查看文件在<span class="label default">工作区</span>和<span class="label default">暂存区</span>的不同</li>
 <li><span class="label default">git add &lt;file&gt;</span> —— 将<span class="label default">工作区</span>文件的新增&修改提交到<span class="label default">暂存区</span></li>
 <li><span class="label default">git rm &lt;file&gt;</span> —— 将<span class="label default">工作区</span>的文件删除提交到<span class="label default">暂存区</span></li>
@@ -316,19 +316,19 @@
 
 </li>
 </ul>
-<h2 id="暂存区-lt-gt-版本库"><a href="#暂存区-lt-gt-版本库" class="headerlink" title="暂存区 &lt; - &gt; 版本库"></a>暂存区 &lt; - &gt; 版本库</h2><ul>
+<h2 id="五、暂存区-lt-gt-版本库"><a href="#五、暂存区-lt-gt-版本库" class="headerlink" title="五、暂存区 &lt; - &gt; 版本库"></a>五、暂存区 &lt; - &gt; 版本库</h2><ul>
 <li><span class="label default">git commit -m &lt;message&gt;</span> —— 将<span class="label default">暂存区</span>内容提交到<span class="label default">版本库</span>
 
 
 </li>
 </ul>
-<h2 id="工作区-lt-gt-版本库"><a href="#工作区-lt-gt-版本库" class="headerlink" title="工作区 &lt; - &gt; 版本库"></a>工作区 &lt; - &gt; 版本库</h2><ul>
+<h2 id="六、工作区-lt-gt-版本库"><a href="#六、工作区-lt-gt-版本库" class="headerlink" title="六、工作区 &lt; - &gt; 版本库"></a>六、工作区 &lt; - &gt; 版本库</h2><ul>
 <li><span class="label default">git diff HEAD -- &lt;file&gt;</span> —— 查看文件在<span class="label default">工作区</span>和<span class="label default">版本库</span>的不同
 
 
 </li>
 </ul>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><ul>
+<h2 id="七、分支"><a href="#七、分支" class="headerlink" title="七、分支"></a>七、分支</h2><ul>
 <li><span class="label default">git branch &lt;branch&gt;</span> —— 创建新分支</li>
 <li><span class="label default">git checkout &lt;branch&gt;</span> —— 切换到分支</li>
 <li><span class="label default">git checkout -b &lt;branch&gt;</span> —— 创建并切换到新分支</li>
@@ -348,7 +348,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="现场"><a href="#现场" class="headerlink" title="现场"></a>现场</h2><ul>
+<h2 id="八、现场"><a href="#八、现场" class="headerlink" title="八、现场"></a>八、现场</h2><ul>
 <li><span class="label default">git stash</span> —— 保留现场</li>
 <li><span class="label default">git stash list</span> —— 查看保留的现场</li>
 <li><span class="label default">git stash apply</span> —— 恢复现场</li>
@@ -359,13 +359,13 @@
 
 </li>
 </ul>
-<h2 id="”挑拣”提交"><a href="#”挑拣”提交" class="headerlink" title="”挑拣”提交"></a>”挑拣”提交</h2><ul>
+<h2 id="九、”挑拣”提交"><a href="#九、”挑拣”提交" class="headerlink" title="九、”挑拣”提交"></a>九、”挑拣”提交</h2><ul>
 <li><span class="label default">git cherry-pick &lt;commit_id&gt;</span> —— 将指定提交复制到当前分支
 
 
 </li>
 </ul>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+<h2 id="十、标签"><a href="#十、标签" class="headerlink" title="十、标签"></a>十、标签</h2><ul>
 <li><span class="label default">git tag &lt;tagname&gt;</span> —— 为最新的提交打标签
 <ul>
 <li><span class="label default">git tag &lt;tagname&gt; &lt;commit_id&gt;</span> —— 为指定的提交打标签</li>
@@ -380,7 +380,7 @@
 
 </li>
 </ul>
-<h2 id="远程库"><a href="#远程库" class="headerlink" title="远程库"></a>远程库</h2><ul>
+<h2 id="十一、远程库"><a href="#十一、远程库" class="headerlink" title="十一、远程库"></a>十一、远程库</h2><ul>
 <li><span class="label default">git remote</span> —— 查看远程库
 <ul>
 <li><span class="label default">git remote -v</span> —— 查看远程库详细信息
@@ -410,7 +410,7 @@
 
 </li>
 </ul>
-<h2 id="Git-Cheat-Sheet"><a href="#Git-Cheat-Sheet" class="headerlink" title="Git-Cheat-Sheet"></a>Git-Cheat-Sheet</h2><p><a href="/downloads/git-cheat-sheet.pdf">下载英文版PDF</a><br><img src="https://i.loli.net/2020/04/10/k1oHNZAIVqmR2dC.png" alt="git-cheat-sheet-large01-cn.png"><br><img src="https://i.loli.net/2020/04/10/aFZVEIvgrDLHOnG.png" alt="git-cheat-sheet-large02-cn.png"></p>
+<h2 id="十二、Git-Cheat-Sheet"><a href="#十二、Git-Cheat-Sheet" class="headerlink" title="十二、Git-Cheat-Sheet"></a>十二、Git-Cheat-Sheet</h2><p><a href="/downloads/git-cheat-sheet.pdf">下载英文版PDF</a><br><img src="https://i.loli.net/2020/04/10/k1oHNZAIVqmR2dC.png" alt="git-cheat-sheet-large01-cn.png"><br><img src="https://i.loli.net/2020/04/10/aFZVEIvgrDLHOnG.png" alt="git-cheat-sheet-large02-cn.png"></p>
 
     </div>
 
@@ -495,7 +495,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git设置"><span class="nav-text">Git设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区"><span class="nav-text">工作区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本库"><span class="nav-text">版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Log"><span class="nav-text">Log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变基"><span class="nav-text">变基</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区-lt-gt-暂存区"><span class="nav-text">工作区 &lt; - &gt; 暂存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存区-lt-gt-版本库"><span class="nav-text">暂存区 &lt; - &gt; 版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区-lt-gt-版本库"><span class="nav-text">工作区 &lt; - &gt; 版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-text">分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现场"><span class="nav-text">现场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#”挑拣”提交"><span class="nav-text">”挑拣”提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程库"><span class="nav-text">远程库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Cheat-Sheet"><span class="nav-text">Git-Cheat-Sheet</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git设置"><span class="nav-text">Git设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本功能"><span class="nav-text">一、基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、工作区"><span class="nav-text">二、工作区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、版本库"><span class="nav-text">三、版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、Log"><span class="nav-text">3.1、Log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、变基"><span class="nav-text">3.2、变基</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、工作区-lt-gt-暂存区"><span class="nav-text">四、工作区 &lt; - &gt; 暂存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、暂存区-lt-gt-版本库"><span class="nav-text">五、暂存区 &lt; - &gt; 版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、工作区-lt-gt-版本库"><span class="nav-text">六、工作区 &lt; - &gt; 版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、分支"><span class="nav-text">七、分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、现场"><span class="nav-text">八、现场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九、”挑拣”提交"><span class="nav-text">九、”挑拣”提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十、标签"><span class="nav-text">十、标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一、远程库"><span class="nav-text">十一、远程库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二、Git-Cheat-Sheet"><span class="nav-text">十二、Git-Cheat-Sheet</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -564,12 +564,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         

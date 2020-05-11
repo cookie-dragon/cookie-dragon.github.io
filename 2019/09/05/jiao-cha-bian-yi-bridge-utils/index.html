@@ -262,9 +262,9 @@
 <h2 id="bridge-utils-1-5"><a href="#bridge-utils-1-5" class="headerlink" title="bridge-utils-1.5"></a>bridge-utils-1.5</h2><blockquote>
 </blockquote>
 <p>目标板内核目录：/home/cooky/Development/hzmct/v6/linux-3.2.0-psp04.06.00.11</p>
-<h3 id="执行交叉编译配置"><a href="#执行交叉编译配置" class="headerlink" title="执行交叉编译配置"></a>执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">autoconf</span><br><span class="line">.&#x2F;configure \</span><br><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX&#x3D;arm-linux-gnueabihf-g++ \</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host&#x3D;arm-linux-gnueabihf \</span><br><span class="line">--prefix&#x3D;&#x2F;opt&#x2F;Crosscompile&#x2F;buildComplete&#x2F;bridge-utils-1.5</span><br></pre></td></tr></table></figure>
+<h3 id="一、执行交叉编译配置"><a href="#一、执行交叉编译配置" class="headerlink" title="一、执行交叉编译配置"></a>一、执行交叉编译配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">autoconf</span><br><span class="line">.&#x2F;configure \</span><br><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc \</span><br><span class="line">CXX&#x3D;arm-linux-gnueabihf-g++ \</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar \</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib \</span><br><span class="line">--host&#x3D;arm-linux-gnueabihf \</span><br><span class="line">--prefix&#x3D;&#x2F;opt&#x2F;Crosscompile&#x2F;buildComplete&#x2F;bridge-utils-1.5</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim brctl/Makefile</p>
+<h3 id="二、修改Makefile"><a href="#二、修改Makefile" class="headerlink" title="二、修改Makefile"></a>二、修改Makefile</h3><p>vim brctl/Makefile</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- #KERNEL_HEADERS&#x3D;-I&#x2F;usr&#x2F;src&#x2F;linux&#x2F;include</span><br><span class="line">+ KERNEL_HEADERS&#x3D;-I&#x2F;home&#x2F;cooky&#x2F;Development&#x2F;hzmct&#x2F;v6&#x2F;linux-3.2.0-psp04.06.00.11</span><br></pre></td></tr></table></figure>
 
 <p>vim doc/Makefile</p>
@@ -273,7 +273,7 @@
 <p>vim libbridge/Makefile</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- #KERNEL_HEADERS&#x3D;-I&#x2F;usr&#x2F;src&#x2F;linux&#x2F;include</span><br><span class="line">+ KERNEL_HEADERS&#x3D;-I&#x2F;home&#x2F;cooky&#x2F;Development&#x2F;hzmct&#x2F;v6&#x2F;linux-3.2.0-psp04.06.00.11</span><br><span class="line">- #AR&#x3D;ar</span><br><span class="line">+ AR&#x3D;arm-linux-gnueabihf-ar</span><br></pre></td></tr></table></figure>
 
-<h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="三、执行make和make-install"><a href="#三、执行make和make-install" class="headerlink" title="三、执行make和make install"></a>三、执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -357,7 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bridge-utils-1-5"><span class="nav-text">bridge-utils-1.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行交叉编译配置"><span class="nav-text">执行交叉编译配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Makefile"><span class="nav-text">修改Makefile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行make和make-install"><span class="nav-text">执行make和make install</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bridge-utils-1-5"><span class="nav-text">bridge-utils-1.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、执行交叉编译配置"><span class="nav-text">一、执行交叉编译配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、修改Makefile"><span class="nav-text">二、修改Makefile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、执行make和make-install"><span class="nav-text">三、执行make和make install</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,12 +426,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         

@@ -197,7 +197,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h2&gt;&lt;p&gt;系统环境：ubuntu-18.04.4-server-amd64&lt;/p&gt;
+      &lt;h2 id=&quot;一、准备环境&quot;&gt;&lt;a href=&quot;#一、准备环境&quot; class=&quot;headerlink&quot; title=&quot;一、准备环境&quot;&gt;&lt;/a&gt;一、准备环境&lt;/h2&gt;&lt;p&gt;系统环境：ubuntu-18.04.4-server-amd64&lt;/p&gt;
 &lt;p&gt;APT：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y make u-boot-tools qemu qemu-user-static&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -268,7 +268,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;获取Global-API-Key&quot;&gt;&lt;a href=&quot;#获取Global-API-Key&quot; class=&quot;headerlink&quot; title=&quot;获取Global API Key&quot;&gt;&lt;/a&gt;获取Global API Key&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里获取Global API Key&lt;/a&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;一、获取Global-API-Key&quot;&gt;&lt;a href=&quot;#一、获取Global-API-Key&quot; class=&quot;headerlink&quot; title=&quot;一、获取Global API Key&quot;&gt;&lt;/a&gt;一、获取Global API Key&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点击这里获取Global API Key&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;本脚本公网IP获取依赖&lt;a href=&quot;http://ip.taobao.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝IP地址库&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;本脚本依赖jq库用于json解析&lt;/li&gt;
@@ -354,7 +354,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Docker-命令&quot;&gt;&lt;a href=&quot;#Docker-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker 命令&quot;&gt;&lt;/a&gt;Docker 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -itd \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--name python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 8022:22 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 5000:5000 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;data:&amp;#x2F;data \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;easy-rsa:&amp;#x2F;usr&amp;#x2F;share&amp;#x2F;easy-rsa \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--network user-defined --network-alias python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python:latest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;一、Docker-命令&quot;&gt;&lt;a href=&quot;#一、Docker-命令&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 命令&quot;&gt;&lt;/a&gt;一、Docker 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -itd \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--name python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 8022:22 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p 5000:5000 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;data:&amp;#x2F;data \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v ~&amp;#x2F;Documents&amp;#x2F;Kitematic&amp;#x2F;python&amp;#x2F;easy-rsa:&amp;#x2F;usr&amp;#x2F;share&amp;#x2F;easy-rsa \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--network user-defined --network-alias python \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python:latest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;该镜像底层为debian系统&lt;/li&gt;
 &lt;li&gt;-p 8022:22 : 用于ssh登陆&lt;/li&gt;
@@ -408,8 +408,7 @@
       
         
         
-          &lt;h3 id=&quot;Package-Control&quot;&gt;&lt;a href=&quot;#Package-Control&quot; class=&quot;headerlink&quot; title=&quot;Package Control&quot;&gt;&lt;/a&gt;Package Control&lt;/h3&gt;&lt;p&gt;这是基础&lt;/p&gt;
-&lt;h2
+          &lt;h3 id=&quot;一、Package-Control&quot;&gt;&lt;a href=&quot;#一、Package-Control&quot; class=&quot;headerlink&quot; title=&quot;一、Package Control&quot;&gt;&lt;/a&gt;一、Package
         
       
     
@@ -436,8 +435,8 @@
       
         
         
-          &lt;h2 id=&quot;版本控制&quot;&gt;&lt;a href=&quot;#版本控制&quot; class=&quot;headerlink&quot; title=&quot;版本控制&quot;&gt;&lt;/a&gt;版本控制&lt;/h2&gt;&lt;p&gt;git（需要先转移自带的git）&lt;/p&gt;
-&lt;h2 id=&quot;端口转发&quot;&gt;&lt;a href=&quot;#端口转发&quot;
+          &lt;h2 id=&quot;一、版本控制&quot;&gt;&lt;a href=&quot;#一、版本控制&quot; class=&quot;headerlink&quot; title=&quot;一、版本控制&quot;&gt;&lt;/a&gt;一、版本控制&lt;/h2&gt;&lt;p&gt;git（需要先转移自带的git）&lt;/p&gt;
+&lt;h2 id=&quot;二、端口转发&quot;&gt;&lt;a
         
       
     
@@ -466,8 +465,8 @@
       
         
         
-          &lt;h2 id=&quot;查看全局包&quot;&gt;&lt;a href=&quot;#查看全局包&quot; class=&quot;headerlink&quot; title=&quot;查看全局包&quot;&gt;&lt;/a&gt;查看全局包&lt;/h2&gt;&lt;p&gt;npm list -g –depth 0&lt;/p&gt;
-&lt;h2 id=&quot;报错集合&quot;&gt;&lt;a href=&quot;#报错集合&quot;
+          &lt;h2 id=&quot;一、查看全局包&quot;&gt;&lt;a href=&quot;#一、查看全局包&quot; class=&quot;headerlink&quot; title=&quot;一、查看全局包&quot;&gt;&lt;/a&gt;一、查看全局包&lt;/h2&gt;&lt;p&gt;npm list -g –depth 0&lt;/p&gt;
+&lt;h2 id=&quot;二、报错集合&quot;&gt;&lt;a
         
       
     
@@ -494,8 +493,8 @@
       
         
         
-          &lt;h2 id=&quot;Appium&quot;&gt;&lt;a href=&quot;#Appium&quot; class=&quot;headerlink&quot; title=&quot;Appium&quot;&gt;&lt;/a&gt;Appium&lt;/h2&gt;&lt;p&gt;appium&lt;br&gt;appium-doctor&lt;/p&gt;
-&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a
+          &lt;h2 id=&quot;一、Appium&quot;&gt;&lt;a href=&quot;#一、Appium&quot; class=&quot;headerlink&quot; title=&quot;一、Appium&quot;&gt;&lt;/a&gt;一、Appium&lt;/h2&gt;&lt;p&gt;appium&lt;br&gt;appium-doctor&lt;/p&gt;
+&lt;h2
         
       
     
@@ -520,7 +519,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;终端翻墙&quot;&gt;&lt;a href=&quot;#终端翻墙&quot; class=&quot;headerlink&quot; title=&quot;终端翻墙&quot;&gt;&lt;/a&gt;终端翻墙&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export all_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export https_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export http_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;一、终端翻墙&quot;&gt;&lt;a href=&quot;#一、终端翻墙&quot; class=&quot;headerlink&quot; title=&quot;一、终端翻墙&quot;&gt;&lt;/a&gt;一、终端翻墙&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export all_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export https_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export http_proxy&amp;#x3D;socks5:&amp;#x2F;&amp;#x2F;127.0.0.1:1081&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -572,7 +571,7 @@
       
         
         
-          &lt;h2 id=&quot;Android原生&quot;&gt;&lt;a href=&quot;#Android原生&quot; class=&quot;headerlink&quot; title=&quot;Android原生&quot;&gt;&lt;/a&gt;Android原生&lt;/h2&gt;&lt;p&gt;&lt;a
+          &lt;h2 id=&quot;一、Android原生&quot;&gt;&lt;a href=&quot;#一、Android原生&quot; class=&quot;headerlink&quot; title=&quot;一、Android原生&quot;&gt;&lt;/a&gt;一、Android原生&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     

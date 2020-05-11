@@ -237,7 +237,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>964</span>
+              <span>968</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -259,10 +259,10 @@
         <p>版本：<br>bzip2-1.0.6 <a href="https://sourceware.org/pub/bzip2/bzip2-1.0.6.tar.gz" target="_blank" rel="noopener">下载</a></p>
 <a id="more"></a>
 
-<h2 id="bzip2-1-0-6"><a href="#bzip2-1-0-6" class="headerlink" title="bzip2-1.0.6"></a>bzip2-1.0.6</h2><h3 id="修改Makefile"><a href="#修改Makefile" class="headerlink" title="修改Makefile"></a>修改Makefile</h3><p>vim Makefile</p>
+<h2 id="bzip2-1-0-6"><a href="#bzip2-1-0-6" class="headerlink" title="bzip2-1.0.6"></a>bzip2-1.0.6</h2><h3 id="一、修改Makefile"><a href="#一、修改Makefile" class="headerlink" title="一、修改Makefile"></a>一、修改Makefile</h3><p>vim Makefile</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># To assist in cross-compiling</span><br><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc -fPIC</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib</span><br><span class="line">LDFLAGS&#x3D;</span><br><span class="line"></span><br><span class="line">BIGFILES&#x3D;-D_FILE_OFFSET_BITS&#x3D;32</span><br><span class="line">CFLAGS&#x3D;-Wall -Winline -O2 -g $(BIGFILES)</span><br><span class="line"></span><br><span class="line"># Where you want it installed when you do &#39;make install&#39;</span><br><span class="line">PREFIX&#x3D;&#x2F;opt&#x2F;Crosscompile&#x2F;buildComplete&#x2F;bzip2-1.0.6</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">check: test</span><br><span class="line">test: bzip2</span><br><span class="line"># @cat words1</span><br><span class="line"># .&#x2F;bzip2 -1 &lt; sample1.ref &gt; sample1.rb2</span><br><span class="line"># .&#x2F;bzip2 -2 &lt; sample2.ref &gt; sample2.rb2</span><br><span class="line"># .&#x2F;bzip2 -3 &lt; sample3.ref &gt; sample3.rb2</span><br><span class="line"># .&#x2F;bzip2 -d &lt; sample1.bz2 &gt; sample1.tst</span><br><span class="line"># .&#x2F;bzip2 -d &lt; sample2.bz2 &gt; sample2.tst</span><br><span class="line"># .&#x2F;bzip2 -ds &lt; sample3.bz2 &gt; sample3.tst</span><br><span class="line"># cmp sample1.bz2 sample1.rb2</span><br><span class="line"># cmp sample2.bz2 sample2.rb2</span><br><span class="line"># cmp sample3.bz2 sample3.rb2</span><br><span class="line"># cmp sample1.tst sample1.ref</span><br><span class="line"># cmp sample2.tst sample2.ref</span><br><span class="line"># cmp sample3.tst sample3.ref</span><br><span class="line"># @cat words3</span><br></pre></td></tr></table></figure>
 
-<h3 id="执行make和make-install"><a href="#执行make和make-install" class="headerlink" title="执行make和make install"></a>执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="二、执行make和make-install"><a href="#二、执行make和make-install" class="headerlink" title="二、执行make和make install"></a>二、执行make和make install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -346,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bzip2-1-0-6"><span class="nav-text">bzip2-1.0.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Makefile"><span class="nav-text">修改Makefile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行make和make-install"><span class="nav-text">执行make和make install</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bzip2-1-0-6"><span class="nav-text">bzip2-1.0.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、修改Makefile"><span class="nav-text">一、修改Makefile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、执行make和make-install"><span class="nav-text">二、执行make和make install</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,12 +415,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         

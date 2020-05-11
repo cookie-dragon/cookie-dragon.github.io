@@ -231,7 +231,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>180</span>
+              <span>184</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>在使用ubuntu16.04编译Linux-3.4.2内核时出现这样的错误：</p>
+          <h2 id="一、报错"><a href="#一、报错" class="headerlink" title="一、报错"></a>一、报错</h2><p>在使用ubuntu16.04编译Linux-3.4.2内核时出现这样的错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recipe for target &#39;kernel&#x2F;timeconst.h&#39; failed kernel&#x2F;timeconst.h] Error 255</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -514,7 +514,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>3.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -693,7 +693,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>450</span>
+              <span>458</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -712,8 +712,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>/bin/bash^M：bad interpreter: No such file or directory</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>这个文件在Windows下编辑过，在Windows下每一行结尾是\n\r，而Linux下则是\n，所以才会有多出来的\r</p>
+          <h2 id="一、报错"><a href="#一、报错" class="headerlink" title="一、报错"></a>一、报错</h2><p>/bin/bash^M：bad interpreter: No such file or directory</p>
+<h2 id="二、原因"><a href="#二、原因" class="headerlink" title="二、原因"></a>二、原因</h2><p>这个文件在Windows下编辑过，在Windows下每一行结尾是\n\r，而Linux下则是\n，所以才会有多出来的\r</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/09/error-bin-bash-m-bad-interpreter-no-such-file-or-directory/#more" rel="contents">
@@ -782,7 +782,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>325</span>
+              <span>329</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -801,9 +801,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="自安装Docker配置"><a href="#自安装Docker配置" class="headerlink" title="自安装Docker配置"></a>自安装Docker配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;xxxxxxxx.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+          <h3 id="一、自安装Docker配置"><a href="#一、自安装Docker配置" class="headerlink" title="一、自安装Docker配置"></a>一、自安装Docker配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;xxxxxxxx.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
-<h3 id="群辉Docker配置文件位置"><a href="#群辉Docker配置文件位置" class="headerlink" title="群辉Docker配置文件位置"></a>群辉Docker配置文件位置</h3><p>/var/packages/Docker/etc/dockerd.json</p>
+<h3 id="二、群辉Docker配置文件位置"><a href="#二、群辉Docker配置文件位置" class="headerlink" title="二、群辉Docker配置文件位置"></a>二、群辉Docker配置文件位置</h3><p>/var/packages/Docker/etc/dockerd.json</p>
 
       
     </div>
@@ -869,7 +869,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4k</span>
+              <span>4.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -961,7 +961,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>174</span>
+              <span>184</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -980,11 +980,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="复制ko驱动"><a href="#复制ko驱动" class="headerlink" title="复制ko驱动"></a>复制ko驱动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp 8188eu.ko &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;</span><br></pre></td></tr></table></figure>
+          <h3 id="一、复制ko驱动"><a href="#一、复制ko驱动" class="headerlink" title="一、复制ko驱动"></a>一、复制ko驱动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp 8188eu.ko &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h4 id="临时注册驱动"><a href="#临时注册驱动" class="headerlink" title="临时注册驱动"></a>临时注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insmod &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;8188eu.ko</span><br></pre></td></tr></table></figure>
+<h4 id="1-1、临时注册驱动"><a href="#1-1、临时注册驱动" class="headerlink" title="1.1、临时注册驱动"></a>1.1、临时注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insmod &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;8188eu.ko</span><br></pre></td></tr></table></figure>
 
-<h4 id="持久化注册驱动"><a href="#持久化注册驱动" class="headerlink" title="持久化注册驱动"></a>持久化注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;</span><br><span class="line">depmod</span><br></pre></td></tr></table></figure>
+<h4 id="1-2、持久化注册驱动"><a href="#1-2、持久化注册驱动" class="headerlink" title="1.2、持久化注册驱动"></a>1.2、持久化注册驱动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;lib&#x2F;modules&#x2F;3.2.0&#x2F;</span><br><span class="line">depmod</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1208,12 +1208,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         

@@ -259,18 +259,18 @@
         <p>【测试环境】Windows 7 旗舰版 With Sp1，RAD 10 Seattle</p>
 <a id="more"></a>
 
-<h2 id="文本文件UAC-manifest编辑"><a href="#文本文件UAC-manifest编辑" class="headerlink" title="文本文件UAC.manifest编辑"></a>文本文件UAC.manifest编辑</h2><p>UAC.manifest</p>
+<h2 id="一、文本文件UAC-manifest编辑"><a href="#一、文本文件UAC-manifest编辑" class="headerlink" title="一、文本文件UAC.manifest编辑"></a>一、文本文件UAC.manifest编辑</h2><p>UAC.manifest</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; standalone&#x3D;&quot;yes&quot;?&gt;</span><br><span class="line">&lt;assembly xmlns&#x3D;&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion&#x3D;&quot;1.0&quot;&gt;</span><br><span class="line">&lt;trustInfo xmlns&#x3D;&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;</span><br><span class="line">&lt;security&gt;</span><br><span class="line">&lt;requestedPrivileges&gt;</span><br><span class="line">&lt;requestedExecutionLevel level&#x3D;&quot;requireAdministrator&quot; uiAccess&#x3D;&quot;false&quot;&gt;</span><br><span class="line">&lt;&#x2F;requestedExecutionLevel&gt;</span><br><span class="line">&lt;&#x2F;requestedPrivileges&gt;</span><br><span class="line">&lt;&#x2F;security&gt;</span><br><span class="line">&lt;&#x2F;trustInfo&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;dependentAssembly&gt;</span><br><span class="line">&lt;assemblyIdentity type&#x3D;&quot;win32&quot;</span><br><span class="line">name&#x3D;&quot;Microsoft.Windows.Common-Controls&quot;</span><br><span class="line">version&#x3D;&quot;6.0.0.0&quot;</span><br><span class="line">processorArchitecture&#x3D;&quot;x86&quot;</span><br><span class="line">publicKeyToken&#x3D;&quot;6595b64144ccf1df&quot;</span><br><span class="line">language&#x3D;&quot;*&quot;&gt;</span><br><span class="line">&lt;&#x2F;assemblyIdentity&gt;</span><br><span class="line">&lt;&#x2F;dependentAssembly&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;&#x2F;assembly&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="文本文件UAC-rc编辑"><a href="#文本文件UAC-rc编辑" class="headerlink" title="文本文件UAC.rc编辑"></a>文本文件UAC.rc编辑</h2><p>UAC.rc</p>
+<h2 id="二、文本文件UAC-rc编辑"><a href="#二、文本文件UAC-rc编辑" class="headerlink" title="二、文本文件UAC.rc编辑"></a>二、文本文件UAC.rc编辑</h2><p>UAC.rc</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 24 UAC.manifest</span><br></pre></td></tr></table></figure>
 
-<h2 id="拷贝文件"><a href="#拷贝文件" class="headerlink" title="拷贝文件"></a>拷贝文件</h2><p>拷贝上述两个文件到RAD10目录下/bin（如Embarcadero\Studio\17.0\bin）</p>
-<h2 id="编译文件"><a href="#编译文件" class="headerlink" title="编译文件"></a>编译文件</h2><p>用brcc32编译这个.rc文件为.res文件</p>
+<h2 id="三、拷贝文件"><a href="#三、拷贝文件" class="headerlink" title="三、拷贝文件"></a>三、拷贝文件</h2><p>拷贝上述两个文件到RAD10目录下/bin（如Embarcadero\Studio\17.0\bin）</p>
+<h2 id="四、编译文件"><a href="#四、编译文件" class="headerlink" title="四、编译文件"></a>四、编译文件</h2><p>用brcc32编译这个.rc文件为.res文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brcc32 uac.rc -fouac.res</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h2><p>在工程文件.dpr中{$R *.res}后面加入{$R uac.res}</p>
-<h2 id="修改工程，重新编译"><a href="#修改工程，重新编译" class="headerlink" title="修改工程，重新编译"></a>修改工程，重新编译</h2><p>打开工程属性，Application-&gt;Manifest File，改成Custom，在下方选择UAC.manifest文件，重新编译工程。</p>
+<h2 id="五、修改文件"><a href="#五、修改文件" class="headerlink" title="五、修改文件"></a>五、修改文件</h2><p>在工程文件.dpr中{$R *.res}后面加入{$R uac.res}</p>
+<h2 id="六、修改工程，重新编译"><a href="#六、修改工程，重新编译" class="headerlink" title="六、修改工程，重新编译"></a>六、修改工程，重新编译</h2><p>打开工程属性，Application-&gt;Manifest File，改成Custom，在下方选择UAC.manifest文件，重新编译工程。</p>
 
     </div>
 
@@ -355,7 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本文件UAC-manifest编辑"><span class="nav-text">文本文件UAC.manifest编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本文件UAC-rc编辑"><span class="nav-text">文本文件UAC.rc编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝文件"><span class="nav-text">拷贝文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译文件"><span class="nav-text">编译文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文件"><span class="nav-text">修改文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改工程，重新编译"><span class="nav-text">修改工程，重新编译</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、文本文件UAC-manifest编辑"><span class="nav-text">一、文本文件UAC.manifest编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、文本文件UAC-rc编辑"><span class="nav-text">二、文本文件UAC.rc编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、拷贝文件"><span class="nav-text">三、拷贝文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、编译文件"><span class="nav-text">四、编译文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、修改文件"><span class="nav-text">五、修改文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、修改工程，重新编译"><span class="nav-text">六、修改工程，重新编译</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -424,12 +424,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         

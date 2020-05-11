@@ -263,9 +263,9 @@
 <p>我们先来看两个与TCP报文段分段和IP数据报分片密切相关的概念。</p>
 <a id="more"></a>
 
-<h3 id="MTU"><a href="#MTU" class="headerlink" title="MTU"></a>MTU</h3><p>Maxitum Transmission Unit 最大传输单元</p>
+<h3 id="一、MTU"><a href="#一、MTU" class="headerlink" title="一、MTU"></a>一、MTU</h3><p>Maxitum Transmission Unit 最大传输单元</p>
 <p>MTU前面已经说过了，是链路层中的网络对数据帧的一个限制，依然以以太网为例，MTU为1500个字节。一个IP数据报在以太网中 传输，如果它的长度大于该MTU值，就要进行分片传输，使得每片数据报的长度小于MTU。分片传输的IP数据报不一定按序到达，但IP首部中的信息能让这些数据报片按序组装。IP数据报的分片与重组是在网络层进完成的。</p>
-<h3 id="MSS"><a href="#MSS" class="headerlink" title="MSS"></a>MSS</h3><p>Maxitum Segment Size 最大分段大小</p>
+<h3 id="二、MSS"><a href="#二、MSS" class="headerlink" title="二、MSS"></a>二、MSS</h3><p>Maxitum Segment Size 最大分段大小</p>
 <p>MSS是TCP里的一个概念（首部的选项字段中）。MSS是TCP数据包每次能够传输的最大数据分段，TCP报文段的长度大于MSS时，要进行分段传输。TCP协议在建立连接的时候通常要协商双方的MSS值，每一方都有用于通告它期望接收的MSS选项（MSS选项只出现在SYN报文段中，即TCP三次握手的前两次）。MSS的值一般为MTU值减去两个首部大小（需要减去IP数据包包头的大小20Bytes和TCP数据段的包头20Bytes）所以如果用链路层以太网，MSS的值往往为1460。而Internet上标准的MTU（最小的MTU，链路层网络为x2.5时）为576，那么如果不设置，则MSS的默认值就为536个字节。很多时候，MSS的值最好取512的倍数。TCP报文段的分段与重组是在运输层完成的。</p>
 <p>到了这里有一个问题自然就明了了，TCP分段的原因是MSS，IP分片的原因是MTU，由于一直有MSS&lt;=MTU，很明显，分段后的每一段TCP报文段再加上IP首部后的长度不可能超过MTU，因此也就不需要在网络层进行IP分片了。因此TCP报文段很少会发生IP分片的情况。</p>
 <p>再来看UDP数据报，由于UDP数据报不会自己进行分段，因此当长度超过了MTU时，会在网络层进行IP分片。同样，ICMP（在网络层中）同样会出现IP分片情况。</p>
@@ -361,7 +361,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MTU"><span class="nav-text">MTU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MSS"><span class="nav-text">MSS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、MTU"><span class="nav-text">一、MTU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、MSS"><span class="nav-text">二、MSS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -430,12 +430,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:27</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
 
         
