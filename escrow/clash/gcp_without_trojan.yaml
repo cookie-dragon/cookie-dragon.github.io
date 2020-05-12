@@ -358,6 +358,9 @@ Rule:
   - DOMAIN-SUFFIX,69shu.org,DIRECT
   - DOMAIN-SUFFIX,biqudu.net,DIRECT
 
+  ### 开发站
+  - DOMAIN-SUFFIX,githubusercontent.com,Proxy
+
 # 国内网站
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN-KEYWORD,-cn,DIRECT
