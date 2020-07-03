@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.cooky.tk/"/>
-  <updated>2020-04-28T06:22:16.000Z</updated>
+  <updated>2020-06-28T07:50:40.000Z</updated>
   <id>https://blog.cooky.tk/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>交叉编译-mosquitto</title>
+    <link href="https://blog.cooky.tk/2020/06/28/jiao-cha-bian-yi-mosquitto/"/>
+    <id>https://blog.cooky.tk/2020/06/28/jiao-cha-bian-yi-mosquitto/</id>
+    <published>2020-06-28T07:50:40.000Z</published>
+    <updated>2020-06-28T07:50:40.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;版本：&lt;br&gt;mosquitto-1.4.15 &lt;a href=&quot;https://mosquitto.org/files/source/mosquitto-1.4.15.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注：1.4.8版本使用本文方法在make install时会报错！
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.cooky.tk/categories/Linux/"/>
+    
+      <category term="交叉编译" scheme="https://blog.cooky.tk/categories/Linux/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+    
+    
+      <category term="动态库" scheme="https://blog.cooky.tk/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>如何在 macOS Catalina 中运行 64 位 KindleGen</title>
@@ -142,21 +167,21 @@
     
       <category term="v2ray" scheme="https://blog.cooky.tk/tags/v2ray/"/>
     
+      <category term="nginx" scheme="https://blog.cooky.tk/tags/nginx/"/>
+    
       <category term="bbr" scheme="https://blog.cooky.tk/tags/bbr/"/>
     
       <category term="ss" scheme="https://blog.cooky.tk/tags/ss/"/>
     
       <category term="shadowsocks" scheme="https://blog.cooky.tk/tags/shadowsocks/"/>
     
+      <category term="trojan" scheme="https://blog.cooky.tk/tags/trojan/"/>
+    
       <category term="翻墙" scheme="https://blog.cooky.tk/tags/%E7%BF%BB%E5%A2%99/"/>
     
       <category term="梯子" scheme="https://blog.cooky.tk/tags/%E6%A2%AF%E5%AD%90/"/>
     
       <category term="防火墙" scheme="https://blog.cooky.tk/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
-      <category term="nginx" scheme="https://blog.cooky.tk/tags/nginx/"/>
-    
-      <category term="trojan" scheme="https://blog.cooky.tk/tags/trojan/"/>
     
   </entry>
   
@@ -199,7 +224,7 @@
     
       &lt;h2 id=&quot;一、准备环境&quot;&gt;&lt;a href=&quot;#一、准备环境&quot; class=&quot;headerlink&quot; title=&quot;一、准备环境&quot;&gt;&lt;/a&gt;一、准备环境&lt;/h2&gt;&lt;p&gt;系统环境：ubuntu-18.04.4-server-amd64&lt;/p&gt;
 &lt;p&gt;APT：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y make u-boot-tools qemu qemu-user-static&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y lib32ncurses5 lib32ncursesw5-dev lib32z1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y make u-boot-tools qemu qemu-user-static tclsh unzip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;格式化工具：HPUSBDisk v2.0.6&lt;br&gt;格式化卷标：boot&lt;/p&gt;
 &lt;p&gt;拷贝顺序&lt;/p&gt;
@@ -243,8 +268,6 @@
     
       <category term="v2ray" scheme="https://blog.cooky.tk/tags/v2ray/"/>
     
-      <category term="caddy" scheme="https://blog.cooky.tk/tags/caddy/"/>
-    
       <category term="bbr" scheme="https://blog.cooky.tk/tags/bbr/"/>
     
       <category term="ss" scheme="https://blog.cooky.tk/tags/ss/"/>
@@ -256,6 +279,8 @@
       <category term="梯子" scheme="https://blog.cooky.tk/tags/%E6%A2%AF%E5%AD%90/"/>
     
       <category term="防火墙" scheme="https://blog.cooky.tk/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+      <category term="caddy" scheme="https://blog.cooky.tk/tags/caddy/"/>
     
   </entry>
   
@@ -552,33 +577,6 @@
     
     
       <category term="Java" scheme="https://blog.cooky.tk/categories/Java/"/>
-    
-    
-      <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android第三方框架集合</title>
-    <link href="https://blog.cooky.tk/2019/10/10/android-di-san-fang-kuang-jia-ji-he/"/>
-    <id>https://blog.cooky.tk/2019/10/10/android-di-san-fang-kuang-jia-ji-he/</id>
-    <published>2019-10-10T13:13:59.000Z</published>
-    <updated>2019-12-24T00:13:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Android原生&quot;&gt;&lt;a href=&quot;#一、Android原生&quot; class=&quot;headerlink&quot; title=&quot;一、Android原生&quot;&gt;&lt;/a&gt;一、Android原生&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://blog.cooky.tk/categories/Android/"/>
     
     
       <category term="集合" scheme="https://blog.cooky.tk/tags/%E9%9B%86%E5%90%88/"/>
