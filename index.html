@@ -189,6 +189,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.cooky.tk/2020/07/09/zai-docker-zhong-shi-yong-erpnext/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="曲奇龙">
+      <meta itemprop="description" content="记录每一个灵感瞬间">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曲奇技术">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/09/zai-docker-zhong-shi-yong-erpnext/" class="post-title-link" itemprop="url">在Docker中使用ERPNext</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-09 16:07:58" itemprop="dateCreated datePublished" datetime="2020-07-09T16:07:58+08:00">2020-07-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Docker-命令"><a href="#Docker-命令" class="headerlink" title="Docker 命令"></a>Docker 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">docker pull lukptr&#x2F;erpnext7</span><br><span class="line">docker run -d --name erpnext \</span><br><span class="line">-p 80:80 \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-p 11000:11000 \</span><br><span class="line">-p 12000:12000 \</span><br><span class="line">-p 13000:13000 \</span><br><span class="line">--restart&#x3D;always \</span><br><span class="line">lukptr&#x2F;erpnext7</span><br><span class="line"></span><br><span class="line">docker exec -it erpnext bash</span><br><span class="line"></span><br><span class="line">mysql -u root -p </span><br><span class="line">12345678</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* to &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;p@ssw0rd&#39;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">select user, host, password from mysql.user;</span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line">sed -i &#39;&#x2F;bind-address&#x2F;s&#x2F;127.0.0.1&#x2F;0.0.0.0&#x2F;g&#39; &#x2F;etc&#x2F;mysql&#x2F;my.cnf</span><br><span class="line">sed -i &#39;&#x2F;bind&#x2F;s&#x2F;127.0.0.1&#x2F;0.0.0.0&#x2F;g&#39; &#x2F;home&#x2F;frappe&#x2F;frappe-bench&#x2F;config&#x2F;redis_cache.conf</span><br><span class="line">sed -i &#39;&#x2F;bind&#x2F;s&#x2F;127.0.0.1&#x2F;0.0.0.0&#x2F;g&#39; &#x2F;home&#x2F;frappe&#x2F;frappe-bench&#x2F;config&#x2F;redis_queue.conf</span><br><span class="line">sed -i &#39;&#x2F;bind&#x2F;s&#x2F;127.0.0.1&#x2F;0.0.0.0&#x2F;g&#39; &#x2F;home&#x2F;frappe&#x2F;frappe-bench&#x2F;config&#x2F;redis_socketio.conf</span><br><span class="line"></span><br><span class="line">docker restart erpnext</span><br><span class="line">docker stop erpnext</span><br><span class="line">docker rm erpnext</span><br><span class="line"></span><br><span class="line">bench update</span><br><span class="line">bench migrate</span><br><span class="line">bench backup</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.cooky.tk/2020/06/28/jiao-cha-bian-yi-mosquitto/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -670,7 +750,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.4k</span>
+              <span>6.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1003,106 +1083,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.cooky.tk/2020/01/17/ddns-for-cloudflare/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="曲奇龙">
-      <meta itemprop="description" content="记录每一个灵感瞬间">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曲奇技术">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/17/ddns-for-cloudflare/" class="post-title-link" itemprop="url">DDNS for Cloudflare</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-17 10:35:48" itemprop="dateCreated datePublished" datetime="2020-01-17T10:35:48+08:00">2020-01-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E8%84%9A%E6%9C%AC/" itemprop="url" rel="index"><span itemprop="name">脚本</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、获取Global-API-Key"><a href="#一、获取Global-API-Key" class="headerlink" title="一、获取Global API Key"></a>一、获取Global API Key</h2><p><a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener">点击这里获取Global API Key</a></p>
-<ul>
-<li>本脚本公网IP获取依赖<a href="http://ip.taobao.com" target="_blank" rel="noopener">淘宝IP地址库</a></li>
-<li>本脚本依赖jq库用于json解析</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/17/ddns-for-cloudflare/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1170,7 +1154,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1183,7 +1167,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1223,12 +1207,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">164k</span>
+    <span title="站点总字数">165k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:29</span>
+    <span title="站点阅读时长">2:30</span>
 </div>
 
         

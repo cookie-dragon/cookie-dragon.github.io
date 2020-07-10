@@ -365,6 +365,9 @@ Rule:
   ### 开发站
   - DOMAIN-SUFFIX,githubusercontent.com,Proxy
 
+  ### 翻墙站
+  - DOMAIN-SUFFIX,v2rayssr.com,Proxy
+
 # 国内网站
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN-KEYWORD,-cn,DIRECT
