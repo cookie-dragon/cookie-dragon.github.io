@@ -175,6 +175,14 @@ proxies:
   #     # headers:
   #     #   custom: value
 
+  - name: "shadowsocks"
+    type: ss
+    server: bwh-direct.cooky.tk
+    port: 55555
+    cipher: aes-256-cfb
+    password: "p@ssw0rd"
+    udp: true
+
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # - name: "vmess"
@@ -211,9 +219,38 @@ proxies:
   #   #   #   Connection:
   #   #   #     - keep-alive
 
+  - name: "vmess-tcp"
+    type: vmess
+    server: bwh-direct.cooky.tk
+    port: 23334
+    uuid: 596af05b-3a86-ff50-6fc5-315f7ebe4344
+    alterId: 4
+    cipher: auto
+
+  - name: "vmess-ws"
+    type: vmess
+    server: bwh-direct.cooky.tk
+    port: 23333
+    uuid: 596af05b-3a86-ff50-6fc5-315f7ebe4344
+    alterId: 4
+    cipher: auto
+    network: ws
+    ws-path: /ray
+
+  - name: "vmess-ws+tls"
+    type: vmess
+    server: bwh-direct.cooky.tk
+    port: 443
+    uuid: 596af05b-3a86-ff50-6fc5-315f7ebe4344
+    alterId: 4
+    cipher: auto
+    tls: true
+    network: ws
+    ws-path: /ray
+
   - name: "vmess-cdn-ws+tls"
     type: vmess
-    server: cdn.cooky.tk
+    server: bwh-cdn.cooky.tk
     port: 443
     uuid: 596af05b-3a86-ff50-6fc5-315f7ebe4344
     alterId: 4
@@ -267,6 +304,12 @@ proxies:
   #   #   - http/1.1
   #   # skip-cert-verify: true
 
+  - name: "trojan"
+    type: trojan
+    server: bwh-direct.cooky.tk
+    port: 443
+    password: admin:Cooky@9258
+
 proxy-groups:
   # relay chains the proxies. proxies shall not contain a relay. No UDP support.
   # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
@@ -279,42 +322,57 @@ proxy-groups:
   #     - ss2
 
   # url-test select which proxy will be used by benchmarking speed to a URL.
-  # - name: "auto"
-  #   type: url-test
-  #   proxies:
-  #     - ss1
-  #     - ss2
-  #     - vmess1
-  #   # tolerance: 150
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 300
+  - name: "auto"
+    type: url-test
+    proxies:
+      - shadowsocks
+      - vmess-tcp
+      - vmess-ws
+      - vmess-ws+tls
+      - trojan
+    # tolerance: 150
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 
   # fallback select an available policy by priority. The availability is tested by accessing an URL, just like an auto url-test group.
-  # - name: "fallback-auto"
-  #   type: fallback
-  #   proxies:
-  #     - ss1
-  #     - ss2
-  #     - vmess1
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 300
+  - name: "fallback-auto"
+    type: fallback
+    proxies:
+      - vmess-cdn-ws+tls
+      - trojan
+      - vmess-ws+tls
+      - vmess-ws
+      - vmess-tcp
+      - shadowsocks
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 
   # load-balance: The request of the same eTLD will be dial on the same proxy.
-  # - name: "load-balance"
-  #   type: load-balance
-  #   proxies:
-  #     - ss1
-  #     - ss2
-  #     - vmess1
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 300
+  - name: "load-balance"
+    type: load-balance
+    proxies:
+      - shadowsocks
+      - vmess-tcp
+      - vmess-ws
+      - vmess-ws+tls
+      - trojan
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 
   # select is used for selecting proxy or proxy group
   # you can use RESTful API to switch proxy, is recommended for use in GUI.
   - name: Proxy
     type: select
     proxies:
+      - shadowsocks
+      - vmess-tcp
+      - vmess-ws
+      - vmess-ws+tls
       - vmess-cdn-ws+tls
+      - trojan
+      - auto
+      - fallback-auto
+      - load-balance
   
   # - name: UseProvider
   #   type: select

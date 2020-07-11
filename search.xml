@@ -182,21 +182,21 @@
             
             <tag> v2ray </tag>
             
+            <tag> nginx </tag>
+            
             <tag> bbr </tag>
             
             <tag> ss </tag>
             
             <tag> shadowsocks </tag>
             
+            <tag> trojan </tag>
+            
             <tag> 翻墙 </tag>
             
             <tag> 梯子 </tag>
             
             <tag> 防火墙 </tag>
-            
-            <tag> nginx </tag>
-            
-            <tag> trojan </tag>
             
         </tags>
       
@@ -279,8 +279,6 @@
             
             <tag> v2ray </tag>
             
-            <tag> caddy </tag>
-            
             <tag> bbr </tag>
             
             <tag> ss </tag>
@@ -292,6 +290,8 @@
             <tag> 梯子 </tag>
             
             <tag> 防火墙 </tag>
+            
+            <tag> caddy </tag>
             
         </tags>
       
